@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--Loading the hibernate properties file-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:hibernate.properties"/>
+    </bean>
+
+    <!--hikari connection pooling configuration-->
+    <bean id="hikariCP" class="com.zaxxer.hikari.HikariConfig">
+        <property name="driverClassName" value="${driver_class}"/>
+        <property name="jdbcUrl" value="${connection_url}"/>
+        <property name="username" value="${medic}"/>
+        <property name="password" value="${password}"/>
+        <property name="poolName" value="${pool_name}"/>
+    </bean>
+
+    <!--hikari connection pooling datasource initialization-->
+    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+        <constructor-arg ref="hikariCP"/>
+    </bean>
+
+    <!--Session Factory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" destroy-method="destroy">
+        <property name="packagesToScan" >
+           <list>
+               <value>egerton.hospital.model</value>
+               <value>egerton.school.records.modal</value>
+               <value>egerton.school.records.util</value>
+           </list>
+        </property>
+        <property name="annotatedPackages">
+            <list>
+                <value>egerton.hospital.model</value>
+                <value>egerton.school.records.modal</value>
+                <value>egerton.school.records.util</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${dialect}</prop>
+                <prop key="hibernate.show_sql">${show_sql}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hbm2ddl.auto}</prop>
+            </props>
+        </property>
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--Transaction management-->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <context:component-scan base-package="egerton"/>
+    <context:annotation-config/>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>

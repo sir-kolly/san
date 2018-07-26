@@ -1,0 +1,25 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://bootsfaces.net/ui"
+                template="Template.xhtml">
+    <ui:define name="title">
+        Login
+    </ui:define>
+
+    <ui:define name="content">
+        <h:column>
+            <h:form styleClass="login-form">
+                <h:panelGrid columns="2" cellspacing="5" cellpadding="5" styleClass="login-area">
+                    <label for="acces">User Code </label>
+                    <h:inputText id="acces" value="#{login.employee.employeeNumber}"  styleClass="form-control" required="true" requiredMessage="access-code missing"/>
+                    <label for="acces">Password </label>
+                    <h:inputSecret id="access" value="#{login.employee.password}" styleClass="form-control" required="true" requiredMessage="access-code missing"/>
+                </h:panelGrid>
+                <h:panelGrid columns="1" styleClass="login-btn-panel">
+                    <h:commandButton value="Login" action="#{login.login}" styleClass="login-button"/>
+                </h:panelGrid>
+            </h:form>
+        </h:column>
+    </ui:define>
+</ui:composition>
