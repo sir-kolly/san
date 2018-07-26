@@ -1,2 +1,2 @@
-# sanatorium
+# san
 Sanatorium information management system
