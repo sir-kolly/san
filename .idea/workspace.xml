@@ -7,74 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ce85d40-49dd-49fb-9ac1-cacbe8e130e0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LabView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/ReceptionView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/StudentPatientView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/TriageView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/admission/AdmissionDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/admission/impl/AdmissionDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/lab/LabDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/lab/impl/LabDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/login/LoginDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/login/impl/LoginDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/medication/MedicationDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/medication/impl/MedicationDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/patient/PatientDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/patient/impl/PatientDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/room/RoomDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/room/impl/RoomDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/triage/TriageDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/triage/impl/TriageDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/VisitDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/impl/VisitDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/message/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/admit/Admission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/employe/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/illness/Illness.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/lab/Lab.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/medication/Medication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/patient/Patient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/room/Bed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/room/Room.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/test/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/triage/Triage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/visit/Visit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/admission/AdmissionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/admission/impl/AdmissionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/lab/LabService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/lab/impl/LabServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/login/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/login/impl/LoginServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/medication/MedicationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/medication/impl/MedicationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/patient/PatientService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/patient/impl/PatientServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/room/RoomService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/room/impl/RoomServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/triage/TriageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/triage/impl/TriageServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/VisitService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/impl/VisitServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/utill/Utill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/school/records/bean/StudentView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/school/records/dao/SchoolRecordsDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/school/records/dao/impl/SchoolRecordsDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/school/records/modal/Staff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/school/records/modal/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/school/records/service/SchoolRecordsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/school/records/service/impl/SchoolRecordsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/school/records/util/Basic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/Resources/css/custom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/Template.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/spring-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/index.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/login.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/san" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sanatorium" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -100,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
-              <caret line="56" column="36" lean-forward="true" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+              <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -118,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/web/index.xhtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="197">
-              <caret line="14" column="71" lean-forward="true" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="71" />
+              <caret line="14" column="71" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -128,7 +62,7 @@
           <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="513">
-              <caret line="84" column="26" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="84" selection-end-column="26" />
+              <caret line="84" column="26" selection-start-line="12" selection-start-column="3" selection-end-line="84" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -145,8 +79,8 @@
       <file leaf-file-name="login.xhtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/login.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+            <state relative-caret-position="195">
+              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -155,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/web/Resources/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -621,12 +555,12 @@
       <option name="presentableId" value="Default" />
       <updated>1532597222091</updated>
       <workItem from="1532597238858" duration="6420000" />
-      <workItem from="1532609219489" duration="5047000" />
+      <workItem from="1532609219489" duration="5401000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11467000" />
+    <option name="totallyTimeSpent" value="11821000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1372" height="746" extended-state="6" />
@@ -753,14 +687,14 @@
       <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
-          <caret line="84" column="26" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="84" selection-end-column="26" />
+          <caret line="84" column="26" selection-start-line="12" selection-start-column="3" selection-end-line="84" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="56" column="36" lean-forward="true" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+          <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -774,7 +708,7 @@
     <entry file="file://$PROJECT_DIR$/web/index.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
-          <caret line="14" column="71" lean-forward="true" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="71" />
+          <caret line="14" column="71" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -788,14 +722,14 @@
     <entry file="file://$PROJECT_DIR$/web/Resources/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/login.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        <state relative-caret-position="195">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
         </state>
       </provider>
     </entry>
