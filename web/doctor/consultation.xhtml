@@ -1,0 +1,101 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/Template.xhtml">
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{doctorView.visitorsToday()}"/>
+    </f:metadata>
+
+    <ui:define name="title">
+        Doctor |Consultation
+    </ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="doctor-menu.xhtml"/>
+    </ui:define>
+    <ui:define name="content">
+        <h:column>
+            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
+                <h:form style="padding: 2px" id="form">
+                    <fieldset>
+                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">select patient</legend>
+                        <h:panelGrid columns="2">
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="Patient number" for="pno"/>
+                                <h:selectOneMenu id="pno" value="#{doctorView.patient.patientNumber}" styleClass="form-control">
+                                    <f:selectItem itemLabel="" itemValue=""/>
+                                    <f:selectItems value="#{doctorView.numbers}"/>
+                                    <f:ajax listener="#{doctorView.patientInfo()}" render="patientInfo"/>
+                                    <h:commandButton action="#{doctorView.patientInfo}"/>
+                                </h:selectOneMenu>
+                                <h:commandButton value="refresh" rendered="#{!doctorView.patientRecordAvailable}" action="#{doctorView.refresh}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold;"/>
+                            </h:panelGrid>
+                            <h:panelGrid columns="3" style="text-align-last: right" rendered="#{doctorView.patientRecordAvailable}">
+                                <h:inputText readonly="true"  value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}" id="lname" class="form-control"/>
+                                <h:inputText readonly="true"  value="#{doctorView.patient.gender}" id="gender" class="form-control" />
+                                <h:inputText readonly="true"  value="#{doctorView.patient.yoB}" id="yob" class="form-control"/>
+                            </h:panelGrid>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+        <h:column>
+            <h:panelGrid width="71%" columns="2"  style="background: white;margin: 2px auto;padding: 5px 20px" rendered="#{triageView.patientRecordAvailable}">
+                <h:form style="padding: 2px;" id="info">
+                    <fieldset>
+                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">Triage Records</legend>
+                        <h:panelGrid>
+                            <h:dataTable value="#{doctorView.triageSet}" var="tr" cellspacing="5" cellpadding="5" style="text-align: center">
+                                <h:column>
+                                    <f:facet name="header">
+                                        <p style="font-size: 13px;color: #008844;text-transform: uppercase">record number</p>
+                                    </f:facet>
+                                    #{tr.recordNo}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <p style="font-size: 13px;color: #008844;text-transform: uppercase">body Weight</p>
+                                    </f:facet>
+                                    #{tr.weight}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <p style="font-size: 13px;color: #008844;text-transform: uppercase">blood pressure</p>
+                                    </f:facet>
+                                    #{tr.pressure}
+                                </h:column>
+                            </h:dataTable>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+                <h:form style="padding: 2px;" id="labTestForm">
+                    <fieldset>
+                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">previous lab test reports</legend>
+                        <h:panelGrid>
+                            <h:dataTable value="#{doctorView.labs}" var="lab" cellspacing="5" cellpadding="5" style="text-align: center">
+                                <h:column>
+                                    <f:facet name="header">
+                                        <p style="font-size: 13px;color: #008844;text-transform: uppercase">text</p>
+                                    </f:facet>
+                                    #{lab.test}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <p style="font-size: 13px;color: #008844;text-transform: uppercase">result</p>
+                                    </f:facet>
+                                    #{lab.result}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <p style="font-size: 13px;color: #008844;text-transform: uppercase">Date</p>
+                                    </f:facet>
+                                    #{lab.date}
+                                </h:column>
+                            </h:dataTable>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+    </ui:define>
+</ui:composition>

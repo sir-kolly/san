@@ -65,7 +65,7 @@ public class DoctorView {
     private List<Lab>labs;
     private Set<Triage>triageSet;
     private Set<String>freeRooms,freeBeds;
-
+    private boolean patientRecordAvailable;
     private FacesContext context=FacesContext.getCurrentInstance();
 
     public DoctorView(){
@@ -170,7 +170,7 @@ public class DoctorView {
                 }
             }
             if(patient!=null){
-                PrimeFaces.current().ajax().update("patientInfoForm");
+                this.setPatientRecordAvailable(true);
                 this.treatments(patient);
                 this.illnesses(patient);
                 this.tests(patient);
@@ -290,6 +290,9 @@ public class DoctorView {
     private String generateRandomNumber(){
         return UUID.randomUUID().toString().replace("-","")
                 .substring(1,16).toUpperCase();
+    }
+    public String refresh(){
+        return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
     }
     public String admissionUrl(){
         return ("/doctor/admission.xhtml");
@@ -526,6 +529,14 @@ public class DoctorView {
 
     public Set<Admission> getAdmissions() {
         return admissions;
+    }
+
+    public boolean isPatientRecordAvailable() {
+        return patientRecordAvailable;
+    }
+
+    public void setPatientRecordAvailable(boolean patientRecordAvailable) {
+        this.patientRecordAvailable = patientRecordAvailable;
     }
 
     public void setAdmissions(Set<Admission> admissions) {
