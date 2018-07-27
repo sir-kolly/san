@@ -7,41 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ce85d40-49dd-49fb-9ac1-cacbe8e130e0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/web/doctor/lab-result.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/doctor/test-to-be-done.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/lab/lab-board.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/lab/lab-menu.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/lab/lab-report.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/lab/view-report.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/DoctorView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/DoctorView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/LoginView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/lab/LabDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/lab/LabDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/lab/impl/LabDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/lab/impl/LabDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/model/lab/Lab.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/model/lab/Lab.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/model/test/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/model/test/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/lab/LabService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/lab/LabService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/lab/impl/LabServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/lab/impl/LabServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LabView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LabView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/lab/LabDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/lab/LabDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/lab/impl/LabDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/lab/impl/LabDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/lab/Lab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/lab/Lab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/lab/LabService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/lab/LabService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/lab/impl/LabServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/lab/impl/LabServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/DoctorView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/DoctorView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/LoginView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/lab/LabDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/lab/LabDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/lab/impl/LabDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/lab/impl/LabDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/model/lab/Lab.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/model/lab/Lab.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/model/test/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/model/test/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/service/lab/LabService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/service/lab/LabService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/service/lab/impl/LabServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/service/lab/impl/LabServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/doctor/consultation.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/doctor/consultation.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/doctor/doctor-board.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/doctor/doctor-board.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/doctor/doctor-menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/doctor/doctor-menu.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/docs/SRS" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -84,7 +50,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="lab-report.xhtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lab-report.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/lab/lab-report.xhtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-202">
@@ -111,7 +77,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lab-board.xhtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="lab-board.xhtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/lab/lab-board.xhtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -296,6 +262,13 @@
               <item name="san" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="san" type="b2602c69:ProjectViewProjectNode" />
@@ -999,16 +972,15 @@
       <workItem from="1532609219489" duration="42362000" />
       <workItem from="1532674523890" duration="2196000" />
       <workItem from="1532680897433" duration="14687000" />
-      <workItem from="1532701535040" duration="6691000" />
+      <workItem from="1532701535040" duration="7087000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72356000" />
+    <option name="totallyTimeSpent" value="72752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1372" height="746" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -1034,7 +1006,7 @@
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32917318" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11859444" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25036603" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -1418,13 +1390,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/lab/view-report.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/doctor/doctor-board.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1440,13 +1405,6 @@
             <element signature="e#716#717#0" expanded="true" />
             <element signature="e#781#782#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/lab/lab-board.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1468,6 +1426,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-202">
           <caret line="41" column="111" selection-start-line="41" selection-start-column="111" selection-end-line="41" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/lab/view-report.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/lab/lab-board.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
         </state>
       </provider>
     </entry>
