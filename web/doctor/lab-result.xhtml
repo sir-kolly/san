@@ -1,0 +1,56 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/Template.xhtml">
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{doctorView.labReport()}"/>
+    </f:metadata>
+
+    <ui:define name="title">
+        Doctor |Consultation
+    </ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="doctor-menu.xhtml"/>
+    </ui:define>
+    <ui:define name="content">
+        <h:column>
+            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
+                <h:form style="padding: 2px;" id="medInfo">
+                    <fieldset>
+                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">
+                            lab test report for [ <h:outputText value="#{doctorView.patient.firstName} #{doctorView.patient.firstName}"/> ]
+                        </legend>
+                        <h:panelGrid width="100%">
+                            <h:dataTable value="#{doctorView.labs}" var="lb" cellspacing="5" cellpadding="5" style="text-align: center" width="100%" border="1">
+                                <h:column>
+                                    <f:facet name="header">
+                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">Test</p>
+                                    </f:facet>
+                                    #{lb.test}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">Result</p>
+                                    </f:facet>
+                                    #{lb.result}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">Comment</p>
+                                    </f:facet>
+                                    #{lb.comment}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">Date</p>
+                                    </f:facet>
+                                    #{lb.date}
+                                </h:column>
+                            </h:dataTable>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+    </ui:define>
+</ui:composition>

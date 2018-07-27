@@ -8,7 +8,8 @@ import java.util.GregorianCalendar;
 
 @Entity
 @Table
-@NamedQuery(name = "getLabReport",query = "from Lab l join fetch l.patient p where p.patientNumber=:number")
+@NamedQueries({@NamedQuery(name = "getLastLabReport",query = "from Lab l join fetch l.patient p where p.patientNumber=:number and l.date !=:date"),
+        @NamedQuery(name = "todayLabReport",query = "from Lab l join fetch l.patient p where p.patientNumber=:number and l.date=:date")})
 public class Lab {
     private String testNumber,test,result,comment;
     private Date date;

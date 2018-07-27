@@ -1,0 +1,42 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/Template.xhtml">
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{triageView.visitorsToday()}"/>
+    </f:metadata>
+
+    <ui:define name="title">
+        Patient |Record
+    </ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="doctor-menu.xhtml"/>
+    </ui:define>
+    <ui:define name="content">
+        <h:column>
+            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
+                <h:form style="padding: 2px;width: 60%;margin: auto" id="info">
+                    <h:inputHidden value="#{doctorView.patient.patientNumber}"/>
+                    <fieldset>
+                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">
+                            Test to be done on: [ <h:outputText value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}"/>]
+                        </legend>
+                        <h:panelGrid width="100%">
+                            <h:column>
+                                <h:message id="msg" style="color: red; font-weight: 10px" showSummary="true" for="info"/>
+                            </h:column>
+                            <h:panelGrid width="100%" columns="2">
+                                <h:outputLabel value="TEST" for="test" />
+                                <h:inputText  id="test" value="#{doctorView.test.test}" required="true" requiredMessage="input test" style="width: 100%" />
+                            </h:panelGrid>
+                            <h:panelGrid width="20%" style="margin: 20px 0 0 0" columns="2" cellpadding="5" cellspacing="5">
+                                <h:commandButton value="submit" action="#{doctorView.submitTest}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold"/>
+                                <h:commandButton value="edit" action="#{doctorView.updateTestToBeDone}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold;"/>
+                            </h:panelGrid>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+    </ui:define>
+</ui:composition>

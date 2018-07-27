@@ -112,14 +112,36 @@ public class DoctorView {
     public String submitTest(){
         try {
             test=new Test(generateRandomNumber(),test.getTest(),this.getPatient(),false,new Date());
-            if(getLabService().submitTestToBeDone(test)){
-                Message.message("Test Submitted",FacesMessage.SEVERITY_INFO);
+            if(!this.getLabService().checkIfTestIsAlreadySubmitted(test))
+                if(getLabService().submitTestToBeDone(test)){
+                     Message.message("Test Submitted",FacesMessage.SEVERITY_INFO);
             }
+            else return ("/faces/doctor/test-to-be-done.xhtml?faces-redirect=true");
         }catch (Exception e){
             Message.message(""+e,FacesMessage.SEVERITY_ERROR);
         }
         return null;
     }
+    public String updateTestToBeDone(){
+        try{
+            if(this.getLabService().updateTestToBeDone(test))
+                return ("/faces/doctor/test-to-be-done.xhtml?faces-redirect=true");
+        }catch (Exception e){
+            Message.message(""+e,FacesMessage.SEVERITY_ERROR);
+        }
+        return null;
+    }
+    private void tests(Patient patient){
+        try {
+            labs=this.getLabService().getLabReport(patient);
+            if(!labs.isEmpty()){
+                PrimeFaces.current().ajax().update("pastTestForm");
+            }
+        }catch (Exception e){
+            Message.message(""+e,FacesMessage.SEVERITY_ERROR);
+        }
+    }
+
     public String saveAdmissionInfo(){
         try {
             bed.setRoom(room);
@@ -217,16 +239,7 @@ public class DoctorView {
 
         }
     }
-    private void tests(Patient patient){
-        try {
-            labs=this.getLabService().getLabReport(patient);
-            if(!labs.isEmpty()){
-                PrimeFaces.current().ajax().update("pastTestForm");
-            }
-        }catch (Exception e){
 
-        }
-    }
     private void triageRecords(Patient patient, Date date){
         triageSet=new HashSet<>();
         try {
@@ -258,7 +271,15 @@ public class DoctorView {
         }catch (Exception e){}
         return null;
     }
-
+    public void labReport(){
+        try{
+            labs=this.getLabService().todayLabReport(new Date(),patient);
+            if (!labs.isEmpty())
+                return;
+        }catch (Exception e){
+            Message.message(e.toString(),FacesMessage.SEVERITY_ERROR);
+        }
+    }
     public Set<String>roomNumbers(){
         try{
             freeRooms=this.getRoomService().freeRooms();
@@ -287,6 +308,7 @@ public class DoctorView {
         }catch (Exception e){}
         return null;
     }
+
     private String generateRandomNumber(){
         return UUID.randomUUID().toString().replace("-","")
                 .substring(1,16).toUpperCase();
@@ -298,7 +320,12 @@ public class DoctorView {
         return ("/doctor/admission.xhtml");
     }
     public String admissionViwUrl(){
-        return ("/doctor/medication.xhtml");
+        return ("/medication.xhtml");
+    }
+    public String testToBeDoneUrl(){
+        if(this.patient!=(null))
+          return ("/faces/doctor/test-to-be-done.xhtml?faces-redirect=true");
+        return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
     }
 
     public String illnessUrl(){
@@ -308,8 +335,12 @@ public class DoctorView {
         return ("/doctor/medication.xhtml");
     }
     public String consultationUrl(){
-        return ("/doctor/consultation.xhtml");
+        return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
     }
+    public String labResultUrl(){
+        return ("/faces/doctor/lab-result.xhtml?faces-redirect=true");
+    }
+
 
 
     public String date(){

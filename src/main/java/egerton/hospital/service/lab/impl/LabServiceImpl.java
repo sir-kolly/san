@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
+import java.util.Date;
 import java.util.List;
 @Transactional
 @Service
@@ -18,6 +19,16 @@ public class LabServiceImpl implements LabService {
     @Override
     public boolean submitTestToBeDone(Test test) {
         return this.getLabDAO().submitTestToBeDone(test);
+    }
+
+    @Override
+    public boolean updateTestToBeDone(Test test) {
+        return this.getLabDAO().updateTest(test);
+    }
+
+    @Override
+    public boolean checkIfTestIsAlreadySubmitted(Test test) {
+        return this.getLabDAO().checkIfTestIsAlreadySubmitted(test);
     }
 
     @Override
@@ -33,6 +44,11 @@ public class LabServiceImpl implements LabService {
     @Override
     public List<Lab> getLabReport(Patient patient) {
         return this.getLabDAO().getLabReport(patient);
+    }
+
+    @Override
+    public List<Lab> todayLabReport(Date date, Patient patient) {
+        return this.getLabDAO().todayLabReport(date,patient);
     }
 
     public LabDAO getLabDAO() {

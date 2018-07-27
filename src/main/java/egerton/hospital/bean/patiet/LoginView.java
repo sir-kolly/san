@@ -35,7 +35,7 @@ public class LoginView implements Serializable {
                 switch (employee.getRole().toLowerCase()){
                     case "doctor":
                         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("doc",employee);
-                        return ("/faces/doctor/reception-board.xhtml?faces-redirect=true");
+                        return ("/faces/doctor/doctor-board.xhtml?faces-redirect=true");
                     case "nurse":
                         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("nurse",employee);
                         return ("/faces/nurse/triage-nurse-board.xhtml?faces-redirect=true");

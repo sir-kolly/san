@@ -7,7 +7,8 @@ import java.util.Date;
 
 @Entity
 @Table
-@NamedQuery(name = "getTestToBeDone",query = "from Test t where t.date=:date and testDone=false")
+@NamedQueries({@NamedQuery(name = "getTestToBeDone",query = "from Test t where t.date=:date and t.testDone=false"),
+        @NamedQuery(name = "checkIfTestIsAlreadySubmitted",query = "from Test t where t.date=:date and t.test=:test")})
 public class Test {
     private String testNumber,test;
     private Patient patient;

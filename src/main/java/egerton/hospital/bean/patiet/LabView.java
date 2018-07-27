@@ -34,6 +34,8 @@ public class LabView {
     private List<Visit>visits;
     private Set<String>numbers;
 
+    private boolean patientRecordAvailable;
+
     public LabView(){
         lab=new Lab();
         test=new Test();
@@ -95,8 +97,7 @@ public class LabView {
                 }
                 System.out.println(availableTests.size());
                 this.setTestsAvailable(true);
-                PrimeFaces.current().ajax().update("info");
-                PrimeFaces.current().ajax().update("testForm");
+                this.setPatientRecordAvailable(true);
                 return patient;
             }
         }catch (Exception e){
@@ -114,6 +115,9 @@ public class LabView {
             PrimeFaces.current().ajax().update("testRecordForm");
         }
     }
+    public String refresh(){
+        return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
+    }
 
     private Timer getTimer(){
         return new Timer();
@@ -127,9 +131,11 @@ public class LabView {
         return ("/doctor/lab-report.xhtml");
     }
     public String newLabReportUrl(){
-        return ("/lab/lab-test.xhtml");
+        return ("/faces/lab/lab-report.xhtml");
     }
-
+    public String viewLabReportUrl(){
+        return ("/faces/lab/view-report.xhtml");
+    }
     private String generateRandomNumber(){
         return UUID.randomUUID().toString().replace("-","")
                 .substring(1,16).toUpperCase();
@@ -229,5 +235,13 @@ public class LabView {
 
     public void setLabService(LabService labService) {
         this.labService = labService;
+    }
+
+    public boolean isPatientRecordAvailable() {
+        return patientRecordAvailable;
+    }
+
+    public void setPatientRecordAvailable(boolean patientRecordAvailable) {
+        this.patientRecordAvailable = patientRecordAvailable;
     }
 }
