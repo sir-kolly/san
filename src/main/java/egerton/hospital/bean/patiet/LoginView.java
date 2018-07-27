@@ -23,47 +23,42 @@ public class LoginView implements Serializable {
     }
 
     public String logout(){
-        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-        return "/login.xhtml?faces-redirect=true";
+        return ("/faces/login.xhtml?faces-redirect=true");
     }
 
     public String login(){
         try {
-            System.out.println(employee.getEmployeeNumber());
-            System.out.println(employee.getPassword());
-
             Employee em=this.getLoginService().employeeInfo(employee);
-            if(!em.equals(null)){
+            if(!em.equals(null))
                 employee=em;
+            if(!employee.equals(null)){
                 switch (employee.getRole().toLowerCase()){
                     case "doctor":
-                        this.getSession().setAttribute("doc",employee);
-                        return "doctor-board";
+                        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("doc",employee);
+                        return ("/faces/doctor/reception-board.xhtml?faces-redirect=true");
                     case "nurse":
-                        this.getSession().setAttribute("nurse",employee);
-                        return "nurse-board";
+                        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("nurse",employee);
+                        return ("/faces/nurse/triage-nurse-board.xhtml?faces-redirect=true");
                     case "receptionist":
-                        this.getSession().setAttribute("reception",employee);
-                        return "reception-board";
+                        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("reception",employee);
+                        return ("/faces/reception/reception-board.xhtml?faces-redirect=true");
                     case "lab-doctor":
-                        this.getSession().setAttribute("lab-doc",employee);
-                        return "lab-board";
+                        FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("lab",employee);
+                        return ("/faces/lab/lab-board.xhtml?faces-redirect=true");
                 }
             }
             else {
-                return "login";
+                return ("/faces/login.xhtml?faces-redirect=true");
             }
         }catch (Exception e){
             System.out.println(e);
         }
-        return "login";
+        return ("/faces/login.xhtml?faces-redirect=true");
     }
-
-    private HttpSession getSession(){
-        return (HttpSession)FacesContext.getCurrentInstance().getExternalContext().getSession(true);
-    }
-    private HttpServletRequest getRequest(){
-        return (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+    public String validateSession(){
+        if(!FacesContext.getCurrentInstance().getExternalContext().getSessionMap().containsValue(employee))
+             return ("/faces/login.xhtml?faces-redirect=true");
+        return null;
     }
 
     public Employee getEmployee() {

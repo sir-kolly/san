@@ -17,11 +17,12 @@ import javax.inject.Named;
 import java.util.*;
 
 @ViewScoped
-@Named("triageView")
+@Named
 public class TriageView {
     private Triage triage;
     private Patient patient;
     private Visit visit;
+    private boolean patientRecordAvailable;
     @Inject
     private TriageService triageService;
     @Inject
@@ -38,24 +39,30 @@ public class TriageView {
 
     public String saveTriageFindings(){
         FacesContext context=FacesContext.getCurrentInstance();
-        context.getExternalContext().getFlash().setKeepMessages(true);
         try {
             triage=new Triage(generateRandomNumber(),getTriage().getWeight(),getTriage().getPressure(),new Date(),new Date(),getPatient());
-            if(this.getTriageService().saveTriageRecord(triage)){
-                Message.message("Record Submitted",FacesMessage.SEVERITY_INFO);
-                context.getExternalContext().getFlash().setKeepMessages(true);
-                triage=new Triage();
-                return "triage-saved";
+            if(!this.getTriageService().checkIfTriageRecordIsAlreadySaved(triage))
+                if(this.getTriageService().saveTriageRecord(triage)){
+                    Message.message("Record Submitted",FacesMessage.SEVERITY_INFO);
+                    context.getExternalContext().getFlash().setKeepMessages(true);
+                return ("/faces/nurse/record-measurement.xhtml?faces-redirect=true");
             }
+            else return ("/faces/nurse/record-measurement.xhtml?faces-redirect=true");
         }catch (Exception e){
             Message.message(""+e,FacesMessage.SEVERITY_INFO);
         }
         return null;
     }
+    public String updateTriageRecord(){
+        if(this.getTriageService().update(triage))
+            return  ("/faces/nurse/record-measurement.xhtml?faces-redirect=true");
+        return null;
+    }
+
     public Set<String> visitorsToday(){
         try {
             numbers=new HashSet<>();
-            visits=getVisitService().visitsToday(new Date());
+            visits=this.getVisitService().visiting(new Date());
             if(!visits.isEmpty()){
                 for (int i=0;i<visits.size();i++){
                     numbers.add(visits.get(i).getPatient().getPatientNumber());
@@ -78,11 +85,14 @@ public class TriageView {
                 }
             }
             if(patient!=null){
-                PrimeFaces.current().ajax().update("patientInfoForm");
+                this.setPatientRecordAvailable(true);
                 return patient;
             }
         }
         return null;
+    }
+    public String refresh(){
+        return  ("/faces/nurse/record-measurement.xhtml?faces-redirect=true");
     }
     public Visit getVisit() {
         return visit;
@@ -116,9 +126,6 @@ public class TriageView {
         this.visits = visits;
     }
 
-    public String newTriageRecordUrl(){
-        return ("/nurse/triage.xhtml");
-    }
     private String generateRandomNumber(){
         return UUID.randomUUID().toString().replace("-","")
                 .substring(1,16).toUpperCase();
@@ -147,4 +154,11 @@ public class TriageView {
         this.patient = patient;
     }
 
+    public boolean isPatientRecordAvailable() {
+        return patientRecordAvailable;
+    }
+
+    public void setPatientRecordAvailable(boolean patientRecordAvailable) {
+        this.patientRecordAvailable = patientRecordAvailable;
+    }
 }

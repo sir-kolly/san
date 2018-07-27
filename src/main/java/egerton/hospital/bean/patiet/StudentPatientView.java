@@ -2,7 +2,7 @@ package egerton.hospital.bean.patiet;
 
 import egerton.hospital.message.Message;
 import egerton.hospital.model.patient.Patient;
-import egerton.hospital.service.patient.PatientService;
+import egerton.hospital.service.patient.ReceptionService;
 import egerton.hospital.utill.Utill;
 import egerton.school.records.modal.Student;
 import egerton.school.records.service.SchoolRecordsService;
@@ -24,17 +24,17 @@ public class StudentPatientView {
     }
 
     @Inject
-    private PatientService patientService;
+    private ReceptionService receptionService;
     @Inject
     private SchoolRecordsService recordsService;
 
     public String submit(){
         try {
             Patient p=this.updatePatientInfo();
-            p=this.getPatientService().patientInfo(p);
+            p=this.getReceptionService().patientInfo(p);
             if(p!=null){
                 patient=p;
-                if(this.getPatientService().save(this.patient)){
+                if(this.getReceptionService().save(this.patient)){
                     Message.message("Record update successful",FacesMessage.SEVERITY_INFO);
                     Utill.setNumber(patient.getPatientNumber());
                     return "student-patient-record-saved";
@@ -115,12 +115,12 @@ public class StudentPatientView {
         this.student = student;
     }
 
-    public PatientService getPatientService() {
-        return patientService;
+    public ReceptionService getReceptionService() {
+        return receptionService;
     }
 
-    public void setPatientService(PatientService patientService) {
-        this.patientService = patientService;
+    public void setReceptionService(ReceptionService receptionService) {
+        this.receptionService = receptionService;
     }
 
     public SchoolRecordsService getRecordsService() {

@@ -54,7 +54,7 @@
         <!--</navigation-case>-->
         <!--<navigation-case>-->
             <!--<from-outcome>triage-saved</from-outcome>-->
-            <!--<to-view-id>/nurse/triage.xhtml</to-view-id>-->
+            <!--<to-view-id>/nurse/triage-nurse-board.xhtml</to-view-id>-->
             <!--<redirect/>-->
         <!--</navigation-case>-->
         <!--<navigation-case>-->
@@ -64,7 +64,7 @@
         <!--</navigation-case>-->
         <!--<navigation-case>-->
             <!--<from-outcome>triage-record-saved</from-outcome>-->
-            <!--<to-view-id>/nurse/triage.xhtml</to-view-id>-->
+            <!--<to-view-id>/nurse/triage-nurse-board.xhtml</to-view-id>-->
             <!--<redirect/>-->
         <!--</navigation-case>-->
         <!--<navigation-case>-->

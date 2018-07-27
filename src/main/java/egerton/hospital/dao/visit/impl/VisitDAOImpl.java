@@ -32,7 +32,7 @@ public class VisitDAOImpl implements VisitDAO {
     @Override
     public List<Visit> visitsToday(Date date) {
         return this.getSessionFactory().getCurrentSession().createNamedQuery("visitsToday",Visit.class)
-                .setParameter("date",date)
+                .setParameter("d",date)
                 .getResultList();
     }
 

@@ -3,7 +3,7 @@ package egerton.hospital.bean.patiet;
 import egerton.hospital.message.Message;
 import egerton.hospital.model.patient.Patient;
 import egerton.hospital.model.visit.Visit;
-import egerton.hospital.service.patient.PatientService;
+import egerton.hospital.service.patient.ReceptionService;
 import egerton.hospital.service.visit.VisitService;
 import egerton.hospital.utill.Utill;
 import egerton.school.records.modal.Staff;
@@ -31,7 +31,7 @@ public class ReceptionView implements Serializable {
     private boolean studentFound,patientVisitsRecordAvailable;
 
     @Inject
-    private PatientService patientService;
+    private ReceptionService receptionService;
     @Inject
     private SchoolRecordsService recordsService;
     @Inject
@@ -52,14 +52,14 @@ public class ReceptionView implements Serializable {
            switch (actionID){
                case 1:
                    patient=this.setStudentPatientRecord();
-                   pat=this.getPatientService().checkIfExisting(patient)                                                                                  ;
+                   pat=this.getReceptionService().checkIfExisting(patient)                                                                                  ;
                    if(pat==null){
-                       if(this.getPatientService().save(patient)){
+                       if(this.getReceptionService().save(patient)){
                            Message.message("Record Update successful",FacesMessage.SEVERITY_WARN);
                            Utill.setNumber(patient.getPatientNumber());
                            student=new Student();
                            setStudentFound(false);
-                           return "patient-record-saved";
+                           return "/faces/reception/patient-record.xhtml?faces-redirect=true";
                        }
                    }else {
                        Message.message("Record Update successful",FacesMessage.SEVERITY_WARN);
@@ -67,14 +67,14 @@ public class ReceptionView implements Serializable {
                        Utill.setNumber(patient.getPatientNumber());
                        student=new Student();
                        setStudentFound(false);
-                       return "patient-record-saved";
+                       return "/faces/reception/patient-record.xhtml?faces-redirect=true";
                    }
                    break;
                case 2:
                    patient=this.setEmployeePatientRecord();
-                   pat=this.getPatientService().checkIfExisting(patient)                                                                                  ;
+                   pat=this.getReceptionService().checkIfExisting(patient)                                                                                  ;
                    if(pat==null){
-                       if(this.getPatientService().save(patient)){
+                       if(this.getReceptionService().save(patient)){
                            Message.message("Record Update successful",FacesMessage.SEVERITY_WARN);
                            Utill.setNumber(patient.getPatientNumber());
                            return "patient-record-saved";
@@ -87,9 +87,9 @@ public class ReceptionView implements Serializable {
                    }
                    break;
                case 3:
-                   pat=this.getPatientService().checkIfExisting(patient)                                                                                  ;
+                   pat=this.getReceptionService().checkIfExisting(patient)                                                                                  ;
                    if(pat==null){
-                       if(this.getPatientService().save(patient)){
+                       if(this.getReceptionService().save(patient)){
                            Message.message("Record Update successful",FacesMessage.SEVERITY_WARN);
                            Utill.setNumber(patient.getPatientNumber());
                            return "patient-record-saved";
@@ -107,7 +107,17 @@ public class ReceptionView implements Serializable {
 
         return null;
     }
+    public String updatePatientRecord(){
+        try {
+            if(this.getReceptionService().update(patient)){
+                return ("/faces/reception/patient-record.xhtml?redirect=true");
+            }
 
+        }catch (Exception e){
+            Message.message(""+e,FacesMessage.SEVERITY_ERROR);
+        }
+        return null;
+    }
     public String saveVisit(){
         FacesContext context=FacesContext.getCurrentInstance();
         visit=new Visit(generateRandomNumber(),new Date(),new Date(),false,patient);
@@ -115,23 +125,25 @@ public class ReceptionView implements Serializable {
             if(this.getVisitService().checkIfVisitIsAlreadyRecordedForPatient(visit)){
                 Message.message("Record Submitted Successfully",FacesMessage.SEVERITY_INFO);
                 context.getExternalContext().getFlash().setKeepMessages(true);
-                return "visit-info-updated";
+                return "/faces/reception/reception.xhtml?faces-redirect=true";
             }else {
                 this.getVisitService().saveVisit(visit);
                 Message.message("Record Submitted Successfully",FacesMessage.SEVERITY_INFO);
                 context.getExternalContext().getFlash().setKeepMessages(true);
-                return "visit-info-updated";
+                return "/faces/reception/reception.xhtml?faces-redirect=true";
             }
         }catch (Exception e){
             context.getExternalContext().getFlash().setKeepMessages(true);
             Message.message(""+e,FacesMessage.SEVERITY_ERROR);
+        }finally {
+            clear();
         }
         return null;
     }
 
     public Patient getPatientInfo(){
         try {
-            patient=this.getPatientService().patientInfo(patient);
+            patient=this.getReceptionService().patientInfo(patient);
             if(patient!=null){
                 return patient;
             }
@@ -139,10 +151,6 @@ public class ReceptionView implements Serializable {
 
         return new Patient();
     }
-    private void updateForm(){
-        PrimeFaces.current().ajax().update("formInfo");
-    }
-
     private Patient setStudentPatientRecord(){
         return new Patient(this.generateRandomNumber(),this.student.getNationalId(),this.student.getPhone(),
                 this.student.getEmail(),this.student.getAddress(),this.student.getFirstName(),this.student.getLastName(),
@@ -160,9 +168,6 @@ public class ReceptionView implements Serializable {
             if(student!=null){
                 setStudentFound(true);
                 setActionID(1);
-                PrimeFaces.current().ajax().update("form");
-                PrimeFaces.current().ajax().update("modalForm");
-                return "student-record-found";
             }else
                 Message.message("Student not found",FacesMessage.SEVERITY_WARN);
 
@@ -172,7 +177,17 @@ public class ReceptionView implements Serializable {
 
         return null;
     }
-
+    public String toUpdate(){
+        return "/faces/reception/update-patient-record.xhtml?redirect=true";
+    }
+    public String toPatientRecord(){
+        return ("/faces/reception/patient-record.xhtml?redirect=true");
+    }
+    private void clear(){
+        patient=new Patient();
+        student=new Student();
+        visit=new Visit();
+    }
     public void patientVisits(){
         visits=this.getVisitService().patientVisits();
     }
@@ -193,6 +208,15 @@ public class ReceptionView implements Serializable {
         SimpleDateFormat sf=new SimpleDateFormat("HH:mm");
         return (sf.format(new Date()));
     }
+    public String s;
+
+    public String getS() {
+        return s;
+    }
+
+    public void setS(String s) {
+        this.s = s;
+    }
 
     public String consultationUrl(){
         return ("/doctor/consultation.xhtml");
@@ -210,12 +234,12 @@ public class ReceptionView implements Serializable {
     public void setRecordsService(SchoolRecordsService recordsService) {
         this.recordsService = recordsService;
     }
-    public PatientService getPatientService() {
-        return patientService;
+    public ReceptionService getReceptionService() {
+        return receptionService;
     }
 
-    public void setPatientService(PatientService patientService) {
-        this.patientService = patientService;
+    public void setReceptionService(ReceptionService receptionService) {
+        this.receptionService = receptionService;
     }
     public Patient getPatient() {
         return patient;

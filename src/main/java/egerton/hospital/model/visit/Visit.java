@@ -8,7 +8,7 @@ import java.util.Date;
 @Table
 @NamedQueries({
         @NamedQuery(name = "patientVisits",query = "from Visit vs"),
-        @NamedQuery(name = "visitsToday",query = "from Visit vs where vs.date=:date"),
+        @NamedQuery(name = "visitsToday",query = "from Visit vs where vs.date=:d"),
         @NamedQuery(name ="checkIfVisitIsAlreadyRecordedForPatient",query ="from Visit vs join fetch vs.patient p where vs.date=:date and p.patientNumber=:number")})
 public class Visit {
     private String visitNo;

@@ -1,0 +1,22 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="/Template.xhtml">
+    <ui:define name="menu">
+        <h:column>
+           <h:form style="width: 70%;background: #145;box-shadow: #bbb 1px 1px 3px 2px;margin: auto;padding: 5px">
+               <h:panelGrid columns="4" width="100%" style="text-align: left;text-align-last: right;">
+                   <h:panelGrid style="text-align: left;color: #fff;font-weight: bold">
+                       <h:outputLabel value="RECEPTION BOARD"/>
+                   </h:panelGrid>
+                   <h:panelGrid style="text-align: center;">
+                       <h:outputLink value="reception.xhtml" style="text-decoration: none;text-transform: uppercase;font-size: 13px;font-weight: bold;color: #008844">Reception</h:outputLink>
+                   </h:panelGrid>
+                   <h:outputLabel value="#{reception.firstName} #{reception.lastName}" style="font-size: 12px;color: orchid"/>
+                   <h:outputLink value="#{login.logout()}"><i class="fa fa-sign-out" style="color: red"/></h:outputLink>
+               </h:panelGrid>
+           </h:form>
+        </h:column>
+    </ui:define>
+</ui:composition>
+

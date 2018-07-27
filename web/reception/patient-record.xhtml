@@ -1,0 +1,82 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/Template.xhtml">
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{receptionView.patientVisits()}"/>
+    </f:metadata>
+
+    <ui:define name="title">
+        Patient |Record
+    </ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="reception-menu.xhtml"/>
+    </ui:define>
+    <ui:define name="content">
+        <h:column>
+            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
+                <h:form style="padding: 2px;margin:auto">
+                    <fieldset>
+                        <legend><p style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">Stored Hospital Records</p></legend>
+                        <h:panelGrid columns="6">
+                            <h:outputLabel value="PATIENT NUMBER" for="patNo" />
+                            <h:inputText readonly="true" id="patNo" value="#{receptionView.patient.patientNumber}"/>
+                            <h:outputLabel value="NAME" for="name"/>
+                            <h:inputText readonly="true" value="#{receptionView.patient.firstName} #{receptionView.patient.lastName}" id="name" class="form-control"/>
+                            <h:outputLabel value="GENDER" for="gender"/>
+                            <h:inputText readonly="true" value="#{receptionView.patient.gender}" id="gender" class="form-control" />
+                            <h:outputLabel value="YoB" for="address"/>
+                            <h:inputText readonly="true" value="#{receptionView.patient.yoB}" id="yob" class="form-control"/>
+                            <h:outputLabel value="PHONE" for="phone"/>
+                            <h:inputText readonly="true" value="#{receptionView.patient.phone}" id="phone" class="form-control"/>
+                            <h:outputLabel value="ID"/>
+                            <h:inputText readonly="true" value="#{receptionView.patient.nationalId}" class="form-control"/>
+                            <h:outputLabel value="EMAIL" for="email"/>
+                            <h:inputText readonly="true" value="#{receptionView.patient.email}" id="email" class="form-control"/>
+                            <h:outputLabel value="ADDRESS" for="address"/>
+                            <h:inputText readonly="true" value="#{receptionView.patient.address}" id="address" class="form-control"/>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+        <h:column>
+            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
+                <h:form style="padding: 2px;width: 80%;">
+                    <fieldset>
+                        <legend><p style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">Previous Visits</p></legend>
+                        <h:dataTable width="100%" style="text-align: center" cellpadding="5" cellspacing="2" bgcolor="white"
+                                     value="#{receptionView.visits}" var="v">
+                            <h:column>
+                                <f:facet name="header">
+                                    <p style="font-size: 12px">VISIT NUMBER</p>
+                                </f:facet>
+                                #{v.visitNo}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <p style="font-size: 12px">DATE</p>
+                                </f:facet>
+                                #{v.date}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <p style="font-size: 12px">TREATED</p>
+                                </f:facet>
+                                #{v.treated ? 'Yes':'No'}
+                            </h:column>
+                        </h:dataTable>
+                    </fieldset>
+                </h:form>
+                <h:form>
+                    <h:panelGrid width="20%" style="margin: 20px 0" columns="2" cellpadding="5" cellspacing="5">
+                        <h:commandButton value="submit" action="#{receptionView.saveVisit}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold"/>
+                        <h:commandButton value="edit" action="#{receptionView.toUpdate}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold;"/>
+                    </h:panelGrid>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+    </ui:define>
+</ui:composition>
+
+        <!--rendered="#"-->

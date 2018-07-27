@@ -1,0 +1,64 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/Template.xhtml">
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{triageView.visitorsToday()}"/>
+    </f:metadata>
+
+    <ui:define name="title">
+        Patient |Record
+    </ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="nurse-menu.xhtml"/>
+    </ui:define>
+    <ui:define name="content">
+        <h:column>
+            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
+                <h:form style="padding: 2px" id="form">
+                    <fieldset>
+                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">select patient</legend>
+                        <h:panelGrid columns="2">
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="Patient number" for="pno"/>
+                                <h:selectOneMenu id="pno" value="#{triageView.patient.patientNumber}" styleClass="form-control">
+                                    <f:selectItem itemLabel="" itemValue=""/>
+                                    <f:selectItems value="#{triageView.numbers}"/>
+                                    <f:ajax listener="#{triageView.patientInfo()}" render="patientInfo"/>
+                                </h:selectOneMenu>
+                                <h:commandButton value="refresh" rendered="#{!triageView.patientRecordAvailable}" action="#{triageView.refresh}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold;"/>
+                            </h:panelGrid>
+                            <h:panelGrid columns="3" style="text-align-last: right" rendered="#{triageView.patientRecordAvailable}">
+                                <h:inputText readonly="true"  value="#{triageView.patient.firstName} #{triageView.patient.lastName}" id="lname" class="form-control"/>
+                                <h:inputText readonly="true"  value="#{triageView.patient.gender}" id="gender" class="form-control" />
+                                <h:inputText readonly="true"  value="#{triageView.patient.yoB}" id="yob" class="form-control"/>
+                            </h:panelGrid>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+        <h:column>
+            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px" rendered="#{triageView.patientRecordAvailable}">
+                <h:form style="padding: 2px;width: 60%;" id="info">
+                    <h:inputHidden value="#{triageView.patient.patientNumber}"/>
+                    <fieldset>
+                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">Findings</legend>
+                        <h:panelGrid>
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="BODY WEIGHT" for="weight" />
+                                <h:inputText  id="weight" value="#{triageView.triage.weight}" required="true" requiredMessage="input weight"/>
+                                <h:outputLabel value="BLOOD PRESSURE" for="pr"/>
+                                <h:inputText  id="pr" value="#{triageView.triage.pressure}"  class="form-control" required="true" requiredMessage="input pressure"/>
+                            </h:panelGrid>
+                            <h:panelGrid width="20%" style="margin: 20px 0 0 0" columns="2" cellpadding="5" cellspacing="5" rendered="#{triageView.patientRecordAvailable}">
+                                <h:commandButton value="submit" action="#{triageView.saveTriageFindings}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold"/>
+                                <h:commandButton value="update" action="#{triageView.updateTriageRecord}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold;"/>
+                            </h:panelGrid>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+    </ui:define>
+</ui:composition>

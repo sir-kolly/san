@@ -19,6 +19,11 @@ public class TriageServiceImpl implements TriageService {
     }
 
     @Override
+    public boolean update(Triage triage) {
+        return this.getTriageDAO().update(triage);
+    }
+
+    @Override
     public boolean checkIfTriageRecordIsAlreadySaved(Triage triage) {
         return this.getTriageDAO().checkIfTriageRecordIsAlreadySaved(triage);
     }

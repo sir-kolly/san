@@ -18,6 +18,12 @@ public class TriageDAOImpl implements TriageDAO {
     }
 
     @Override
+    public boolean update(Triage triage) {
+        this.getSessionFactory().getCurrentSession().update(triage);
+        return true;
+    }
+
+    @Override
     public boolean checkIfTriageRecordIsAlreadySaved(Triage triage) {
         triage=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfTriageRecordIsAlreadySaved",Triage.class)
                 .setParameter("date",triage.getDate())

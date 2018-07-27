@@ -1,0 +1,54 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                template="/Template.xhtml">
+
+    <ui:define name="title">
+        Student |Reception
+    </ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="reception-menu.xhtml"/>
+    </ui:define>
+    <ui:define name="content">
+        <h:column>
+            <h:panelGrid width="71%" style="background: white;margin: 2px auto;padding: 15px 20px" rendered="#{not receptionView.studentFound}">
+                <h:form style="padding: 20px;width: 30%;margin:auto;">
+                    <fieldset>
+                        <legend><p style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">Registration number</p></legend>
+                        <h:inputText placeholder="registration numnber" value="#{receptionView.student.regNo}"/>
+                        <h:commandButton value="submit" styleClass="login-button" action="#{receptionView.getStudentRecord}"/>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+        <h:column>
+            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px" rendered="#{receptionView.studentFound}">
+                <h:form style="padding: 20px;margin:50px auto 0 auto;border: #bbbbbb 1px inset">
+                    <h:panelGrid columns="6">
+                        <h:outputLabel for="regnumber" value="REG.NUMBER"/>
+                        <h:inputText readonly="true" id="regnumber" value="#{receptionView.student.regNo}"/>
+                        <h:outputLabel value="NAME" for="name"/>
+                        <h:inputText readonly="true" value="#{receptionView.student.firstName} #{receptionView.student.lastName}" id="name" class="form-control"/>
+                        <h:outputLabel value="GENDER" for="gender"/>
+                        <h:inputText readonly="true" value="#{receptionView.student.gender}" id="gender" class="form-control" />
+                        <h:outputLabel value="PHONE" for="phone"/>
+                        <h:inputText readonly="true" value="#{receptionView.student.phone}" id="phone" class="form-control"/>
+                        <h:outputLabel value="ID"/>
+                        <h:inputText readonly="true" value="#{receptionView.student.nationalId}" class="form-control"/>
+                        <h:outputLabel value="EMAIL" for="email"/>
+                        <h:inputText readonly="true" value="#{receptionView.student.email}" id="email" class="form-control"/>
+                        <h:outputLabel value="ADDRESS" for="address"/>
+                        <h:inputText readonly="true" value="#{receptionView.student.address}" id="address" class="form-control"/>
+                        <h:outputLabel value="FACULTY" for="faculty"/>
+                        <h:inputText readonly="true" value="#{receptionView.student.faculty}" id="faculty" class="form-control"/>
+                        <h:outputLabel value="DEPARTMENT" for="dept"/>
+                        <h:inputText readonly="true" value="#{receptionView.student.dept}" id="dept" class="form-control"/>
+                    </h:panelGrid>
+                    <h:panelGrid width="20%" style="margin: 20px auto">
+                        <h:commandButton value="Ok" action="#{receptionView.savePatient}" styleClass="login-button" style="background: #008844;color: blue;text-transform: uppercase"/>
+                    </h:panelGrid>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+    </ui:define>
+</ui:composition>
+

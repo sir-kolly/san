@@ -2,7 +2,7 @@ package egerton.hospital.service.patient.impl;
 
 import egerton.hospital.dao.patient.PatientDAO;
 import egerton.hospital.model.patient.Patient;
-import egerton.hospital.service.patient.PatientService;
+import egerton.hospital.service.patient.ReceptionService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,13 +10,18 @@ import javax.inject.Inject;
 
 @Transactional
 @Service
-public class PatientServiceImpl implements PatientService {
+public class ReceptionServiceImpl implements ReceptionService {
     @Inject
     private PatientDAO patientRecord;
 
     @Override
     public boolean save(Patient patient) {
         return this.patientRecord.save(patient);
+    }
+
+    @Override
+    public boolean update(Patient patient) {
+        return this.patientRecord.update(patient);
     }
 
     @Override

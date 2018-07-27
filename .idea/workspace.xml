@@ -7,8 +7,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ce85d40-49dd-49fb-9ac1-cacbe8e130e0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/san" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sanatorium" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/nurse/nurse-menu.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/nurse/record-measurement.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/nurse/triage-nurse-board.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/reception/patient-record.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/reception/reception-board.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/reception/reception-menu.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/reception/reception.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/reception/update-patient-record.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/Resources/css/custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/Template.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/Template.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/DoctorView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/DoctorView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/LoginView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/ReceptionView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/ReceptionView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/StudentPatientView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/StudentPatientView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/TriageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/TriageView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/patient/PatientDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/patient/PatientDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/patient/impl/PatientDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/patient/impl/PatientDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/triage/TriageDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/triage/TriageDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/triage/impl/TriageDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/triage/impl/TriageDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/visit/impl/VisitDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/visit/impl/VisitDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/model/visit/Visit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/model/visit/Visit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/patient/PatientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/patient/impl/PatientServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/triage/TriageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/triage/TriageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/triage/impl/TriageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/triage/impl/TriageServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/visit/VisitService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/visit/VisitService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/visit/impl/VisitServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/visit/impl/VisitServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/faces-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/login.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/ReceptionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/ReceptionView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/StudentPatientView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/StudentPatientView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/TriageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/TriageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/patient/PatientDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/patient/PatientDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/patient/impl/PatientDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/patient/impl/PatientDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/triage/TriageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/triage/TriageDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/triage/impl/TriageDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/triage/impl/TriageDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/impl/VisitDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/impl/VisitDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/visit/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/visit/Visit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/patient/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/patient/ReceptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/patient/impl/PatientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/patient/impl/ReceptionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/triage/TriageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/triage/TriageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/triage/impl/TriageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/triage/impl/TriageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/VisitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/VisitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/impl/VisitServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/impl/VisitServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/DoctorView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/DoctorView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/LoginView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/ReceptionView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/ReceptionView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/StudentPatientView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/StudentPatientView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/TriageView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/TriageView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/patient/PatientDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/patient/PatientDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/patient/impl/PatientDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/patient/impl/PatientDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/triage/TriageDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/triage/TriageDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/triage/impl/TriageDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/triage/impl/TriageDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/visit/impl/VisitDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/visit/impl/VisitDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/model/visit/Visit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/model/visit/Visit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/service/patient/PatientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/service/patient/impl/PatientServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/service/triage/TriageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/service/triage/TriageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/service/triage/impl/TriageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/service/triage/impl/TriageServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/service/visit/VisitService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/service/visit/VisitService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/service/visit/impl/VisitServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/service/visit/impl/VisitServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Resources/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/Resources/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/Template.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/Template.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.xhtml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,22 +89,52 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="san" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="san" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="san" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="hospital: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="record-measurement.xhtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/nurse/record-measurement.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+            <state relative-caret-position="255">
+              <caret line="44" column="30" lean-forward="true" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <file leaf-file-name="DoctorView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+            <state relative-caret-position="2505">
+              <caret line="194" column="28" selection-start-line="194" selection-start-column="28" selection-end-line="194" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -42,54 +142,48 @@
       <file leaf-file-name="LoginView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-184">
-              <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+            <state relative-caret-position="330">
+              <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+              <folding>
+                <element signature="e#716#717#0" expanded="true" />
+                <element signature="e#781#782#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.xhtml">
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3ace36a8-3c82-4dee-84a3-16419856a23c/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="14" column="71" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="71" />
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="faces-config.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-          <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
+      <file leaf-file-name="TriageView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/TriageView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="84" column="26" selection-start-line="12" selection-start-column="3" selection-end-line="84" selection-end-column="26" />
+            <state relative-caret-position="480">
+              <caret line="46" column="82" selection-start-line="46" selection-start-column="82" selection-end-line="46" selection-end-column="82" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Template.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/Template.xhtml">
+      <file leaf-file-name="VisitService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/VisitService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="76" selection-start-line="11" selection-start-column="76" selection-end-line="11" selection-end-column="76" />
+            <state relative-caret-position="105">
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.xhtml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/login.xhtml">
+      <file leaf-file-name="VisitServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/impl/VisitServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/Resources/css/custom.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="255">
+              <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -99,9 +193,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="facelets" />
         <option value="CSS File" />
         <option value="jsf" />
+        <option value="facelets" />
       </list>
     </option>
   </component>
@@ -113,13 +207,41 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/web/faces.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/web/Template.xhtml" />
+        <option value="$PROJECT_DIR$/web/student-reception.xhtml" />
         <option value="$PROJECT_DIR$/web/index.xhtml" />
+        <option value="$PROJECT_DIR$/web/Template.xhtml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/patient/PatientService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/patient/ReceptionService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/patient/impl/ReceptionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/patient/PatientDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/patient/impl/PatientDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/ReceptionView.java" />
+        <option value="$PROJECT_DIR$/web/reception/reception.xhtml" />
+        <option value="$PROJECT_DIR$/web/reception/reception-menu.xhtml" />
         <option value="$PROJECT_DIR$/web/Resources/css/custom.css" />
         <option value="$PROJECT_DIR$/web/login.xhtml" />
+        <option value="$PROJECT_DIR$/web/Resources/css/style.css" />
+        <option value="$PROJECT_DIR$/web/reception/update-patient-record.xhtml" />
+        <option value="$PROJECT_DIR$/web/nurse/triage.xhtml" />
+        <option value="$PROJECT_DIR$/web/reception/reception-board.xhtml" />
+        <option value="$PROJECT_DIR$/web/nurse/triage-nurse-board.xhtml" />
+        <option value="$PROJECT_DIR$/web/nurse/nurse-menu.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/triage/TriageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/triage/impl/TriageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/triage/TriageDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/triage/impl/TriageDAOImpl.java" />
+        <option value="$PROJECT_DIR$/web/reception/patient-record.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/impl/VisitDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/visit/Visit.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/VisitService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/impl/VisitServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java" />
+        <option value="$PROJECT_DIR$/web/nurse/record-measurement.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/TriageView.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3ace36a8-3c82-4dee-84a3-16419856a23c/console.sql" />
       </list>
     </option>
   </component>
@@ -254,27 +376,9 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="egerton" type="462c0819:PsiDirectoryNode" />
-              <item name="records" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="san" type="b2602c69:ProjectViewProjectNode" />
-              <item name="san" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="egerton" type="462c0819:PsiDirectoryNode" />
-              <item name="records" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="san" type="b2602c69:ProjectViewProjectNode" />
-              <item name="san" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="egerton" type="462c0819:PsiDirectoryNode" />
-              <item name="records" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="patient" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="san" type="b2602c69:ProjectViewProjectNode" />
@@ -283,8 +387,143 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="egerton" type="462c0819:PsiDirectoryNode" />
-              <item name="records" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="patient" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="egerton" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="triage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="egerton" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="triage" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="egerton" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="visit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="egerton" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="visit" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="egerton" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="egerton" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="patient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="egerton" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="visit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="egerton" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="egerton" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="patient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="egerton" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="patient" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="egerton" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="visit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="egerton" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="visit" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -296,24 +535,13 @@
               <item name="san" type="b2602c69:ProjectViewProjectNode" />
               <item name="san" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="nurse" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="san" type="b2602c69:ProjectViewProjectNode" />
               <item name="san" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="san" type="b2602c69:ProjectViewProjectNode" />
-              <item name="san" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="san" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="reception" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -324,6 +552,8 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -467,13 +697,155 @@
         </option>
       </method>
     </configuration>
-    <configuration name="san" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.8" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/faces/" />
-      <option name="UPDATING_POLICY" value="restart-server" />
+    <configuration name="patient-record.xhtml" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 9.0.8" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/faces/reception/patient-record.xhtml" />
       <deployment>
         <artifact name="san:Web exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="patient-record_xhtml_san" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="44239" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="san:Web exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="reception.xhtml" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.8" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/faces/reception/reception.xhtml" />
+      <deployment>
+        <artifact name="san:Web exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="reception_xhtml_san" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="44039" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="san:Web exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="san" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.8" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/faces/index.xhtml" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="san:Web exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
@@ -542,7 +914,14 @@
     <list>
       <item itemvalue="Tomcat Server.san" />
       <item itemvalue="Tomcat Server.login.xhtml" />
+      <item itemvalue="Tomcat Server.reception.xhtml" />
+      <item itemvalue="Tomcat Server.patient-record.xhtml" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Tomcat Server.patient-record.xhtml" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -555,12 +934,14 @@
       <option name="presentableId" value="Default" />
       <updated>1532597222091</updated>
       <workItem from="1532597238858" duration="6420000" />
-      <workItem from="1532609219489" duration="5401000" />
+      <workItem from="1532609219489" duration="42362000" />
+      <workItem from="1532674523890" duration="2196000" />
+      <workItem from="1532680897433" duration="162000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11821000" />
+    <option name="totallyTimeSpent" value="50978000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1372" height="746" extended-state="6" />
@@ -574,32 +955,33 @@
       <window_info anchor="right" id="CDI" order="3" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.1566618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="JSF" order="3" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32917318" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32917318" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32917318" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21961933" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Database Console" order="8" weight="0.32917318" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32917318" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32917318" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,6 +991,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Employee">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -683,53 +1072,268 @@
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring-config.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LabView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="84" column="26" selection-start-line="12" selection-start-column="3" selection-end-line="84" selection-end-column="26" />
+        <state relative-caret-position="339">
+          <caret line="44" column="13" lean-forward="true" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/student-reception.xhtml" />
+    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+        <state relative-caret-position="95">
+          <caret line="54" column="19" lean-forward="true" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="70" column="64" lean-forward="true" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/patient/impl/PatientDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/patient/PatientDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/patient/impl/ReceptionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/patient/ReceptionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/Template.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="76" selection-start-line="11" selection-start-column="76" selection-end-line="11" selection-end-column="76" />
+        <state relative-caret-position="225">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
+    <entry file="file://$PROJECT_DIR$/web/Resources/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="14" column="71" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-184">
-          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Resources/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        <state relative-caret-position="75">
+          <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/login.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/reception/reception.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/reception/reception-menu.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="44" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/ReceptionView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="109" column="39" lean-forward="true" selection-start-line="109" selection-start-column="39" selection-end-line="109" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/nurse/triage-nurse-board.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/reception/reception-board.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/reception/update-patient-record.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="26" column="19" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/nurse/nurse-menu.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="65" lean-forward="true" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/triage/TriageDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/triage/impl/TriageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/triage/impl/TriageDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/triage/TriageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/VisitDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/patient/Patient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="86" column="52" lean-forward="true" selection-start-line="86" selection-start-column="52" selection-end-line="86" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/visit/Visit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-202">
+          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/reception/patient-record.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/impl/VisitDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Patient">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/VisitService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/impl/VisitServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Employee">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2505">
+          <caret line="194" column="28" selection-start-line="194" selection-start-column="28" selection-end-line="194" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+          <folding>
+            <element signature="e#716#717#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/TriageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="46" column="82" selection-start-line="46" selection-start-column="82" selection-end-line="46" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3ace36a8-3c82-4dee-84a3-16419856a23c/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/nurse/record-measurement.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="44" column="30" lean-forward="true" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
         </state>
       </provider>
     </entry>

@@ -18,6 +18,12 @@ public class PatientDAOImpl implements PatientDAO {
     }
 
     @Override
+    public boolean update(Patient patient) {
+        this.getSessionFactory().getCurrentSession().update(patient);
+        return true;
+    }
+
+    @Override
     public Patient checkIfExisting(Patient patient) {
         return this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfExisting",Patient.class)
                 .setParameter("firstname",patient.getFirstName())

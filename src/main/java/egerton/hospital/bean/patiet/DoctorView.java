@@ -15,7 +15,7 @@ import egerton.hospital.model.visit.Visit;
 import egerton.hospital.service.admission.AdmissionService;
 import egerton.hospital.service.lab.LabService;
 import egerton.hospital.service.medication.MedicationService;
-import egerton.hospital.service.patient.PatientService;
+import egerton.hospital.service.patient.ReceptionService;
 import egerton.hospital.service.room.RoomService;
 import egerton.hospital.service.triage.TriageService;
 import egerton.hospital.service.visit.VisitService;
@@ -47,7 +47,7 @@ public class DoctorView {
     @Inject
     private AdmissionService admissionService;
     @Inject
-    private PatientService patientService;
+    private ReceptionService receptionService;
     @Inject
     private VisitService visitService;
     @Inject
@@ -184,7 +184,7 @@ public class DoctorView {
     public Set<String> visitorsToday(){
         numbers=new HashSet<>();
         try {
-            visits=getVisitService().visitsToday(new Date());
+            visits=getVisitService().visiting(new Date());
             if(!visits.isEmpty()){
                 for (int i=0;i<visits.size();i++){
                     numbers.add(visits.get(i).getPatient().getPatientNumber());
@@ -396,12 +396,12 @@ public class DoctorView {
         this.admissionService = admissionService;
     }
 
-    public PatientService getPatientService() {
-        return patientService;
+    public ReceptionService getReceptionService() {
+        return receptionService;
     }
 
-    public void setPatientService(PatientService patientService) {
-        this.patientService = patientService;
+    public void setReceptionService(ReceptionService receptionService) {
+        this.receptionService = receptionService;
     }
 
     public Set<String> getNumbers() {
