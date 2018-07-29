@@ -163,14 +163,14 @@ public class ReceptionView implements Serializable {
     }
     public String getStudentRecord(){
         try {
-            student=this.getRecordsService().findStudentRecord(student);
-            System.out.println(student.getDept());
-            if(student!=null){
-                setStudentFound(true);
-                setActionID(1);
-            }else
-                Message.message("Student not found",FacesMessage.SEVERITY_WARN);
-
+            Student std=this.getRecordsService().findStudentRecord(student);
+            if (std!=null){
+                student=std;
+                if(student!=null){
+                    setStudentFound(true);
+                    setActionID(1);
+                }else Message.message("Student not found",FacesMessage.SEVERITY_WARN);
+            }
         }catch (Exception e){
             Message.message(""+e,FacesMessage.SEVERITY_ERROR);
         }
@@ -204,26 +204,15 @@ public class ReceptionView implements Serializable {
         return (sf.format(new Date()));
     }
 
-    public String formatTime(){
-        SimpleDateFormat sf=new SimpleDateFormat("HH:mm");
+    public String formatTime() {
+        SimpleDateFormat sf = new SimpleDateFormat("HH:mm");
         return (sf.format(new Date()));
     }
-    public String s;
 
-    public String getS() {
-        return s;
-    }
-
-    public void setS(String s) {
-        this.s = s;
-    }
-
-    public String consultationUrl(){
-        return ("/doctor/consultation.xhtml");
-    }
     public String studentReceptionUrl(){
-        return ("/reception/student-reception.xhtml");
+        return ("/faces/reception/reception.xhtml?faces-redirect=true");
     }
+
     public Integer getActionID() {
         return actionID;
     }

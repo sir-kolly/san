@@ -10,7 +10,7 @@ public interface RoomDAO {
     Set<String> freeRooms();
     Set<String>freeBeds(Room room);
     Bed bedInfo(Bed bed);
-
+    Room roomInfo(Room room);
     boolean updateRoom(Room room);
 
     boolean updateBed(Bed bed);

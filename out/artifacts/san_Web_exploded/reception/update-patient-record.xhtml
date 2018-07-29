@@ -11,14 +11,14 @@
     </ui:define>
     <ui:define name="content">
         <h:column>
-            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
+            <h:panelGrid styleClass="panel-grid">
                 <h:form style="padding: 2px">
                     <h:column>
-                        <h:messages id="msg" style="background: indigo;font-weight: bold;font-size: 12px;text-transform: capitalize;color: white;width: 40%;height:auto;margin: auto;box-shadow: #bbbbbb 2px 5px 3px 4px;" />
+                        <h:messages id="msg" styleClass="messages" />
                     </h:column>
                     <h:inputHidden readonly="true" id="patNo" value="#{receptionView.patient.patientNumber}"/>
                     <fieldset>
-                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">patient record update</legend>
+                        <legend >patient record update</legend>
                         <h:panelGrid columns="6">
                             <h:outputLabel value="FIRST NAME" for="fname"/>
                             <h:inputText value="#{receptionView.patient.firstName}" id="fname" class="form-control"/>
@@ -37,9 +37,9 @@
                             <h:outputLabel value="ADDRESS" for="address"/>
                             <h:inputText readonly="true" value="#{receptionView.patient.address}" id="address" class="form-control"/>
                         </h:panelGrid>
-                        <h:panelGrid width="20%" style="margin: 20px 0 5px 0" columns="2" cellpadding="5" cellspacing="5">
-                            <h:commandButton value="update" action="#{receptionView.updatePatientRecord}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold"/>
-                            <h:commandButton value="back" action="#{receptionView.toPatientRecord}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold;"/>
+                        <h:panelGrid width="20%" style="margin: 20px 0 5px 0" columns="2" cellpadding="5" cellspacing="3">
+                            <h:commandButton value="update" action="#{receptionView.updatePatientRecord}" styleClass="button"/>
+                            <h:commandButton value="back" action="#{receptionView.toPatientRecord}" styleClass="button"/>
                         </h:panelGrid>
                     </fieldset>
                 </h:form>

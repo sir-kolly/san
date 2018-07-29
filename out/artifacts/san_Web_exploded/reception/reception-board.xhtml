@@ -14,15 +14,42 @@
     </ui:define>
     <ui:define name="content">
         <h:column>
-            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
-                <h:form style="padding: 20px;">
-                   <fieldset>
-                       <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">to do list</legend>
-                       <p><i class="fa fa-check-square-o"> Facilitate the student reception</i></p>
-                       <p><i class="fa fa-check-square-o"> Update patient records at the reception level</i></p>
-                       <p><i class="fa fa-check-square-o"> Report the reception hardles to the higher authority</i></p>
-                   </fieldset>
+            <h:panelGrid rendered="#{!empty reception}" styleClass="panel-grid">
+                <h:form style="width:40%">
+                    <fieldset>
+                        <legend>My profile</legend>
+                        <h:panelGrid columns="4">
+                            <label for="workno">social number</label>
+                            <h:inputText readonly="true" id="workno" value="#{reception.employeeNumber}" styleClass="form-control"/>
+                            <label for="name">name</label>
+                            <h:inputText readonly="true" value="#{reception.firstName} #{reception.lastName}" id="name" class="form-control"/>
+                            <label for="gender">gender</label>
+                            <h:inputText readonly="true" value="#{reception.gender}" id="gender" class="form-control" />
+                            <label for="phone">phone</label>
+                            <h:inputText readonly="true" value="#{reception.phone}" id="phone" class="form-control"/>
+                            <label for="nid">id</label>
+                            <h:inputText readonly="true" id="nid" value="#{reception.nationalId}" class="form-control"/>
+                            <label for="email">email</label>
+                            <h:inputText readonly="true" value="#{reception.email}" id="email" class="form-control"/>
+                            <label for="address">address</label>
+                            <h:inputText readonly="true" value="#{reception.role}" id="address" class="form-control"/>
+                        </h:panelGrid>
+                    </fieldset>
                 </h:form>
+            </h:panelGrid>
+        </h:column>
+        <h:column>
+            <h:panelGrid  styleClass="panel-grid">
+                <h:panelGrid>
+                    <h:form style="padding: 20px;text-align: left">
+                        <fieldset>
+                            <legend>to do list</legend>
+                            <p><i class="fa fa-check-square-o"> Facilitate the student reception</i></p>
+                            <p><i class="fa fa-check-square-o"> Update patient records at the reception level</i></p>
+                            <p><i class="fa fa-check-square-o"> Report the reception hardles to the higher authority</i></p>
+                        </fieldset>
+                    </h:form>
+                </h:panelGrid>
             </h:panelGrid>
         </h:column>
     </ui:define>

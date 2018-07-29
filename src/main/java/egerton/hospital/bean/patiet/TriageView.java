@@ -59,35 +59,19 @@ public class TriageView {
         return null;
     }
 
-    public Set<String> visitorsToday(){
+    public Patient visitorsToday(){
         try {
-            numbers=new HashSet<>();
             visits=this.getVisitService().visiting(new Date());
             if(!visits.isEmpty()){
-                for (int i=0;i<visits.size();i++){
-                    numbers.add(visits.get(i).getPatient().getPatientNumber());
+                System.out.println(visits.size());
+                patient=visits.get(0).getPatient();
+                if(patient!=null){
+                    this.setPatientRecordAvailable(true);
+                    return patient;
                 }
-                return numbers;
             }
         }catch (Exception e){
             Message.message(""+e,FacesMessage.SEVERITY_WARN);
-        }
-        return null;
-    }
-    public Patient patientInfo(){
-        if(!visits.isEmpty()){
-            for (int i=0;i<visits.size();i++){
-                String number,num;
-                number=visits.get(i).getPatient().getPatientNumber();
-                num=patient.getPatientNumber();
-                if(number.equalsIgnoreCase(num)){
-                    patient=visits.get(i).getPatient();
-                }
-            }
-            if(patient!=null){
-                this.setPatientRecordAvailable(true);
-                return patient;
-            }
         }
         return null;
     }

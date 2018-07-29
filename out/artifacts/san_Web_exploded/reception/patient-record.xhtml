@@ -14,26 +14,26 @@
     </ui:define>
     <ui:define name="content">
         <h:column>
-            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
-                <h:form style="padding: 2px;margin:auto">
+            <h:panelGrid styleClass="panel-grid">
+                <h:form>
                     <fieldset>
-                        <legend><p style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">Stored Hospital Records</p></legend>
-                        <h:panelGrid columns="6">
-                            <h:outputLabel value="PATIENT NUMBER" for="patNo" />
-                            <h:inputText readonly="true" id="patNo" value="#{receptionView.patient.patientNumber}"/>
-                            <h:outputLabel value="NAME" for="name"/>
+                        <legend>Stored Hospital Records</legend>
+                        <h:panelGrid columns="6" width="100%">
+                            <h:outputLabel value="patient number" for="patNo" />
+                            <h:inputText readonly="true" id="patNo" value="#{receptionView.patient.patientNumber}" styleClass="form-control"/>
+                            <h:outputLabel value="name" for="name"/>
                             <h:inputText readonly="true" value="#{receptionView.patient.firstName} #{receptionView.patient.lastName}" id="name" class="form-control"/>
-                            <h:outputLabel value="GENDER" for="gender"/>
+                            <h:outputLabel value="gender" for="gender"/>
                             <h:inputText readonly="true" value="#{receptionView.patient.gender}" id="gender" class="form-control" />
-                            <h:outputLabel value="YoB" for="address"/>
+                            <h:outputLabel value="yob" for="address"/>
                             <h:inputText readonly="true" value="#{receptionView.patient.yoB}" id="yob" class="form-control"/>
-                            <h:outputLabel value="PHONE" for="phone"/>
+                            <h:outputLabel value="phone" for="phone"/>
                             <h:inputText readonly="true" value="#{receptionView.patient.phone}" id="phone" class="form-control"/>
-                            <h:outputLabel value="ID"/>
+                            <h:outputLabel value="id"/>
                             <h:inputText readonly="true" value="#{receptionView.patient.nationalId}" class="form-control"/>
-                            <h:outputLabel value="EMAIL" for="email"/>
+                            <h:outputLabel value="email" for="email"/>
                             <h:inputText readonly="true" value="#{receptionView.patient.email}" id="email" class="form-control"/>
-                            <h:outputLabel value="ADDRESS" for="address"/>
+                            <h:outputLabel value="address" for="address"/>
                             <h:inputText readonly="true" value="#{receptionView.patient.address}" id="address" class="form-control"/>
                         </h:panelGrid>
                     </fieldset>
@@ -41,27 +41,26 @@
             </h:panelGrid>
         </h:column>
         <h:column>
-            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
-                <h:form style="padding: 2px;width: 80%;">
+            <h:panelGrid styleClass="panel-grid">
+                <h:form style="padding: 2px;width: 80%;margin: auto">
                     <fieldset>
-                        <legend><p style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">Previous Visits</p></legend>
-                        <h:dataTable width="100%" style="text-align: center" cellpadding="5" cellspacing="2" bgcolor="white"
-                                     value="#{receptionView.visits}" var="v">
+                        <legend>Previous Visits</legend>
+                        <h:dataTable value="#{receptionView.visits}" var="v" headerClass="table-header" rowClasses="even,odd">
                             <h:column>
                                 <f:facet name="header">
-                                    <p style="font-size: 12px">VISIT NUMBER</p>
+                                   visit number
                                 </f:facet>
                                 #{v.visitNo}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <p style="font-size: 12px">DATE</p>
+                                   date
                                 </f:facet>
                                 #{v.date}
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <p style="font-size: 12px">TREATED</p>
+                                    treated
                                 </f:facet>
                                 #{v.treated ? 'Yes':'No'}
                             </h:column>
@@ -70,11 +69,11 @@
                 </h:form>
                 <h:form>
                     <h:column>
-                        <h:messages id="msg" style="background: indigo;font-weight: bold;font-size: 12px;text-transform: capitalize;color: white;width: 40%;height:auto;margin: auto;box-shadow: #bbbbbb 2px 5px 3px 4px;" />
+                        <h:messages id="msg" styleClass="messages"/>
                     </h:column>
-                    <h:panelGrid width="20%" style="margin: 20px 0" columns="2" cellpadding="5" cellspacing="5">
-                        <h:commandButton value="submit" action="#{receptionView.saveVisit}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold"/>
-                        <h:commandButton value="edit" action="#{receptionView.toUpdate}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold;"/>
+                    <h:panelGrid width="20%" style="margin:auto" columns="2" cellpadding="5" cellspacing="3">
+                        <h:commandButton value="submit" action="#{receptionView.saveVisit}" styleClass="button"/>
+                        <h:commandButton value="edit" action="#{receptionView.toUpdate}" styleClass="button" />
                     </h:panelGrid>
                 </h:form>
             </h:panelGrid>

@@ -34,6 +34,11 @@ public class RoomDAOImpl implements RoomDAO {
     }
 
     @Override
+    public Room roomInfo(Room room) {
+        return this.getSessionFactory().getCurrentSession().find(Room.class,room.getRoomNumber());
+    }
+
+    @Override
     public boolean updateRoom(Room room) {
         this.getSessionFactory().getCurrentSession().update(room);
         return true;

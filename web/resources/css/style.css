@@ -32,7 +32,35 @@
     background: #bbbbbb;
     padding: 20px;
 }
-
+.top-nav{
+    width: 70%;
+    background: #145;
+    box-shadow: #bbb 1px 1px 3px 2px;
+    margin: auto;
+    padding: 5px
+}
+.brand{
+    font-family: Lucida Console, Courier, monospace;
+    text-transform: uppercase;
+    font-size: 18px;font-weight: bold;
+    color: chartreuse;
+}
+.user-info{
+    font-size: 12px;
+    color:white;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-family: Lucida Console, Courier, monospace;
+    font-style: italic;
+}
+.nav-links{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    color: #008844;
+    text-align: center;
+}
 .form-control{
     border: #bbbbbb 1px solid;
     background: white;
@@ -40,4 +68,98 @@
     font-size: 12px;
     font-weight: bold;
     width: 100%;
+}
+label{
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+/****/
+/***page elements*/
+.empty-page-visit{
+    background: #ffffff;
+    box-shadow: #bbbbbb 2px 2px 2px 2px;
+    color: green;
+    font-size: 14px;
+
+}
+.panel-grid{
+    width:71%;
+    background: white;
+    margin: 2px auto;
+    padding: 15px 20px;
+}
+.messages{
+    background: deeppink;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: capitalize;
+    color: white;
+    width: 60%;
+    height:auto;margin: auto;
+    box-shadow: #bbbbbb 2px 5px 3px 4px;
+}
+legend{
+    color: #008844;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+/**button styles*/
+.button{
+    width: auto;
+    height: 25px;
+    background: #008844;
+    color: white;
+    border:#008844 1px outset;
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: grab;
+}
+.search-input{
+    border: #bbbbbb 1px solid;
+    background: white;
+    color: #4b0082;
+    font-size: 12px;
+    font-weight: bold;
+    width: auto;
+}
+.search-btn{
+    width: auto;
+    height: 30px;
+    background: #008844;
+    color: white;
+    border:#008844 1px outset;
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: grab;
+}
+
+/****table**/
+table{
+    width:100%;
+    text-align: center;
+    padding: 5px;
+    margin: 2px;
+}
+.table-header{
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    background: #008844;
+    height: 20px;
+
+}
+.odd{
+    font-size: 11px;
+    color: indigo;
+    background: aliceblue;
+}
+.even{
+   background: gainsboro;
+    color:deeppink;
+    font-size: 11px;
 }

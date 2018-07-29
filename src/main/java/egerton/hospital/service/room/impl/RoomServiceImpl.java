@@ -32,6 +32,11 @@ public class RoomServiceImpl implements RoomService {
     }
 
     @Override
+    public Room roomInfo(Room room) {
+        return this.getRoom().roomInfo(room);
+    }
+
+    @Override
     public boolean updateRoom(Room room) {
         return this.getRoom().updateRoom(room);
     }

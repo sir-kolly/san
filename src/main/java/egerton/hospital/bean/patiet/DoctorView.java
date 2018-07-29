@@ -162,6 +162,9 @@ public class DoctorView {
             admission =new Admission(generateRandomNumber(),getAdmission().getSection(),new Date(),new Date(),getRoom(),getBed(),getPatient(),getEmployee());
             if (this.getAdmissionService().checkIfAdmittedAlready(admission)){
                 if (this.getAdmissionService().admitPatient(admission)){
+                    room.setSize(this.updatedRoomSize(room));
+                    bed.setRoom(room);
+                    bed.setOccupied(true);
                     if(this.getRoomService().updateRoom(room) && this.getRoomService().updateBed(bed)){
                         Message.message("Admission Successful",FacesMessage.SEVERITY_INFO);
                         context.getExternalContext().getFlash().setKeepMessages(true);
@@ -391,8 +394,20 @@ public class DoctorView {
             return ("/faces/doctor/admission-info.xhtml?faces-redirect=true");
         return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
     }
-
-
+    private String updatedRoomSize(Room room){
+        try{
+            room=this.getRoomService().roomInfo(room);
+            if(room.getSize()=="0")
+                return room.getSize();
+            else {
+                room.setSize(""+(Integer.parseInt(room.getSize())-(1)));
+                return room.getSize();
+            }
+        }catch (Exception e){
+            Message.message(e.toString(),FacesMessage.SEVERITY_ERROR);
+        }
+        return null;
+    }
     public String date(){
         return new SimpleDateFormat("dd/MM/yyy").format(new Date());
     }

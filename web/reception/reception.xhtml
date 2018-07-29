@@ -10,44 +10,47 @@
     </ui:define>
     <ui:define name="content">
         <h:column>
-            <h:panelGrid width="71%" style="background: white;margin: 2px auto;padding: 15px 20px" rendered="#{not receptionView.studentFound}">
+            <h:panelGrid rendered="#{not receptionView.studentFound}" styleClass="panel-grid">
                 <h:form style="padding: 20px;width: 30%;margin:auto;">
                     <h:column>
-                        <h:messages id="msg" style="background: indigo;font-weight: bold;font-size: 12px;text-transform: capitalize;color: white;width: 40%;height:auto;margin: auto;box-shadow: #bbbbbb 2px 5px 3px 4px;" />
+                        <h:messages id="msg" styleClass="messages" />
                     </h:column>
                     <fieldset>
-                        <legend><p style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">Registration number</p></legend>
-                        <h:inputText placeholder="registration numnber" value="#{receptionView.student.regNo}"/>
-                        <h:commandButton value="submit" styleClass="login-button" action="#{receptionView.getStudentRecord}"/>
+                        <legend>registration number</legend>
+                        <h:inputText placeholder="registration numnber" value="#{receptionView.student.regNo}" styleClass="search-input"/>
+                        <h:commandButton value="search" styleClass="button" action="#{receptionView.getStudentRecord}"/>
                     </fieldset>
                 </h:form>
             </h:panelGrid>
         </h:column>
         <h:column>
-            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px" rendered="#{receptionView.studentFound}">
+            <h:panelGrid rendered="#{receptionView.studentFound}" styleClass="panel-grid">
                 <h:form style="padding: 20px;margin:50px auto 0 auto;border: #bbbbbb 1px inset">
-                    <h:panelGrid columns="6">
-                        <h:outputLabel for="regnumber" value="REG.NUMBER"/>
-                        <h:inputText readonly="true" id="regnumber" value="#{receptionView.student.regNo}"/>
-                        <h:outputLabel value="NAME" for="name"/>
-                        <h:inputText readonly="true" value="#{receptionView.student.firstName} #{receptionView.student.lastName}" id="name" class="form-control"/>
-                        <h:outputLabel value="GENDER" for="gender"/>
-                        <h:inputText readonly="true" value="#{receptionView.student.gender}" id="gender" class="form-control" />
-                        <h:outputLabel value="PHONE" for="phone"/>
-                        <h:inputText readonly="true" value="#{receptionView.student.phone}" id="phone" class="form-control"/>
-                        <h:outputLabel value="ID"/>
-                        <h:inputText readonly="true" value="#{receptionView.student.nationalId}" class="form-control"/>
-                        <h:outputLabel value="EMAIL" for="email"/>
-                        <h:inputText readonly="true" value="#{receptionView.student.email}" id="email" class="form-control"/>
-                        <h:outputLabel value="ADDRESS" for="address"/>
-                        <h:inputText readonly="true" value="#{receptionView.student.address}" id="address" class="form-control"/>
-                        <h:outputLabel value="FACULTY" for="faculty"/>
-                        <h:inputText readonly="true" value="#{receptionView.student.faculty}" id="faculty" class="form-control"/>
-                        <h:outputLabel value="DEPARTMENT" for="dept"/>
-                        <h:inputText readonly="true" value="#{receptionView.student.dept}" id="dept" class="form-control"/>
-                    </h:panelGrid>
+                   <fieldset>
+                       <legend>confirm student records</legend>
+                       <h:panelGrid columns="6" width="100%">
+                           <label for="regnumber">reg no</label>
+                           <h:inputText readonly="true" id="regnumber" value="#{receptionView.student.regNo}" styleClass="form-control"/>
+                           <label for="name">name</label>
+                           <h:inputText readonly="true" value="#{receptionView.student.firstName} #{receptionView.student.lastName}" id="name" class="form-control"/>
+                           <label for="gender">gender</label>
+                           <h:inputText readonly="true" value="#{receptionView.student.gender}" id="gender" class="form-control" />
+                           <label for="phone">phone</label>
+                           <h:inputText readonly="true" value="#{receptionView.student.phone}" id="phone" class="form-control"/>
+                           <label for="nid">id</label>
+                           <h:inputText readonly="true" id="nid" value="#{receptionView.student.nationalId}" class="form-control"/>
+                           <label for="email">email</label>
+                           <h:inputText readonly="true" value="#{receptionView.student.email}" id="email" class="form-control"/>
+                           <label for="address">address</label>
+                           <h:inputText readonly="true" value="#{receptionView.student.address}" id="address" class="form-control"/>
+                           <label for="faculty">faculty</label>
+                           <h:inputText readonly="true" value="#{receptionView.student.faculty}" id="faculty" class="form-control"/>
+                           <label for="dept">department</label>
+                           <h:inputText readonly="true" value="#{receptionView.student.dept}" id="dept" class="form-control"/>
+                       </h:panelGrid>
+                   </fieldset>
                     <h:panelGrid width="20%" style="margin: 20px auto">
-                        <h:commandButton value="Ok" action="#{receptionView.savePatient}" styleClass="login-button" style="background: #008844;color: blue;text-transform: uppercase"/>
+                        <h:commandButton value="Ok" action="#{receptionView.savePatient}" styleClass="button"/>
                     </h:panelGrid>
                 </h:form>
             </h:panelGrid>
