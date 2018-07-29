@@ -30,6 +30,17 @@ public class RoomServiceImpl implements RoomService {
     public Bed bedInfo(Bed bed) {
         return this.getRoom().bedInfo(bed);
     }
+
+    @Override
+    public boolean updateRoom(Room room) {
+        return this.getRoom().updateRoom(room);
+    }
+
+    @Override
+    public boolean updateBed(Bed bed) {
+        return this.getRoom().updateBed(bed);
+    }
+
     public RoomDAO getRoom() {
         return room;
     }

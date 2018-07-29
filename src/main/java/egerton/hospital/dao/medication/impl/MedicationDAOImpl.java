@@ -8,7 +8,9 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import javax.inject.Inject;
+import javax.persistence.TemporalType;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 @Repository
 public class MedicationDAOImpl implements MedicationDAO {
@@ -37,6 +39,36 @@ public class MedicationDAOImpl implements MedicationDAO {
     public List<Illness> getPatientIllnesses(Patient patient) {
         return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("patientIllnesses",Illness.class)
                 .setParameter("number",patient.getPatientNumber()).getResultList());
+    }
+
+    @Override
+    public boolean checkIfIllnessIsSavedAlready(Illness illness) {
+        illness=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfIllnessIsSavedAlready",Illness.class)
+                .setParameter("illness",illness.getIllness()).setParameter("number",illness.getPatient().getPatientNumber())
+                .setParameter("date",new Date(),TemporalType.DATE).stream().findFirst().orElse(null);
+
+        return illness==null ? false:true;
+    }
+
+    @Override
+    public boolean checkIfMedicationIsSavedAlready(Medication medication) {
+        medication=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfMedicationIsSavedAlready",Medication.class)
+                .setParameter("product",medication.getProductName()).setParameter("number",medication.getPatient().getPatientNumber())
+                .setParameter("date",new Date(),TemporalType.DATE).setParameter("illno",medication.getIllness().getIllnessNumber())
+                .stream().findFirst().orElse(null);
+
+        return medication==null ? false:true;
+    }
+
+    @Override
+    public List<Illness> getTodayPatientIllnesses(Patient patient) {
+        return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("getTodayPatientIllnesses",Illness.class)
+                .setParameter("number",patient.getPatientNumber()).setParameter("date",new Date(),TemporalType.DATE).getResultList());
+    }
+
+    @Override
+    public Illness illnessInfo(Illness illness) {
+        return this.getSessionFactory().getCurrentSession().find(Illness.class,illness.getIllnessNumber());
     }
 
     public SessionFactory getSessionFactory() {

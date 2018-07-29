@@ -12,4 +12,11 @@ public interface MedicationDAO {
 
     boolean saveIllness(Illness illness);
     List<Illness> getPatientIllnesses(Patient patient);
+
+    boolean checkIfIllnessIsSavedAlready(Illness illness);
+
+    boolean checkIfMedicationIsSavedAlready(Medication medication);
+    List<Illness> getTodayPatientIllnesses(Patient patient);
+
+    Illness illnessInfo(Illness illness);
 }

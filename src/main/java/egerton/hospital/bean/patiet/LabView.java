@@ -46,13 +46,23 @@ public class LabView {
         FacesContext context=FacesContext.getCurrentInstance();
         try {
             lab=new Lab(lab.getTestNumber(),lab.getTest(),lab.getResult(),lab.getComment(),new Date(),getPatient());
-            if(this.getLabService().submitLabResult(lab)){
-                Message.message("Result submitted",FacesMessage.SEVERITY_INFO);
+            if (!this.getLabService().checkIfResultIsAlreadySubmitted(lab)){
+                if(this.getLabService().submitLabResult(lab)){
+                    test=new Test(lab.getTestNumber(),lab.getTest(),patient,true,new Date());
+                    if(this.getLabService().updateTestAfterSubmitted(test)){
+                        Message.message("Result submitted",FacesMessage.SEVERITY_INFO);
+                        context.getExternalContext().getFlash().setKeepMessages(true);
+                        setTestSelected(false);
+                        return ("/faces/lab/lab-report.xhtml?faces-redirect=true");
+                    }
+                }
+            }else{
+                Message.message("Result submitted already",FacesMessage.SEVERITY_INFO);
                 context.getExternalContext().getFlash().setKeepMessages(true);
-                return "lab-result-saved";
+                return ("/faces/lab/lab-report.xhtml?faces-redirect=true");
             }
         }catch (Exception e){
-            Message.message(""+e,FacesMessage.SEVERITY_INFO);
+            Message.message(""+e,FacesMessage.SEVERITY_ERROR);
         }
         return null;
     }
@@ -62,7 +72,7 @@ public class LabView {
             if(labResults.isEmpty());
             else return labResults;
         }catch (Exception e){
-            Message.message(""+e,FacesMessage.SEVERITY_INFO);
+            Message.message(""+e,FacesMessage.SEVERITY_ERROR);
         }
         return null;
     }
@@ -111,12 +121,10 @@ public class LabView {
         else {
             this.setTestSelected(true);
             lab=new Lab(test.getTestNumber(),test.getTest(),test.getPatient());
-
-            PrimeFaces.current().ajax().update("testRecordForm");
         }
     }
     public String refresh(){
-        return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
+        return ("/faces/lab/lab-report.xhtml?faces-redirect=true");
     }
 
     private Timer getTimer(){
@@ -126,9 +134,6 @@ public class LabView {
 
     public String testToBeDoneUrl(){
         return ("/doctor/test.xhtml");
-    }
-    public String labReportUrl(){
-        return ("/doctor/lab-report.xhtml");
     }
     public String newLabReportUrl(){
         return ("/faces/lab/lab-report.xhtml");

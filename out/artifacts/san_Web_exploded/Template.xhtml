@@ -10,11 +10,11 @@
 
 <h:head>
     <title><ui:insert name="title"/></title>
-    <link rel="stylesheet" type="text/css" href="Resources/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
+    <h:outputStylesheet library="css" name="style.css"/>
 </h:head>
 
 <h:body style="background: lavender">
-    <!--<f:loadBundle var="css/style.css" basename="/Resources"/>-->
     <ui:insert name="menu"/>
 
     <ui:insert name="content"/>

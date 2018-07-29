@@ -32,9 +32,8 @@ public class LabDAOImpl implements LabDAO {
     public boolean checkIfTestIsAlreadySubmitted(Test test) {
         test=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfTestIsAlreadySubmitted",Test.class)
                 .setParameter("test",test.getTest()).setParameter("date",test.getDate()).stream().findFirst().orElse(null);
-        if(test.equals(null))
-            return false;
-        return true;
+
+        return test==null ? false:true;
     }
 
     @Override
@@ -51,14 +50,35 @@ public class LabDAOImpl implements LabDAO {
 
     @Override
     public List<Lab> getLabReport(Patient patient) {
-        return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("getLastLabReport",Lab.class)
-                .setParameter("number",patient.getPatientNumber()).setParameter("date",new Date()).getResultList());
+        return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("getAllLabReport",Lab.class)
+                .getResultList());
     }
 
     @Override
     public List<Lab> todayLabReport(Date date, Patient patient) {
         return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("todayLabReport",Lab.class)
                 .setParameter("date",date).setParameter("number",patient.getPatientNumber()).getResultList());
+    }
+
+    @Override
+    public List<Lab> previousReports(Date date, Patient patient) {
+        return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("todayLabReport",Lab.class)
+                .setParameter("date",date).setParameter("number",patient.getPatientNumber()).getResultList());
+    }
+
+    @Override
+    public boolean checkIfResultIsAlreadySubmitted(Lab lab) {
+        lab=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfResultIsAlreadySubmitted",Lab.class)
+                .setParameter("test",lab.getTest()).setParameter("date",lab.getDate()).setParameter("num",lab.getPatient().getPatientNumber())
+                .stream().findFirst().orElse(null);
+
+        return lab==null ? false:true;
+    }
+
+    @Override
+    public boolean updateTestAfterSubmitted(Test test) {
+        this.getSessionFactory().getCurrentSession().update(test);
+        return true;
     }
 
     public SessionFactory getSessionFactory() {

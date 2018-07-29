@@ -25,6 +25,11 @@ public class AdmissionServiceImpl implements AdmissionService {
         return this.getAdmissionDAO().admissionDetails(patient);
     }
 
+    @Override
+    public boolean checkIfAdmittedAlready(Admission admission) {
+        return this.getAdmissionDAO().checkIfAdmittedAlready(admission);
+    }
+
     public AdmissionDAO getAdmissionDAO() {
         return admissionDAO;
     }

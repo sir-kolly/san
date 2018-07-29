@@ -17,14 +17,14 @@
             <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
                 <h:form style="padding: 2px;width: 60%;margin: auto" id="info">
                     <h:inputHidden value="#{doctorView.patient.patientNumber}"/>
+                    <h:column>
+                        <h:messages id="msg" style="background: indigo;font-weight: bold;font-size: 12px;text-transform: capitalize;color: white;width: 40%;height:auto;margin: auto;box-shadow: #bbbbbb 2px 5px 3px 4px;" />
+                    </h:column>
                     <fieldset>
                         <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">
-                            Test to be done on: [ <h:outputText value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}"/>]
+                            Test to be done on [ <h:outputText value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}"/>]
                         </legend>
                         <h:panelGrid width="100%">
-                            <h:column>
-                                <h:message id="msg" style="color: red; font-weight: 10px" showSummary="true" for="info"/>
-                            </h:column>
                             <h:panelGrid width="100%" columns="2">
                                 <h:outputLabel value="TEST" for="test" />
                                 <h:inputText  id="test" value="#{doctorView.test.test}" required="true" requiredMessage="input test" style="width: 100%" />

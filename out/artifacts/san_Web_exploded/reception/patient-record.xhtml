@@ -69,6 +69,9 @@
                     </fieldset>
                 </h:form>
                 <h:form>
+                    <h:column>
+                        <h:messages id="msg" style="background: indigo;font-weight: bold;font-size: 12px;text-transform: capitalize;color: white;width: 40%;height:auto;margin: auto;box-shadow: #bbbbbb 2px 5px 3px 4px;" />
+                    </h:column>
                     <h:panelGrid width="20%" style="margin: 20px 0" columns="2" cellpadding="5" cellspacing="5">
                         <h:commandButton value="submit" action="#{receptionView.saveVisit}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold"/>
                         <h:commandButton value="edit" action="#{receptionView.toUpdate}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold;"/>

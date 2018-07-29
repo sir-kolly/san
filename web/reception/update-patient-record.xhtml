@@ -13,6 +13,9 @@
         <h:column>
             <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
                 <h:form style="padding: 2px">
+                    <h:column>
+                        <h:messages id="msg" style="background: indigo;font-weight: bold;font-size: 12px;text-transform: capitalize;color: white;width: 40%;height:auto;margin: auto;box-shadow: #bbbbbb 2px 5px 3px 4px;" />
+                    </h:column>
                     <h:inputHidden readonly="true" id="patNo" value="#{receptionView.patient.patientNumber}"/>
                     <fieldset>
                         <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">patient record update</legend>

@@ -39,34 +39,7 @@
             </h:panelGrid>
         </h:column>
         <h:column>
-            <h:panelGrid width="71%" columns="2"  style="background: white;margin: 2px auto;padding: 5px 20px" rendered="#{doctorView.patientRecordAvailable}">
-                <h:form style="padding: 2px;" id="info">
-                    <fieldset>
-                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">Triage Records</legend>
-                        <h:panelGrid width="100%">
-                            <h:dataTable value="#{doctorView.triageSet}" var="tr" cellspacing="5" cellpadding="5" style="text-align: center" width="100%" border="1">
-                                <h:column>
-                                    <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">record number</p>
-                                    </f:facet>
-                                    #{tr.recordNo}
-                                </h:column>
-                                <h:column>
-                                    <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">body Weight</p>
-                                    </f:facet>
-                                    #{tr.weight}
-                                </h:column>
-                                <h:column>
-                                    <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">blood pressure</p>
-                                    </f:facet>
-                                    #{tr.pressure}
-                                </h:column>
-                            </h:dataTable>
-                        </h:panelGrid>
-                    </fieldset>
-                </h:form>
+            <h:panelGrid width="71%"   style="background: white;margin: 2px auto;padding: 5px 20px" rendered="#{doctorView.patientRecordAvailable}">
                 <h:form style="padding: 2px;" id="labTestForm" >
                     <fieldset>
                         <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">previous lab test reports</legend>

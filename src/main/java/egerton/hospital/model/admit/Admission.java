@@ -9,17 +9,21 @@ import egerton.hospital.model.room.Room;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table
-@NamedQueries({@NamedQuery(name = "patientAdmissionDetails",query = "from Admission adm join fetch adm.patient p where p.patientNumber=:number")})
+@NamedQueries({
+        @NamedQuery(name = "patientAdmissionDetails",query = "from Admission adm join fetch adm.patient p where p.patientNumber=:number"),
+        @NamedQuery(name = "checkIfAdmittedAlready",query = "from Admission adm join fetch adm.patient p where p.patientNumber=:number and date=:date")})
 public class Admission {
-    private String admissionNumber,section;
+    private String admissionNumber,section,reason;
     private Date date,time;
     private Room room;
     private Bed bed;
     private Patient patient;
     private Employee doc;
+    private Set<Illness>illnesses;
 
     public Admission() {
     }
@@ -43,6 +47,10 @@ public class Admission {
     @Column(name = "section",length = 50,nullable = false)
     public String getSection() {
         return section;
+    }
+    @Column(name = "reason",length = 300,nullable = false)
+    public String getReason() {
+        return reason;
     }
     @Temporal(TemporalType.DATE)
     @Column(name = "date",nullable = false)
@@ -74,6 +82,14 @@ public class Admission {
     @JoinColumn(name = "doc_number",nullable = false,foreignKey = @ForeignKey(name = "DOC_AD_FK"))
     public Employee getDoc() {
         return doc;
+    }
+    @OneToMany(mappedBy = "admission",targetEntity = Illness.class,cascade = CascadeType.ALL)
+    public Set<Illness> getIllnesses() {
+        return illnesses;
+    }
+
+    public void setIllnesses(Set<Illness> illnesses) {
+        this.illnesses = illnesses;
     }
 
     public void setDoc(Employee doc) {
@@ -108,4 +124,7 @@ public class Admission {
         this.bed = bed;
     }
 
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
 }

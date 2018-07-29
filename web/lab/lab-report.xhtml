@@ -28,10 +28,10 @@
                                 </h:selectOneMenu>
                                 <h:commandButton value="refresh" rendered="#{!labView.patientRecordAvailable}" action="#{labView.refresh}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold;"/>
                             </h:panelGrid>
-                            <h:panelGrid columns="3" style="text-align-last: right" rendered="#{doctorView.patientRecordAvailable}" id="patientInfo">
-                                <h:inputText readonly="true"  value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}" id="lname" class="form-control"/>
-                                <h:inputText readonly="true"  value="#{doctorView.patient.gender}" id="gender" class="form-control" />
-                                <h:inputText readonly="true"  value="#{doctorView.patient.yoB}" id="yob" class="form-control"/>
+                            <h:panelGrid columns="3" style="text-align-last: right" rendered="#{labView.patientRecordAvailable}" id="patientInfo">
+                                <h:inputText readonly="true"  value="#{labView.patient.firstName} #{labView.patient.lastName}" id="lname" class="form-control"/>
+                                <h:inputText readonly="true"  value="#{labView.patient.gender}" id="gender" class="form-control" />
+                                <h:inputText readonly="true"  value="#{labView.patient.yoB}" id="yob" class="form-control"/>
                             </h:panelGrid>
                         </h:panelGrid>
                     </fieldset>
@@ -44,14 +44,13 @@
                     <fieldset>
                         <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">previous medication reports</legend>
                         <h:panelGrid width="100%">
-                            <h:dataTable value="#{labView.tests}" var="ts" cellspacing="5" cellpadding="5" style="text-align: center" width="100%" border="1">
+                            <h:dataTable  value="#{labView.tests}" var="ts" cellspacing="5" cellpadding="5" style="text-align: center" width="100%" border="1">
                                 <h:column style="width: 20px">
                                     <f:facet name="header">
                                         <i class="fa fa-check-circle-o"/>
                                     </f:facet>
-                                    <h:commandButton action="#{labView.testSelectedForSubmission}">
-                                        <i class="fa fa-check-circle-o"></i>
-                                        <f:setPropertyActionListener value="ts" target="#{labView.test}"/>
+                                    <h:commandButton value="select" action="#{labView.testSelectedForSubmission}" styleClass="login-button" style="background: #879;color: white;text-transform: uppercase;font-weight: bold">
+                                        <f:setPropertyActionListener value="#{ts}" target="#{labView.test}"/>
                                     </h:commandButton>
                                 </h:column>
                                 <h:column>
@@ -68,7 +67,7 @@
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">Test</p>
+                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">Test Done</p>
                                     </f:facet>
                                     #{ts.testDone ? 'Yes':'NO'}
                                 </h:column>
@@ -82,24 +81,27 @@
             <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px" rendered="#{labView.patientRecordAvailable}" >
                 <h:form style="padding: 2px">
                     <h:inputHidden readonly="true" id="patNo" value="#{labView.patient.patientNumber}"/>
+                    <h:column>
+                        <h:messages id="msg" style="background: indigo;font-weight: bold;font-size: 12px;text-transform: capitalize;color: white;width: 40%;height:auto;margin: auto;box-shadow: #bbbbbb 2px 5px 3px 4px;" />
+                    </h:column>
                     <fieldset>
                         <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">lab report submission</legend>
                         <h:panelGrid width="100%">
                             <h:panelGrid columns="4" width="100%" style="text-align: left">
                                 <h:outputLabel value="NUMBER" for="testno"/>
-                                <h:inputText readonly="true" value="#{labView.test.testNumber}" id="testno" class="form-control"/>
+                                <h:inputText readonly="true" value="#{labView.lab.testNumber}" id="testno" class="form-control" required="true" requiredMessage="select test"/>
                                 <h:outputLabel value="TEST" for="test"/>
-                                <h:inputText readonly="true" value="#{labView.test.test}" id="test" class="form-control"/>
+                                <h:inputText readonly="true" value="#{labView.lab.test}" id="test" class="form-control"/>
                             </h:panelGrid>
                             <h:panelGrid columns="2" style="text-align: left" width="100%">
                                 <h:outputLabel value="RESULT" for="gender"/>
-                                <h:inputTextarea  value="#{labView.lab.result}" id="result" class="form-control" style="width: 100%"/>
+                                <h:inputTextarea  value="#{labView.lab.result}" id="result" class="form-control" style="width: 100%" required="true" requiredMessage="input result"/>
                                 <h:outputLabel value="COMMENT" for="comment"/>
-                                <h:inputTextarea  value="#{labView.lab.comment}" id="comment" class="form-control" style="width: 100%"/>
+                                <h:inputTextarea  value="#{labView.lab.comment}" id="comment" class="form-control" style="width: 100%" required="true" requiredMessage="input comment"/>
                             </h:panelGrid>
                         </h:panelGrid>
-                        <h:panelGrid width="20%" style="margin: 20px 0 5px 0" columns="2" cellpadding="5" cellspacing="5">
-                            <h:commandButton value="submit" action="#{labView.saveLabResult}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold"/>
+                        <h:panelGrid width="20%" style="margin: 20px 0 5px 0" columns="2" cellpadding="5" cellspacing="5" rendered="#{labView.testSelected}">
+                            <h:commandButton value="submit" action="#{labView.saveLabResult}" styleClass="login-button" id="bt" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold"/>
                         </h:panelGrid>
                     </fieldset>
                 </h:form>

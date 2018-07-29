@@ -18,7 +18,7 @@
                 <h:form style="padding: 2px;" id="medInfo">
                     <fieldset>
                         <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">
-                            lab test report for [ <h:outputText value="#{doctorView.patient.firstName} #{doctorView.patient.firstName}"/> ]
+                            lab test report for [ <h:outputText value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}"/> ]
                         </legend>
                         <h:panelGrid width="100%">
                             <h:dataTable value="#{doctorView.labs}" var="lb" cellspacing="5" cellpadding="5" style="text-align: center" width="100%" border="1">

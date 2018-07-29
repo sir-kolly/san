@@ -35,6 +35,27 @@ public class MedicationServiceImpl implements MedicationService {
         return this.getMedicationDAO().getPatientIllnesses(patient);
     }
 
+    @Override
+    public boolean checkIfIllnessIsSavedAlready(Illness illness) {
+        return this.getMedicationDAO().checkIfIllnessIsSavedAlready(illness);
+    }
+
+
+    @Override
+    public boolean checkIfMedicationIsSavedAlready(Medication medication) {
+        return this.getMedicationDAO().checkIfMedicationIsSavedAlready(medication);
+    }
+
+    @Override
+    public List<Illness> getTodayPatientIllnesses(Patient patient) {
+        return this.getMedicationDAO().getTodayPatientIllnesses(patient);
+    }
+
+    @Override
+    public Illness illnessInfo(Illness illness) {
+        return this.getMedicationDAO().illnessInfo(illness);
+    }
+
     public MedicationDAO getMedicationDAO() {
         return medicationDAO;
     }

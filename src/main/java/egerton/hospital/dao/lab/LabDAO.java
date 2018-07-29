@@ -16,4 +16,9 @@ public interface LabDAO {
     boolean submitLabResult(Lab lab);
     List<Lab>getLabReport(Patient patient);
     List<Lab> todayLabReport(Date date, Patient patient);
+    List<Lab> previousReports(Date date, Patient patient);
+
+    boolean checkIfResultIsAlreadySubmitted(Lab lab);
+
+    boolean updateTestAfterSubmitted(Test test);
 }

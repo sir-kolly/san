@@ -32,3 +32,12 @@
     background: #bbbbbb;
     padding: 20px;
 }
+
+.form-control{
+    border: #bbbbbb 1px solid;
+    background: white;
+    color: #4b0082;
+    font-size: 12px;
+    font-weight: bold;
+    width: 100%;
+}

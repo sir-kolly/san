@@ -32,6 +32,11 @@ public class LabServiceImpl implements LabService {
     }
 
     @Override
+    public boolean checkIfResultIsAlreadySubmitted(Lab lab) {
+        return this.getLabDAO().checkIfResultIsAlreadySubmitted(lab);
+    }
+
+    @Override
     public List<Test> getTestToBeDone(Test test) {
         return this.getLabDAO().getTestToBeDone(test);
     }
@@ -47,8 +52,18 @@ public class LabServiceImpl implements LabService {
     }
 
     @Override
+    public List<Lab> previousReports(Date date, Patient patient) {
+        return this.getLabDAO().previousReports(date, patient);
+    }
+
+    @Override
     public List<Lab> todayLabReport(Date date, Patient patient) {
         return this.getLabDAO().todayLabReport(date,patient);
+    }
+
+    @Override
+    public boolean updateTestAfterSubmitted(Test test) {
+        return this.getLabDAO().updateTestAfterSubmitted(test);
     }
 
     public LabDAO getLabDAO() {

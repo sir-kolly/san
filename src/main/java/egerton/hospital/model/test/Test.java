@@ -30,6 +30,11 @@ public class Test {
         this.date = date;
     }
 
+    public Test(String testNumber, boolean testDone) {
+        this.testNumber = testNumber;
+        this.testDone = testDone;
+    }
+
     @Id
     @Column(name = "test_number",length = 15,nullable = false)
     public String getTestNumber() {

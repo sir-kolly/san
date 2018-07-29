@@ -1,0 +1,71 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/Template.xhtml">
+
+    <ui:define name="title">
+        Patient |Record
+    </ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="doctor-menu.xhtml"/>
+    </ui:define>
+    <ui:define name="content">
+        <h:column>
+            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
+                <h:form style="padding: 2px">
+                    <h:column>
+                        <h:messages id="msg" style="background: indigo;font-weight: bold;font-size: 12px;text-transform: capitalize;color: white;width: 40%;height:auto;margin: auto;box-shadow: #bbbbbb 2px 5px 3px 4px;" />
+                    </h:column>
+                    <h:inputHidden readonly="true" id="patNo" value="#{receptionView.patient.patientNumber}"/>
+                    <fieldset>
+                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">save patient admission information</legend>
+                        <h:panelGrid columns="2" width="100%" cellpadding="7" cellspacing="3" >
+                            <h:outputLabel value="NAME" for="name"/>
+                            <h:inputText readonly="true" value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}" id="name" class="form-control" style="width: 100%"/>
+                            <h:outputLabel value="DATE" for="date"/>
+                            <h:inputText readonly="true" value="#{doctorView.date()}" id="date" class="form-control"/>
+                            <h:outputLabel value="TIME" for="time"/>
+                            <h:inputText readonly="true" value="#{doctorView.date()}" id="time" class="form-control"/>
+                            <h:outputLabel value="SECTION" for="section"/>
+                            <h:selectOneMenu value="#{doctorView.admission.section}" id="section" class="form-control">
+                                <f:selectItem itemValue="" itemLabel=""/>
+                                <f:selectItem itemValue="Maternal" itemLabel="Maternal"/>
+                                <f:selectItem itemValue="Medical care" itemLabel="Medical care"/>
+                            </h:selectOneMenu>
+                            <h:outputLabel value="REASON" for="r"/>
+                            <h:inputTextarea  value="#{doctorView.admission.reason}" id="r" class="form-control" style="width: 100%"/>                            <h:outputLabel value="ROOM" for="rm"/>
+                            <h:selectOneMenu value="#{doctorView.room.roomNumber}" id="rm" class="form-control">
+                                <f:selectItem itemValue="" itemLabel=""/>
+                                <f:selectItems value="#{doctorView.freeRooms}"/>
+                                <f:ajax render="bed" listener="#{doctorView.bedNumbers()}"/>
+                            </h:selectOneMenu>
+                            <h:outputLabel value="BED" for="bed"/>
+                            <h:selectOneMenu value="#{doctorView.bed.bedNumber}" id="bed" class="form-control">
+                                <f:selectItem itemValue="" itemLabel=""/>
+                                <f:selectItems value="#{doctorView.freeBeds}"/>
+                                <f:ajax render="bed" listener="#{doctorView.bedNumbers()}"/>
+                            </h:selectOneMenu>
+                        </h:panelGrid>
+                        <h:panelGrid width="100%">
+                            <fieldset>
+                                <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">suspected illnesses and infections that might have lead to the admission</legend>
+                                <h:dataTable value="#{doctorView.suspectedIllness}" var="illness" style="color: green">
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <b  style="font-size: 13px;color: #136;text-transform: uppercase;font-size: 12px">Illnesses</b>
+                                        </f:facet>
+                                        #{illness}
+                                    </h:column>
+                                </h:dataTable>
+                            </fieldset>
+                        </h:panelGrid>
+                        <h:panelGrid width="20%" style="margin: 20px 0 5px 0" columns="2" cellpadding="5" cellspacing="5">
+                            <h:commandButton value="update" action="#{doctorView.saveAdmissionInfo}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold"/>
+                            <h:commandButton value="view" action="#{doctorView.toPatientAdmissionRecord}" styleClass="login-button" style="background: #548830;color: white;text-transform: uppercase;font-weight: bold;"/>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+    </ui:define>
+</ui:composition>
