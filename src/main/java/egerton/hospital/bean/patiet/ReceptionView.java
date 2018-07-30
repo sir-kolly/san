@@ -3,7 +3,7 @@ package egerton.hospital.bean.patiet;
 import egerton.hospital.message.Message;
 import egerton.hospital.model.patient.Patient;
 import egerton.hospital.model.visit.Visit;
-import egerton.hospital.service.patient.ReceptionService;
+import egerton.hospital.service.reception.ReceptionService;
 import egerton.hospital.service.visit.VisitService;
 import egerton.hospital.utill.Utill;
 import egerton.school.records.modal.Staff;
@@ -77,13 +77,13 @@ public class ReceptionView implements Serializable {
                        if(this.getReceptionService().save(patient)){
                            Message.message("Record Update successful",FacesMessage.SEVERITY_WARN);
                            Utill.setNumber(patient.getPatientNumber());
-                           return "patient-record-saved";
+                           return "reception-record-saved";
                        }
                    }else {
                        this.patient=pat;
                        Message.message("Record Update successful",FacesMessage.SEVERITY_WARN);
                        Utill.setNumber(patient.getPatientNumber());
-                       return "patient-record-saved";
+                       return "reception-record-saved";
                    }
                    break;
                case 3:
@@ -92,12 +92,12 @@ public class ReceptionView implements Serializable {
                        if(this.getReceptionService().save(patient)){
                            Message.message("Record Update successful",FacesMessage.SEVERITY_WARN);
                            Utill.setNumber(patient.getPatientNumber());
-                           return "patient-record-saved";
+                           return "reception-record-saved";
                        }
                    }else {
                        Message.message("Record Update successful",FacesMessage.SEVERITY_WARN);
                        Utill.setNumber(patient.getPatientNumber());
-                       return "patient-record-saved";
+                       return "reception-record-saved";
                    }
                    break;
            }
@@ -189,7 +189,7 @@ public class ReceptionView implements Serializable {
         visit=new Visit();
     }
     public void patientVisits(){
-        visits=this.getVisitService().patientVisits();
+        visits=this.getVisitService().patientVisits(patient);
     }
     private String generateRandomNumber(){
         return UUID.randomUUID().toString().replace("-","")

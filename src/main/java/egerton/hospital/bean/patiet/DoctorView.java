@@ -15,11 +15,10 @@ import egerton.hospital.model.visit.Visit;
 import egerton.hospital.service.admission.AdmissionService;
 import egerton.hospital.service.lab.LabService;
 import egerton.hospital.service.medication.MedicationService;
-import egerton.hospital.service.patient.ReceptionService;
+import egerton.hospital.service.reception.ReceptionService;
 import egerton.hospital.service.room.RoomService;
 import egerton.hospital.service.triage.TriageService;
 import egerton.hospital.service.visit.VisitService;
-import org.primefaces.PrimeFaces;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;

@@ -24,14 +24,21 @@ public class VisitDAOImpl implements VisitDAO {
 
 
     @Override
-    public List<Visit> patientVisits() {
+    public List<Visit> patientVisits(Patient patient) {
         return new LinkedList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("patientVisits",Visit.class)
+                .setParameter("number",patient.getPatientNumber())
                 .getResultList());
     }
 
     @Override
     public List<Visit> visitsToday(Date date) {
         return this.getSessionFactory().getCurrentSession().createNamedQuery("visitsToday",Visit.class)
+                .setParameter("d",date).setMaxResults(1).getResultList();
+    }
+
+    @Override
+    public List<Visit> visitsForTheTriageToday(Date date) {
+        return this.getSessionFactory().getCurrentSession().createNamedQuery("visitsForTheTriageToday",Visit.class)
                 .setParameter("d",date).setMaxResults(1).getResultList();
     }
 

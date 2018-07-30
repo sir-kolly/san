@@ -1,8 +1,8 @@
-package egerton.hospital.service.patient.impl;
+package egerton.hospital.service.reception.impl;
 
-import egerton.hospital.dao.patient.PatientDAO;
+import egerton.hospital.dao.patient.ReceptionDAO;
 import egerton.hospital.model.patient.Patient;
-import egerton.hospital.service.patient.ReceptionService;
+import egerton.hospital.service.reception.ReceptionService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,7 +12,7 @@ import javax.inject.Inject;
 @Service
 public class ReceptionServiceImpl implements ReceptionService {
     @Inject
-    private PatientDAO patientRecord;
+    private ReceptionDAO patientRecord;
 
     @Override
     public boolean save(Patient patient) {
@@ -34,11 +34,11 @@ public class ReceptionServiceImpl implements ReceptionService {
         return this.patientRecord.patientInfo(patient);
     }
 
-    public PatientDAO getPatientRecord() {
+    public ReceptionDAO getPatientRecord() {
         return patientRecord;
     }
 
-    public void setPatientRecord(PatientDAO patientRecord) {
+    public void setPatientRecord(ReceptionDAO patientRecord) {
         this.patientRecord = patientRecord;
     }
 }

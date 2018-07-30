@@ -1,6 +1,6 @@
 package egerton.hospital.dao.patient.impl;
 
-import egerton.hospital.dao.patient.PatientDAO;
+import egerton.hospital.dao.patient.ReceptionDAO;
 import egerton.hospital.model.patient.Patient;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import javax.inject.Inject;
 
 @Repository
-public class PatientDAOImpl implements PatientDAO {
+public class ReceptionDAOImpl implements ReceptionDAO {
     @Inject
     private SessionFactory sessionFactory;
     @Override

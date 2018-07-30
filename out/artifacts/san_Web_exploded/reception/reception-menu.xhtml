@@ -8,9 +8,9 @@
                <h:panelGrid columns="4" width="auto" style="text-align: left;">
                    <h:outputText value="RECEPTION BOARD" styleClass="brand"/>
                    <h:panelGrid style="text-align: left">
-                       <h:outputLink value="#{receptionView.studentReceptionUrl()}" styleClass="nav-links">Reception</h:outputLink>
+                       <h:outputLink value="#{receptionView.studentReceptionUrl()}" styleClass="nav-links">| Reception |</h:outputLink>
                    </h:panelGrid>
-                   <h:outputText value="logedin : #{reception.firstName} #{reception.lastName}" styleClass="user-info"/>
+                   <h:outputText value="signed-in : #{reception.firstName} #{reception.lastName} :[#{login.time()} hrs]" styleClass="user-info"/>
                    <h:outputLink value="#{login.logout()}"><i class="fa fa-sign-out" style="color: red"/></h:outputLink>
                </h:panelGrid>
            </h:form>

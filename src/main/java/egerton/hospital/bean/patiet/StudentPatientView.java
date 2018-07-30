@@ -2,7 +2,7 @@ package egerton.hospital.bean.patiet;
 
 import egerton.hospital.message.Message;
 import egerton.hospital.model.patient.Patient;
-import egerton.hospital.service.patient.ReceptionService;
+import egerton.hospital.service.reception.ReceptionService;
 import egerton.hospital.utill.Utill;
 import egerton.school.records.modal.Student;
 import egerton.school.records.service.SchoolRecordsService;
@@ -37,14 +37,14 @@ public class StudentPatientView {
                 if(this.getReceptionService().save(this.patient)){
                     Message.message("Record update successful",FacesMessage.SEVERITY_INFO);
                     Utill.setNumber(patient.getPatientNumber());
-                    return "student-patient-record-saved";
+                    return "student-reception-record-saved";
                 }else{
                     Message.message("Error occurred",FacesMessage.SEVERITY_FATAL);
                     return null;
                 }
             }else {
                 Message.message("Record update successful",FacesMessage.SEVERITY_INFO);
-                return "student-patient-record-saved";
+                return "student-reception-record-saved";
             }
 
         }catch (Exception e){

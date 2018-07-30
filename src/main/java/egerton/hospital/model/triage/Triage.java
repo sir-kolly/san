@@ -11,11 +11,22 @@ import java.util.Date;
         @NamedQuery(name = "getTriageResult",query = "from Triage tr join fetch tr.patient p where p.patientNumber=:number and tr.date=:date")})
 
 public class Triage {
-    private String recordNo,weight,pressure;
+    private String recordNo,weight,pressure,height,bmi;
     private Date date,time;
     private Patient patient;
 
     public Triage() {
+    }
+
+    public Triage(String recordNo, String weight, String pressure, String height, String bmi, Date date, Date time, Patient patient) {
+        this.recordNo = recordNo;
+        this.weight = weight;
+        this.pressure = pressure;
+        this.height = height;
+        this.bmi = bmi;
+        this.date = date;
+        this.time = time;
+        this.patient = patient;
     }
 
     public Triage(String recordNo, String weight, String pressure, Date date, Date time, Patient patient) {
@@ -53,6 +64,15 @@ public class Triage {
     public String getPressure() {
         return pressure;
     }
+    @Column(name = "height",length =3,nullable = false)
+    public String getHeight() {
+        return height;
+    }
+    @Column(name = "bmi",length = 5,nullable = false)
+    public String getBmi() {
+        return bmi;
+    }
+
     @Column(name = "date",nullable = false)
     @Temporal(TemporalType.DATE)
     public Date getDate() {
@@ -74,6 +94,14 @@ public class Triage {
     public String toString() {
         return ("record-no:"+this.getRecordNo()+" weight:"+this.getWeight()+" pressure:"+this.getPressure()+
                 " date:"+this.getDate()+" time:"+this.getTime()+" p-no:"+this.getPatient().getPatientNumber());
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public void setBmi(String bmi) {
+        this.bmi = bmi;
     }
 
     public void setRecordNo(String recordNo) {

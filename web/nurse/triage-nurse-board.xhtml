@@ -14,10 +14,35 @@
     </ui:define>
     <ui:define name="content">
         <h:column>
-            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
-                <h:form style="padding: 20px;">
+            <h:panelGrid rendered="#{!empty nurse}" styleClass="panel-grid">
+                <h:form style="width:60%">
                     <fieldset>
-                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">to do list</legend>
+                        <legend>My profile</legend>
+                        <h:panelGrid columns="4">
+                            <label for="workno">social number</label>
+                            <h:inputText readonly="true" id="workno" value="#{nurse.employeeNumber}" styleClass="form-control"/>
+                            <label for="name">name</label>
+                            <h:inputText readonly="true" value="#{nurse.firstName} #{nurse.lastName}" id="name" class="form-control"/>
+                            <label for="gender">gender</label>
+                            <h:inputText readonly="true" value="#{nurse.gender}" id="gender" class="form-control" />
+                            <label for="phone">phone</label>
+                            <h:inputText readonly="true" value="#{nurse.phone}" id="phone" class="form-control"/>
+                            <label for="nid">id</label>
+                            <h:inputText readonly="true" id="nid" value="#{nurse.nationalId}" class="form-control"/>
+                            <label for="email">email</label>
+                            <h:inputText readonly="true" value="#{nurse.email}" id="email" class="form-control"/>
+                            <label for="address">address</label>
+                            <h:inputText readonly="true" value="#{nurse.role}" id="address" class="form-control"/>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+        <h:column>
+            <h:panelGrid styleClass="panel-grid">
+                <h:form style="padding: 20px;text-align: left">
+                    <fieldset>
+                        <legend>to do list</legend>
                         <p><i class="fa fa-check-square-o"> Facilitate the patient checks at the triage</i></p>
                         <p><i class="fa fa-check-square-o"> Update patient triage records at the triage level</i></p>
                         <p><i class="fa fa-check-square-o"> Report the triage system anormalies to the higher authority</i></p>

@@ -43,8 +43,8 @@
             <!--<redirect/>-->
         <!--</navigation-case>-->
         <!--<navigation-case>-->
-            <!--<from-outcome>patient-record-saved</from-outcome>-->
-            <!--<to-view-id>/reception/patient-record.xhtml</to-view-id>-->
+            <!--<from-outcome>reception-record-saved</from-outcome>-->
+            <!--<to-view-id>/reception/reception-record.xhtml</to-view-id>-->
             <!--<redirect/>-->
         <!--</navigation-case>-->
         <!--<navigation-case>-->

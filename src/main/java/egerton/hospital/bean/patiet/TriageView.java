@@ -14,6 +14,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @ViewScoped
@@ -30,6 +31,7 @@ public class TriageView {
 
     private Set<String>numbers;
     private List<Visit>visits;
+    FacesContext context=FacesContext.getCurrentInstance();
 
     public TriageView(){
         triage =new Triage();
@@ -38,14 +40,16 @@ public class TriageView {
     }
 
     public String saveTriageFindings(){
-        FacesContext context=FacesContext.getCurrentInstance();
         try {
-            triage=new Triage(generateRandomNumber(),getTriage().getWeight(),getTriage().getPressure(),new Date(),new Date(),getPatient());
+            triage=new Triage(generateRandomNumber(),getTriage().getWeight(),getTriage().getPressure(),getTriage().getHeight(),getTriage().getBmi(),new Date(),new Date(),getPatient());
             if(!this.getTriageService().checkIfTriageRecordIsAlreadySaved(triage))
                 if(this.getTriageService().saveTriageRecord(triage)){
-                    Message.message("Record Submitted",FacesMessage.SEVERITY_INFO);
-                    context.getExternalContext().getFlash().setKeepMessages(true);
-                return ("/faces/nurse/record-measurement.xhtml?faces-redirect=true");
+                    visit.setAttendedTriage(true);
+                    if (this.getVisitService().updateVisit(visit)){
+                        Message.message("Record Submitted",FacesMessage.SEVERITY_INFO);
+                        context.getExternalContext().getFlash().setKeepMessages(true);
+                        return ("/faces/nurse/record-measurement.xhtml?faces-redirect=true");
+                    }
             }
             else return ("/faces/nurse/record-measurement.xhtml?faces-redirect=true");
         }catch (Exception e){
@@ -54,14 +58,22 @@ public class TriageView {
         return null;
     }
     public String updateTriageRecord(){
-        if(this.getTriageService().update(triage))
-            return  ("/faces/nurse/record-measurement.xhtml?faces-redirect=true");
+        try{
+            if(this.getTriageService().update(triage)){
+                Message.message("Record Submitted",FacesMessage.SEVERITY_INFO);
+                context.getExternalContext().getFlash().setKeepMessages(true);
+                return  ("/faces/nurse/record-measurement.xhtml?faces-redirect=true");
+            }
+
+        }catch (Exception e){
+            Message.message(e.toString(),FacesMessage.SEVERITY_ERROR);
+        }
         return null;
     }
 
     public Patient visitorsToday(){
         try {
-            visits=this.getVisitService().visiting(new Date());
+            visits=this.getVisitService().visitsForTheTriageToday(new Date());
             if(!visits.isEmpty()){
                 System.out.println(visits.size());
                 patient=visits.get(0).getPatient();
@@ -75,9 +87,16 @@ public class TriageView {
         }
         return null;
     }
-    public String refresh(){
+    public String calculateBMI(){
+        triage.setBmi(""+(Float.parseFloat(triage.getWeight())/(Float.parseFloat(triage.getHeight())*Float.parseFloat(triage.getHeight()))));
         return  ("/faces/nurse/record-measurement.xhtml?faces-redirect=true");
     }
+    public String measurementUrl(){
+        return  ("/faces/nurse/record-measurement.xhtml?faces-redirect=true");
+    }
+//    public String refresh(){
+//        return  ("/faces/nurse/record-measurement.xhtml?faces-redirect=true");
+//    }
     public Visit getVisit() {
         return visit;
     }

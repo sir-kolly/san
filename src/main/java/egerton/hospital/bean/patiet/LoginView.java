@@ -11,6 +11,9 @@ import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @SessionScoped
 @Named("login")
 public class LoginView implements Serializable {
@@ -25,7 +28,9 @@ public class LoginView implements Serializable {
     public String logout(){
         return ("/faces/login.xhtml?faces-redirect=true");
     }
-
+    public String time(){
+        return new SimpleDateFormat("HH:mm").format(new Date());
+    }
     public String login(){
         try {
             Employee em=this.getLoginService().employeeInfo(employee);

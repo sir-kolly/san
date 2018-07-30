@@ -1,8 +1,8 @@
-package egerton.hospital.dao.patient;
+package egerton.hospital.service.reception;
 
 import egerton.hospital.model.patient.Patient;
 
-public interface PatientDAO {
+public interface ReceptionService {
     boolean save(Patient patient);
     boolean update(Patient patient);
     Patient checkIfExisting(Patient patient);

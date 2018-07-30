@@ -6,7 +6,7 @@
     </f:metadata>
 
     <ui:define name="title">
-        Patient |Record
+        Patient |Tiage Record
     </ui:define>
 
     <ui:define name="menu">
@@ -17,41 +17,48 @@
             <h:outputText value="NO VISITS CURRENTLY AVAILABLE"/>
         </h:panelGrid>
         <h:column>
-            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px" rendered="#{triageView.patientRecordAvailable}">
-                <h:form style="padding: 2px" id="form">
-                    <h:column>
-                        <h:messages id="msg" style="background: indigo;font-weight: bold;font-size: 12px;text-transform: capitalize;color: white;width: 40%;height:auto;margin: auto;box-shadow: #bbbbbb 2px 5px 3px 4px;" />
-                    </h:column>
+            <h:panelGrid styleClass="panel-grid" rendered="#{triageView.patientRecordAvailable}" >
+                <h:form style="padding: 2px" id="info">
                     <fieldset>
-                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">select patient</legend>
-                        <h:outputLabel value="Patient number" for="pno"/>
-                        <h:inputText readonly="true"  value="#{triageView.patient.patientNumber}" id="pno" class="form-control"/>
-                        <h:outputLabel value="Name" for="name"/>
-                        <h:inputText readonly="true"  value="#{triageView.patient.firstName} #{triageView.patient.lastName}" id="name" class="form-control"/>
-                        <h:outputLabel value="Gender" for="gender"/>
-                        <h:inputText readonly="true"  value="#{triageView.patient.gender}" id="gender" class="form-control" />
-                        <h:outputLabel value="YoB" for="yob"/>
-                        <h:inputText readonly="true"  value="#{triageView.patient.yoB}" id="yob" class="form-control"/>
+                        <legend >selected patient</legend>
+                        <h:panelGrid columns="8" width="100%">
+                            <h:outputLabel value="Patient number" for="pno"/>
+                            <h:inputText readonly="true"  value="#{triageView.patient.patientNumber}" id="pno" class="form-control"/>
+                            <h:outputLabel value="Name" for="name"/>
+                            <h:inputText readonly="true"  value="#{triageView.patient.firstName} #{triageView.patient.lastName}" id="name" class="form-control"/>
+                            <h:outputLabel value="Gender" for="gender"/>
+                            <h:inputText readonly="true"  value="#{triageView.patient.gender}" id="gender" class="form-control" />
+                            <h:outputLabel value="YoB" for="yob"/>
+                            <h:inputText readonly="true"  value="#{triageView.patient.yoB}" id="yob" class="form-control"/>
+                        </h:panelGrid>
                     </fieldset>
                 </h:form>
             </h:panelGrid>
         </h:column>
         <h:column>
-            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px" rendered="#{triageView.patientRecordAvailable}">
-                <h:form style="padding: 2px;width: 60%;" id="info">
+            <h:panelGrid rendered="#{triageView.patientRecordAvailable}" styleClass="panel-grid">
+                <h:form style="padding: 2px;width: 60%; margin: auto" id="form" autocomplete="nope">
+                    <h:column>
+                        <h:messages id="msg" styleClass="messages" />
+                    </h:column>
                     <h:inputHidden value="#{triageView.patient.patientNumber}"/>
                     <fieldset>
-                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">Findings</legend>
+                        <legend>Findings</legend>
                         <h:panelGrid>
                             <h:panelGrid columns="2">
-                                <h:outputLabel value="BODY WEIGHT" for="weight" />
-                                <h:inputText  id="weight" value="#{triageView.triage.weight}" required="true" requiredMessage="input weight"/>
-                                <h:outputLabel value="BLOOD PRESSURE" for="pr"/>
-                                <h:inputText  id="pr" value="#{triageView.triage.pressure}"  class="form-control" required="true" requiredMessage="input pressure"/>
+                                <h:outputLabel value="weight" for="weight" />
+                                <h:inputText  id="weight" value="#{triageView.triage.weight}" maxlength="3" class="form-control" onkeyup="numbersOnly(this)" required="true" requiredMessage="input weight"/>
+                                <h:outputLabel value="height" for="height" />
+                                <h:inputText  id="height" value="#{triageView.triage.height}" maxlength="2" class="form-control" onkeyup="numbersOnly(this)" required="true" requiredMessage="input height"/>
+                                <h:outputLabel value="pressure" for="pr"/>
+                                <h:inputText  id="pr" value="#{triageView.triage.pressure}"  class="form-control" maxlength="3" onkeyup="numbersOnly(this)" required="true" requiredMessage="input pressure"/>
+                                <h:outputLabel value="bmi" for="bmi"/>
+                                <h:inputText readonly="true" id="bmi" value="#{triageView.triage.bmi}"  class="form-control" required="true"  requiredMessage="error calculating bmi"/>
                             </h:panelGrid>
-                            <h:panelGrid width="20%" style="margin: 20px 0 0 0" columns="2" cellpadding="5" cellspacing="5" rendered="#{triageView.patientRecordAvailable}">
-                                <h:commandButton value="submit" action="#{triageView.saveTriageFindings}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold"/>
-                                <h:commandButton value="update" action="#{triageView.updateTriageRecord}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold;"/>
+                            <h:panelGrid width="20%" style="margin: 20px 0 0 0" columns="3" cellpadding="2" cellspacing="2">
+                                <h:commandButton value="calculate bmi" action="#{triageView.calculateBMI}" styleClass="button"/>
+                                <h:commandButton value="submit" action="#{triageView.saveTriageFindings}" styleClass="button"/>
+                                <h:commandButton value="update" action="#{triageView.updateTriageRecord}" styleClass="button"/>
                             </h:panelGrid>
                         </h:panelGrid>
                     </fieldset>

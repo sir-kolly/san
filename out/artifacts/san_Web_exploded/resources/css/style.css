@@ -78,10 +78,11 @@ label{
 /***page elements*/
 .empty-page-visit{
     background: #ffffff;
-    box-shadow: #bbbbbb 2px 2px 2px 2px;
+    box-shadow: #bbbbbb 2px 5px 2px 4px;
     color: green;
     font-size: 14px;
-
+    width: 70%;
+    margin: 1px auto;
 }
 .panel-grid{
     width:71%;
