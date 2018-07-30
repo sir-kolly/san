@@ -5,16 +5,14 @@
                 template="/Template.xhtml">
     <ui:define name="menu">
         <h:column>
-            <h:form style="width: 70%;background: #145;box-shadow: #bbb 1px 1px 3px 2px;margin: auto;padding: 5px">
-                <h:panelGrid columns="4" width="100%" style="text-align: left;text-align-last: right;">
-                    <h:panelGrid style="text-align: left;color: #fff;font-weight: bold">
-                        <h:outputLabel value="LAB BOARD"/>
+            <h:form styleClass="top-nav">
+                <h:panelGrid columns="4" width="auto" style="text-align: left;">
+                    <h:outputText value="LAB BOARD" styleClass="brand"/>
+                    <h:panelGrid columns="2">
+                        <h:outputLink value="#{labView.newLabReportUrl()}" styleClass="nav-links">| submit report |</h:outputLink>
+                        <h:outputLink  styleClass="nav-links">| update report |</h:outputLink>
                     </h:panelGrid>
-                    <h:panelGrid style="text-align: center;" columns="2" cellpadding="5">
-                        <h:outputLink value="#{labView.newLabReportUrl()}" style="text-decoration: none;text-transform: uppercase;font-size: 13px;font-weight: bold;color: #008844">submit report</h:outputLink>
-                        <h:outputLink value="#{labView.viewLabReportUrl()}" style="text-decoration: none;text-transform: uppercase;font-size: 13px;font-weight: bold;color: #008844">view report</h:outputLink>
-                    </h:panelGrid>
-                    <h:outputLabel value="#{lab.firstName} #{lab.lastName}" style="font-size: 12px;color: orchid"/>
+                    <h:outputText value="[#{lab.firstName} #{lab.lastName}]" styleClass="user-info"/>
                     <h:outputLink value="#{login.logout()}"><i class="fa fa-sign-out" style="color: red"/></h:outputLink>
                 </h:panelGrid>
             </h:form>

@@ -2,7 +2,7 @@
                 xmlns:f="http://java.sun.com/jsf/core"
                 template="/Template.xhtml">
     <f:metadata>
-        <f:event type="preRenderView" listener="#{doctorView.visitorsToday()}"/>
+        <f:event type="preRenderView" listener="#{doctorView.visitorToday()}"/>
     </f:metadata>
 
     <ui:define name="title">
@@ -14,52 +14,46 @@
     </ui:define>
     <ui:define name="content">
         <h:column>
-            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
+            <h:panelGrid styleClass="panel-grid" rendered="#{doctorView.patientRecordAvailable}">
                 <h:form style="padding: 2px" id="form">
                     <fieldset>
-                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">select patient</legend>
-                        <h:panelGrid columns="2">
-                            <h:panelGrid columns="3">
-                                <h:outputLabel value="PATIENT NUMBER" for="pno" style="color: #bbbbbb;font-size: 12px;font-weight: bold"/>
-                                <h:selectOneMenu id="pno" value="#{doctorView.patient.patientNumber}" styleClass="form-control">
-                                    <f:selectItem itemLabel="" itemValue=""/>
-                                    <f:selectItems value="#{doctorView.numbers}"/>
-                                    <f:ajax listener="#{doctorView.patientInfo()}"/>
-                                </h:selectOneMenu>
-                                <h:commandButton value="refresh" rendered="#{!doctorView.patientRecordAvailable}" action="#{doctorView.refresh}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold;"/>
-                            </h:panelGrid>
-                            <h:panelGrid columns="3" style="text-align-last: right" rendered="#{doctorView.patientRecordAvailable}" id="patientInfo">
-                                <h:inputText readonly="true"  value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}" id="lname" class="form-control"/>
-                                <h:inputText readonly="true"  value="#{doctorView.patient.gender}" id="gender" class="form-control" />
-                                <h:inputText readonly="true"  value="#{doctorView.patient.yoB}" id="yob" class="form-control"/>
-                            </h:panelGrid>
+                        <legend>selected patient for Treatement process</legend>
+                        <h:panelGrid columns="8" width="100%">
+                            <h:outputLabel value="patient number" for="pno"/>
+                            <h:inputText readonly="true"  value="#{doctorView.patient.patientNumber}" id="pno" class="form-control"/>
+                            <h:outputLabel value="name" for="name"/>
+                            <h:inputText readonly="true"  value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}" id="name" class="form-control"/>
+                            <h:outputLabel value="gender" for="gender"/>
+                            <h:inputText readonly="true"  value="#{doctorView.patient.gender}" id="gender" class="form-control" />
+                            <h:outputLabel value="yob" for="yob"/>
+                            <h:inputText readonly="true"  value="#{doctorView.patient.yoB}" id="yob" class="form-control"/>
                         </h:panelGrid>
                     </fieldset>
                 </h:form>
             </h:panelGrid>
         </h:column>
         <h:column>
-            <h:panelGrid width="71%"   style="background: white;margin: 2px auto;padding: 5px 20px" rendered="#{doctorView.patientRecordAvailable}">
+            <h:panelGrid styleClass="panel-grid">
                 <h:form style="padding: 2px;" id="labTestForm" >
                     <fieldset>
-                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">previous lab test reports</legend>
+                        <legend >previous lab test reports</legend>
                         <h:panelGrid width="100%">
-                            <h:dataTable value="#{doctorView.labs}" var="lab" cellspacing="5" cellpadding="5" style="text-align: center" width="100%" border="1">
+                            <h:dataTable value="#{doctorView.labs}" var="lab" headerClass="table-header" rowClasses="even,odd">
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">test</p>
+                                        test
                                     </f:facet>
                                     #{lab.test}
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">result</p>
+                                     result
                                     </f:facet>
                                     #{lab.result}
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">Date</p>
+                                        Date
                                     </f:facet>
                                     #{lab.date}
                                 </h:column>
@@ -70,45 +64,45 @@
             </h:panelGrid>
         </h:column>
         <h:column>
-            <h:panelGrid width="71%" style="background: white;margin: 2px auto;padding: 5px 20px" rendered="#{doctorView.patientRecordAvailable}">
+            <h:panelGrid rendered="#{doctorView.patientRecordAvailable}"  styleClass="panel-grid">
                 <h:form style="padding: 2px;" id="admInfo">
                     <fieldset>
-                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">Previous Admission Records</legend>
+                        <legend >Previous Admission Records</legend>
                         <h:panelGrid width="100%">
-                            <h:dataTable value="#{doctorView.admissions}" var="adm" cellspacing="5" cellpadding="5" style="text-align: center" border="1" width="100%">
+                            <h:dataTable value="#{doctorView.admissions}" var="adm" headerClass="table-header" rowClasses="even,odd" width="100%">
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">admission number</p>
+                                       admission number
                                     </f:facet>
                                     #{adm.admissionNumber}
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">section</p>
+                                        section
                                     </f:facet>
                                     #{adm.section}
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">room</p>
+                                        room
                                     </f:facet>
                                     #{adm.room.roomNumber}
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">bed</p>
+                                        bed
                                     </f:facet>
                                     #{adm.bed.bedNumber}
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">date</p>
+                                        date
                                     </f:facet>
                                     #{adm.date}
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">Service Doctor</p>
+                                        Service Doctor
                                     </f:facet>
                                      #{adm.doc.lastName}
                                 </h:column>
@@ -119,39 +113,39 @@
             </h:panelGrid>
         </h:column>
         <h:column>
-            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px" rendered="#{doctorView.patientRecordAvailable}">
+            <h:panelGrid  rendered="#{doctorView.patientRecordAvailable}"  styleClass="panel-grid">
                 <h:form style="padding: 2px;" id="medInfo">
                     <fieldset>
-                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">previous medication reports</legend>
+                        <legend >previous medication reports</legend>
                         <h:panelGrid width="100%">
-                            <h:dataTable value="#{doctorView.medications}" var="md" cellspacing="5" cellpadding="5" style="text-align: center" width="100%" border="1">
+                            <h:dataTable value="#{doctorView.medications}" var="md" headerClass="table-header" rowClasses="even,odd" width="100%">
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">Serial</p>
+                                       Serial
                                     </f:facet>
                                     #{md.productNumber}
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">Medicine</p>
+                                       Medicine
                                     </f:facet>
                                     #{md.productName}
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">Prescription</p>
+                                        Prescription
                                     </f:facet>
                                     #{md.prescription}
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">Strength</p>
+                                        Strength
                                     </f:facet>
                                     #{md.strength}
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">Date</p>
+                                        Date
                                     </f:facet>
                                     #{md.dateOfAdministration}
                                 </h:column>

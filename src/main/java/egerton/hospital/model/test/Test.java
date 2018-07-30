@@ -7,8 +7,10 @@ import java.util.Date;
 
 @Entity
 @Table
-@NamedQueries({@NamedQuery(name = "getTestToBeDone",query = "from Test t where t.date=:date and t.testDone=false"),
-        @NamedQuery(name = "checkIfTestIsAlreadySubmitted",query = "from Test t where t.date=:date and t.test=:test")})
+@NamedQueries({
+        @NamedQuery(name = "getTestToBeDone",query = "from Test t join fetch t.patient p where t.date=:date and t.testDone=false and p.patientNumber=:number"),
+        @NamedQuery(name = "checkIfTestIsAlreadySubmitted",query = "from Test t where t.date=:date and t.test=:test")
+})
 public class Test {
     private String testNumber,test;
     private Patient patient;
@@ -23,6 +25,11 @@ public class Test {
         this.test = test;
         this.patient = patient;
         this.testDone = testDone;
+        this.date = date;
+    }
+
+    public Test(Patient patient, Date date) {
+        this.patient = patient;
         this.date = date;
     }
 

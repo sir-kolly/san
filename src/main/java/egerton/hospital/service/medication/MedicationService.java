@@ -17,7 +17,7 @@ public interface MedicationService {
 
     boolean checkIfMedicationIsSavedAlready(Medication medication);
 
-    List<Illness> getTodayPatientIllnesses(Patient patient);
+    List<Illness> getTodayPatientIllnesses(Illness illness);
 
     Illness illnessInfo(Illness illness);
 }

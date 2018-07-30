@@ -14,24 +14,23 @@
     </ui:define>
     <ui:define name="content">
         <h:column>
-            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
+            <h:panelGrid styleClass="panel-grid">
                 <h:form style="padding: 2px;width: 60%;margin: auto" id="info">
                     <h:inputHidden value="#{doctorView.patient.patientNumber}"/>
                     <h:column>
-                        <h:messages id="msg" style="background: indigo;font-weight: bold;font-size: 12px;text-transform: capitalize;color: white;width: 40%;height:auto;margin: auto;box-shadow: #bbbbbb 2px 5px 3px 4px;" />
+                        <h:messages id="msg" styleClass="messages"/>
                     </h:column>
                     <fieldset>
-                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">
+                        <legend>
                             Detected illnessn that [ <h:outputText value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}"/>] suffers from
                         </legend>
-                        <h:panelGrid width="100%">
-                            <h:panelGrid width="100%" columns="2">
-                                <h:outputLabel value="Illness" for="il" />
-                                <h:inputText  id="il" value="#{doctorView.illness.illness}" required="true" requiredMessage="input dissease" style="width: 100%" />
-                            </h:panelGrid>
-                            <h:panelGrid width="20%" style="margin: 20px 0 0 0" columns="2" cellpadding="5" cellspacing="5">
-                                <h:commandButton value="submit" action="#{doctorView.saveSuggestedIllness}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold"/>
-                            </h:panelGrid>
+                        <h:panelGrid width="100%" columns="2">
+                            <h:outputLabel value="Illness" for="il" />
+                            <h:inputText  id="il" value="#{doctorView.illness.illness}" required="true" requiredMessage="input dissease" styleClass="form-control" />
+                        </h:panelGrid>
+                        <h:panelGrid width="20%" style="margin: 5px auto" columns="2">
+                            <h:commandButton value="submit" action="#{doctorView.saveSuggestedIllness}" styleClass="button"/>
+                            <h:commandButton value="close" action="#{doctorView.openConsultationUrl}" styleClass="button"/>
                         </h:panelGrid>
                     </fieldset>
                 </h:form>

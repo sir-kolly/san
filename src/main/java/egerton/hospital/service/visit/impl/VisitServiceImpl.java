@@ -28,9 +28,10 @@ public class VisitServiceImpl  implements VisitService {
     }
 
     @Override
-    public List<Visit> visiting(Date date) {
-        return this.getVisitDAO().visitsToday(date);
+    public Visit visitorToday(Date date) {
+        return this.getVisitDAO().visitorToday(date);
     }
+
 
     @Override
     public List<Visit> visitsForTheTriageToday(Date date) {

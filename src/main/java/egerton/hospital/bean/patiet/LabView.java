@@ -66,53 +66,20 @@ public class LabView {
         }
         return null;
     }
-    public List<Lab> labTestResult(){
+    public void patientForTheTest(){
         try {
-            labResults=this.getLabService().getLabReport(patient);
-            if(labResults.isEmpty());
-            else return labResults;
-        }catch (Exception e){
-            Message.message(""+e,FacesMessage.SEVERITY_ERROR);
-        }
-        return null;
-    }
-
-    public Set<String> patientsForTheTest(){
-        numbers=new HashSet<>();
-        try {
-            test=new Test(new Date());
-            tests=getLabService().getTestToBeDone(test);
-            if(!tests.isEmpty()){
-                for (int i=0;i<tests.size();i++){
-                    numbers.add(tests.get(i).getPatient().getPatientNumber());
-                }
-                return numbers;
-
+            Visit visit=getVisitService().visitorToday(new Date());
+            if (!visit.equals(null)){
+                patient=visit.getPatient();
             }
-        }catch (Exception e){}
-        return null;
-    }
-
-    public Patient patientInfo(){
-        try {
-            availableTests=new ArrayList<>();
-            if(!tests.isEmpty()){
-                for (int i=0;i<tests.size();i++){
-                    String number=tests.get(i).getPatient().getPatientNumber();
-                    String num=patient.getPatientNumber();
-                    if(number.equalsIgnoreCase(num)){
-                        patient=tests.get(i).getPatient();
-                        availableTests.add(tests.get(i));
-                    }
-                }
-                System.out.println(availableTests.size());
+            if(!patient.equals(null)){
+                test=new Test(patient,new Date());
+                tests=this.getLabService().getTestToBeDone(test);
                 this.setTestsAvailable(true);
                 this.setPatientRecordAvailable(true);
-                return patient;
             }
-        }catch (Exception e){
-        }
-        return null;
+        }catch (Exception e){}
+        return;
     }
 
     public void testSelectedForSubmission(){

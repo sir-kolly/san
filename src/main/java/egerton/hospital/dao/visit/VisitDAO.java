@@ -9,7 +9,7 @@ import java.util.List;
 public interface VisitDAO {
     boolean saveVisit(Visit visit);
     List<Visit> patientVisits(Patient patient);
-    List<Visit> visitsToday(Date date);
+    Visit visitorToday(Date date);
     List<Visit>visitsForTheTriageToday(Date date);
     boolean updateVisit(Visit visit);
     boolean checkIfVisitIsAlreadyRecordedForPatient(Visit visit);

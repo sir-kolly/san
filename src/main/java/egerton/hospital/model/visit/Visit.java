@@ -9,7 +9,7 @@ import java.util.Date;
 @NamedQueries({
         @NamedQuery(name = "patientVisits",query = "from Visit vs join fetch vs.patient p where p.patientNumber=:number"),
         @NamedQuery(name = "visitsForTheTriageToday",query = "from Visit vs where vs.date=:d and vs.treated=false and vs.attendedTriage=false order by vs.time"),
-        @NamedQuery(name = "visitsToday",query = "from Visit vs where vs.date=:d and vs.treated=false and vs.attendedTriage=false order by vs.time"),
+        @NamedQuery(name = "visitsToday",query = "from Visit vs where vs.date=:d and vs.treated=false order by vs.time"),
         @NamedQuery(name ="checkIfVisitIsAlreadyRecordedForPatient",query ="from Visit vs join fetch vs.patient p where vs.date=:date and p.patientNumber=:number")})
 public class Visit {
     private String visitNo;

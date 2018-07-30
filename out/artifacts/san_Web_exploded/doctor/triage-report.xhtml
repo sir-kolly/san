@@ -14,35 +14,38 @@
     </ui:define>
     <ui:define name="content">
         <h:column>
-            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
+            <h:panelGrid  styleClass="panel-grid">
                 <h:form style="padding: 2px;" id="medInfo">
                     <fieldset>
-                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">
+                        <legend>
                             triage report for [ <h:outputText value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}"/> ]
                         </legend>
                         <h:panelGrid width="100%">
-                            <h:dataTable value="#{doctorView.triageSet}" var="tr" cellspacing="5" cellpadding="5" style="text-align: center" width="100%" border="1">
+                            <h:dataTable value="#{doctorView.triageSet}" var="tr" headerClass="table-header" rowClasses="even,odd">
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">record number</p>
+                                      record number
                                     </f:facet>
                                     #{tr.recordNo}
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">body Weight</p>
+                                        body Weight
                                     </f:facet>
                                     #{tr.weight}
                                 </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <p style="font-size: 13px;color: #136;text-transform: uppercase">blood pressure</p>
+                                       blood pressure
                                     </f:facet>
                                     #{tr.pressure}
                                 </h:column>
                             </h:dataTable>
                         </h:panelGrid>
                     </fieldset>
+                    <h:panelGrid width="20%" style="margin: 2px auto">
+                        <h:commandButton value="close" action="#{doctorView.openConsultationUrl}" styleClass="button"/>
+                    </h:panelGrid>
                 </h:form>
             </h:panelGrid>
         </h:column>

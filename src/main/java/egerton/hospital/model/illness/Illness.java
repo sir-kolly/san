@@ -29,6 +29,12 @@ public class Illness {
         illness = illness;
         this.patient = patient;
     }
+
+    public Illness(Patient patient, Date date) {
+        this.patient = patient;
+        this.date = date;
+    }
+
     @Id
     @Column(name = "illness_number",length = 15,nullable = false)
     public String getIllnessNumber() {

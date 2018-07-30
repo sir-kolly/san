@@ -31,9 +31,9 @@ public class VisitDAOImpl implements VisitDAO {
     }
 
     @Override
-    public List<Visit> visitsToday(Date date) {
+    public Visit visitorToday(Date date) {
         return this.getSessionFactory().getCurrentSession().createNamedQuery("visitsToday",Visit.class)
-                .setParameter("d",date).setMaxResults(1).getResultList();
+                .setParameter("d",date).setMaxResults(1).stream().findFirst().orElse(null);
     }
 
     @Override

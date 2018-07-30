@@ -47,8 +47,8 @@ public class MedicationServiceImpl implements MedicationService {
     }
 
     @Override
-    public List<Illness> getTodayPatientIllnesses(Patient patient) {
-        return this.getMedicationDAO().getTodayPatientIllnesses(patient);
+    public List<Illness> getTodayPatientIllnesses(Illness illness) {
+        return this.getMedicationDAO().getTodayPatientIllnesses(illness);
     }
 
     @Override

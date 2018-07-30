@@ -39,7 +39,8 @@ public class LabDAOImpl implements LabDAO {
     @Override
     public List<Test> getTestToBeDone(Test test) {
         return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("getTestToBeDone",Test.class)
-                .setParameter("date",test.getDate()).getResultList());
+                .setParameter("date",test.getDate()).setParameter("number",test.getPatient().getPatientNumber())
+                .getResultList());
     }
 
     @Override

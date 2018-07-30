@@ -5,31 +5,33 @@
                 template="/Template.xhtml">
     <ui:define name="menu">
         <h:column>
-            <h:form style="width: 70%;background: #145;box-shadow: #bbb 1px 1px 3px 2px;margin: auto;padding: 5px">
-                <h:panelGrid columns="9" width="100%" style="text-align: left;text-align-last: right;">
-                    <h:panelGrid style="text-align: left;color: #fff;font-weight: bold">
-                        <h:outputLabel value="DOCTOR BOARD"/>
+            <h:form styleClass="top-nav">
+                <h:panelGrid columns="9" width="auto" style="text-align: left;">
+                    <h:outputText value="DOCTOR BOARD" styleClass="brand"/>
+                    <h:panelGrid style="text-align: center" columns="2">
+                        <h:outputLink value="#{doctorView.openConsultationUrl()}" styleClass="nav-links" >|open consultation|</h:outputLink>
+                        <h:outputLink value="#{doctorView.endConsultationUrl()}" styleClass="nav-links"
+                                      onclick="return confirm('Ending the patient treatment process....')">|end consultation|</h:outputLink>
                     </h:panelGrid>
-                    <h:panelGrid style="text-align: center;">
-                        <h:outputLink value="#{doctorView.consultationUrl()}" style="text-decoration: none;text-transform: uppercase;font-size: 13px;font-weight: bold;color: #008844">consultation</h:outputLink>
+                    <h:panelGrid style="text-align: center">
+                        <h:outputLink value="#{doctorView.triageReportUrl()}" styleClass="nav-links">|triage results|</h:outputLink>
                     </h:panelGrid>
-                    <h:panelGrid style="text-align: center;">
-                        <h:outputLink value="#{doctorView.triageReportUrl()}" style="text-decoration: none;text-transform: uppercase;font-size: 13px;font-weight: bold;color: #008844">Triage report</h:outputLink>
+                    <h:panelGrid style="text-align: center">
+                        <h:outputLink value="#{doctorView.illnessUrl()}" styleClass="nav-links">|illness|</h:outputLink>
                     </h:panelGrid>
-                    <h:panelGrid style="text-align: center;" columns="2" cellpadding="5">
-                        <h:outputLink value="#{doctorView.testToBeDoneUrl()}" style="text-decoration: none;text-transform: uppercase;font-size: 13px;font-weight: bold;color: #008844">Test</h:outputLink>
-                        <h:outputLink value="#{doctorView.labResultUrl()}" style="text-decoration: none;text-transform: uppercase;font-size: 13px;font-weight: bold;color: #008844">Lab result</h:outputLink>
+                    <h:panelGrid style="text-align: center">
+                        <h:outputLink value="#{doctorView.medicationUrl()}" styleClass="nav-links">|medication|</h:outputLink>
                     </h:panelGrid>
-                    <h:panelGrid style="text-align: center;">
-                        <h:outputLink value="#{doctorView.illnessUrl()}" style="text-decoration: none;text-transform: uppercase;font-size: 13px;font-weight: bold;color: #008844">Illness</h:outputLink>
+                    <h:panelGrid style="text-align: center">
+                        <h:outputLink value="#{doctorView.admissionUrl()}" styleClass="nav-links">|admission|</h:outputLink>
                     </h:panelGrid>
-                    <h:panelGrid style="text-align: center;">
-                        <h:outputLink value="#{doctorView.medicationUrl()}" style="text-decoration: none;text-transform: uppercase;font-size: 13px;font-weight: bold;color: #008844">Medication</h:outputLink>
+                    <h:panelGrid style="text-align: center" columns="2">
+                        <h:outputLink value="#{doctorView.testToBeDoneUrl()}" styleClass="nav-links">|Test|</h:outputLink>
+                        <h:outputLink value="#{doctorView.labResultUrl()}" styleClass="nav-links">|Lab result| </h:outputLink>
                     </h:panelGrid>
-                    <h:panelGrid style="text-align: center;">
-                        <h:outputLink value="#{doctorView.admissionUrl()}" style="text-decoration: none;text-transform: uppercase;font-size: 13px;font-weight: bold;color: #008844">Admission</h:outputLink>
+                    <h:panelGrid style="text-align: center">
+                        <h:outputText value="[#{doc.firstName} #{doc.lastName}]"  styleClass="user-info"/>
                     </h:panelGrid>
-                    <h:outputLabel value="#{doc.firstName} #{doc.lastName}" style="font-size: 12px;color: orchid"/>
                     <h:outputLink value="#{login.logout()}"><i class="fa fa-sign-out" style="color: red"/></h:outputLink>
                 </h:panelGrid>
             </h:form>
