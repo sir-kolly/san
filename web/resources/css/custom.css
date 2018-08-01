@@ -34,16 +34,10 @@
 }
 .top-nav{
     width: 80%;
-    background: #145;
+    background: #111144;
     box-shadow: #bbb 1px 1px 3px 2px;
     margin: auto;
-    padding: 5px
-}
-.brand{
-    font-family: Lucida Console, Courier, monospace;
-    text-transform: uppercase;
-    font-size: 18px;font-weight: bold;
-    color: chartreuse;
+    padding: 0;
 }
 .user-info{
     font-size: 12px;
@@ -53,13 +47,21 @@
     font-family: Lucida Console, Courier, monospace;
     font-style: italic;
 }
+.brand{
+    font-weight: bold;
+    font-size: 14px;
+    background: #bbbbbb;
+    color: green;
+    font-family: "Courier New", Courier, monospace;
+}
 .nav-links{
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: bold;
     color: #008844;
     text-align: center;
+    cursor: grabbing;
 }
 .form-control{
     border: #bbbbbb 1px solid;
@@ -78,7 +80,7 @@ textarea{
 label{
     text-align: left;
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: 13px;
 }
 /****/
 /***page elements*/
@@ -91,26 +93,32 @@ label{
     margin: 1px auto;
 }
 .panel-grid{
-    width:81%;
+    width:80%;
     background: white;
-    margin: 2px auto;
+    margin: 5px auto;
     padding: 15px 20px;
 }
 .messages{
     background: deeppink;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 15px;
     text-transform: capitalize;
-    color: white;
+    color: indigo;
     width: 60%;
     height:auto;margin: auto;
     box-shadow: #bbbbbb 2px 5px 3px 4px;
+    text-decoration-style: unset;
 }
 legend{
-    color: plum;
+    color: #002255;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
+}
+.fieldset{
+    border: transparent;
+    height: 30px;
+    margin-top: 0;
 }
 /**button styles*/
 .button{
@@ -152,29 +160,44 @@ legend{
     border: 1px outset;
     width: 100%;
 }
+.option-button{
+    width: 100%;
+    height: 50px;
+    background: #008844;
+    font-size: 10px;
+    font-stretch: ultra-condensed;
+    border: #ffffff 1px outset;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    cursor: grab;
+}
 /****table**/
 table{
-    width:100%;
-    text-align: center;
-    padding: 5px;
-    margin: 2px;
+    width: 100%;
 }
 .table-header{
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
-    color: #000;
+    color: #ffffff;
     background: #008844;
     height: 30px;
-
 }
+
 .odd{
-    font-size: 11px;
-    color: indigo;
-    background: aliceblue;
+    font-size: 16px;
+    color:#000;
+    background: gray;
+    padding: 10px;
+    margin: 5px;
+    border: #bbbbbb 1px solid;
 }
 .even{
-   background: gainsboro;
-    color:deeppink;
-    font-size: 11px;
+   background: whitesmoke;
+    color:#111144;
+    font-size: 16px;
+    padding: 10px;
+    margin: 5px;
+    width: 25px;
 }

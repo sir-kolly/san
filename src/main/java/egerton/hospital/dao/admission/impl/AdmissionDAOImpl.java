@@ -2,7 +2,6 @@ package egerton.hospital.dao.admission.impl;
 
 import egerton.hospital.dao.admission.AdmissionDAO;
 import egerton.hospital.model.admit.Admission;
-import egerton.hospital.model.medication.Medication;
 import egerton.hospital.model.patient.Patient;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
@@ -24,18 +23,33 @@ public class AdmissionDAOImpl implements AdmissionDAO {
     }
 
     @Override
-    public Set<Admission> admissionDetails(Patient patient) {
-        return new LinkedHashSet<>(this.getSessionFactory().getCurrentSession().createNamedQuery("patientAdmissionDetails",Admission.class)
-                .setParameter("number",patient.getPatientNumber()).getResultList());
+    public Set<Admission> patientPreviousAdmissionDetails(Admission admission) {
+        return new LinkedHashSet<>(this.getSessionFactory().getCurrentSession().createNamedQuery("patientPreviousAdmissionDetails",Admission.class)
+                .setParameter("number",admission.getPatient().getPatientNumber()).setParameter("date",admission.getPatient().getPatientNumber())
+                .getResultList());
     }
+
 
     @Override
     public boolean checkIfAdmittedAlready(Admission admission) {
         admission=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfAdmittedAlready",Admission.class)
                 .setParameter("number",admission.getPatient().getPatientNumber())
-                .setParameter("date",new Date(),TemporalType.DATE).stream().findFirst().orElse(null);
+                .setParameter("date",admission.getDate()).stream().findFirst().orElse(null);
 
         return admission==null ? false:true;
+    }
+
+    @Override
+    public boolean update(Admission admission) {
+         this.getSessionFactory().getCurrentSession().update(admission);
+         return true;
+    }
+
+    @Override
+    public Admission todayPatientAdmission(Admission admission) {
+        return this.getSessionFactory().getCurrentSession().createNamedQuery("todayPatientAdmission",Admission.class)
+                .setParameter("number",admission.getPatient().getPatientNumber())
+                .setParameter("date",admission.getDate()).stream().findFirst().orElse(null);
     }
 
     public SessionFactory getSessionFactory() {

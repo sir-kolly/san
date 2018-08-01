@@ -2,7 +2,7 @@ package egerton.hospital.model.patient;
 
 import egerton.hospital.model.admit.Admission;
 import egerton.hospital.model.lab.Lab;
-import egerton.hospital.model.medication.Medication;
+import egerton.hospital.model.medication.Medicate;
 import egerton.hospital.model.triage.Triage;
 import egerton.hospital.model.visit.Visit;
 
@@ -22,7 +22,7 @@ public class Patient  implements Serializable {
     private List<Triage>triageList;
     private List<Lab>labs;
     private List<Admission> admissions;
-    private List<Medication>medications;
+    private List<Medicate>medications;
 
     public Patient() {
     }
@@ -97,32 +97,35 @@ public class Patient  implements Serializable {
     public List<Visit> getVisits() {
         return visits;
     }
+
     @OneToMany(mappedBy = "patient",targetEntity = Triage.class,cascade = CascadeType.ALL)
     public List<Triage> getTriageList() {
         return triageList;
     }
+
     @OneToMany(mappedBy = "patient",targetEntity = Lab.class,cascade = CascadeType.ALL)
     public List<Lab> getLabs() {
         return labs;
     }
+
     @OneToMany(mappedBy = "patient",targetEntity = Admission.class,cascade = CascadeType.ALL)
     public List<Admission> getAdmissions() {
         return admissions;
     }
-    @OneToMany(mappedBy = "patient",targetEntity = Medication.class,cascade = CascadeType.ALL)
-    public List<Medication> getMedications() {
+
+    @OneToMany(mappedBy = "patient",targetEntity = Medicate.class,cascade = CascadeType.ALL)
+    public List<Medicate> getMedications() {
         return medications;
     }
 
     public void setLabs(List<Lab> labs) {
         this.labs = labs;
     }
-
     public void setAdmissions(List<Admission> admissions) {
         this.admissions = admissions;
     }
 
-    public void setMedications(List<Medication> medications) {
+    public void setMedications(List<Medicate> medications) {
         this.medications = medications;
     }
 

@@ -1,4 +1,5 @@
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
                 template="/Template.xhtml">
     <f:metadata>
@@ -26,25 +27,25 @@
                             <h:outputLabel value="NAME" for="name"/>
                             <h:inputText readonly="true" value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}" id="name" class="form-control"/>
                             <h:outputLabel value="ILLNESS" for="ill"/>
-                            <h:selectOneMenu  value="#{doctorView.illness.illness}" id="ill" class="form-control" required="true" requiredMessage="illness missing">
+                            <h:selectOneMenu value="#{doctorView.disease.illness}" id="ill"  class="form-control" required="true" requiredMessage="illness missing">
                                 <f:selectItem itemLabel="" itemValue=""/>
-                                <f:selectItems values="#{doctorView.suspectedIllness}"/>
+                                <f:selectItems value="#{doctorView.sicknesses}"/>
                                 <f:ajax listener="#{doctorView.illnessInfo()}" />
                             </h:selectOneMenu>
                             <h:outputLabel value="MEDICINE" for="med"/>
-                            <h:inputText  value="#{doctorView.medication.productName}" id="med" class="form-control" required="true" requiredMessage="medicine missing"/>
+                            <h:inputText  value="#{doctorView.medicate.medName}" id="med" class="form-control" required="true" requiredMessage="medicine missing"/>
                             <h:outputLabel value="MODE OF ADMISSION" for="mod"/>
-                            <h:selectOneMenu  value="#{doctorView.medication.routeOfAdministration}" id="mod" class="form-control" required="true" requiredMessage="mode missing">
+                            <h:selectOneMenu  value="#{doctorView.medicate.modeOfAdministration}" id="mod" class="form-control" required="true" requiredMessage="mode missing">
                                 <f:selectItem itemLabel="" itemValue=""/>
                                 <f:selectItem itemLabel="Injection" itemValue="Injection"/>
                                 <f:selectItem itemLabel="Oral" itemValue="Oral"/>
                             </h:selectOneMenu>
                             <h:outputLabel value="PRESCRIPTION" for="pr"/>
-                            <h:inputTextarea  value="#{doctorView.medication.prescription}" id="pr"  required="true" requiredMessage="prescription missing"/>
+                            <h:inputTextarea  value="#{doctorView.medicate.prescription}" id="pr"  required="true" requiredMessage="prescription missing"/>
                             <h:outputLabel value="STRENGTH" for="str"/>
-                            <h:inputText  value="#{doctorView.medication.strength}" id="str" class="form-control" required="true" requiredMessage="strength missing"/>
+                            <h:inputText  value="#{doctorView.medicate.strength}" id="str" class="form-control" required="true" requiredMessage="strength missing"/>
                             <h:outputLabel value="COMMENT" for="com"/>
-                            <h:inputTextarea  value="#{doctorView.medication.comment}" id="com"   required="true" requiredMessage="comment missing"/>
+                            <h:inputTextarea  value="#{doctorView.medicate.comment}" id="com"   required="true" requiredMessage="comment missing"/>
                             <h:outputLabel value="DATE" for="date"/>
                             <h:inputText readonly="true" value="#{doctorView.date()}" id="date" class="form-control" />
                             <h:outputLabel value="TIME" for="time"/>

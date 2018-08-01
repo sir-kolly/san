@@ -13,13 +13,13 @@
     <!--<navigation-rule>-->
         <!--<from-view-id>*</from-view-id>-->
         <!--<navigation-case>-->
-            <!--<from-outcome>doctor-board</from-outcome>-->
-            <!--<to-view-id>/doctor/doctor-board.xhtml</to-view-id>-->
+            <!--<from-outcome>init-consultation</from-outcome>-->
+            <!--<to-view-id>/doctor/consultation.xhtml</to-view-id>-->
             <!--<redirect/>-->
         <!--</navigation-case>-->
         <!--<navigation-case>-->
-            <!--<from-outcome>nurse-board</from-outcome>-->
-            <!--<to-view-id>/nurse/nurse-board.xhtml</to-view-id>-->
+            <!--<from-outcome>end-consultation</from-outcome>-->
+            <!--<to-view-id>/doctor/init-consultation.xhtml</to-view-id>-->
             <!--<redirect/>-->
         <!--</navigation-case>-->
         <!--<navigation-case>-->

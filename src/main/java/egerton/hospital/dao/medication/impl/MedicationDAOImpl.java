@@ -1,16 +1,14 @@
 package egerton.hospital.dao.medication.impl;
 
 import egerton.hospital.dao.medication.MedicationDAO;
-import egerton.hospital.model.illness.Illness;
+import egerton.hospital.model.illness.Disease;
+import egerton.hospital.model.medication.Medicate;
 import egerton.hospital.model.patient.Patient;
-import egerton.hospital.model.medication.Medication;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import javax.inject.Inject;
-import javax.persistence.TemporalType;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 @Repository
 public class MedicationDAOImpl implements MedicationDAO {
@@ -18,57 +16,64 @@ public class MedicationDAOImpl implements MedicationDAO {
     private SessionFactory sessionFactory;
 
     @Override
-    public boolean saveTreatmentRecord(Medication medication) {
-        this.getSessionFactory().getCurrentSession().save(medication);
+    public boolean saveTreatmentRecord(Medicate medicate) {
+        this.getSessionFactory().getCurrentSession().save(medicate);
         return true;
     }
 
     @Override
-    public List<Medication> getPatientMedications(Patient patient) {
-        return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("patientMedications",Medication.class)
+    public List<Medicate> getPatientMedications(Patient patient) {
+        return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("patientMedications",Medicate.class)
                 .setParameter("number",patient.getPatientNumber()).getResultList());
     }
 
     @Override
-    public boolean saveIllness(Illness illness) {
-        this.getSessionFactory().getCurrentSession().save(illness);
+    public boolean saveIllness(Disease disease) {
+        this.getSessionFactory().getCurrentSession().save(disease);
         return true;
     }
 
     @Override
-    public List<Illness> getPatientIllnesses(Patient patient) {
-        return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("patientIllnesses",Illness.class)
+    public List<Disease> getPatientIllnesses(Patient patient) {
+        return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("patientIllnesses",Disease.class)
                 .setParameter("number",patient.getPatientNumber()).getResultList());
     }
 
     @Override
-    public boolean checkIfIllnessIsSavedAlready(Illness illness) {
-        illness=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfIllnessIsSavedAlready",Illness.class)
-                .setParameter("illness",illness.getIllness()).setParameter("number",illness.getPatient().getPatientNumber())
-                .setParameter("date",illness.getDate()).stream().findFirst().orElse(null);
-
-        return illness==null ? false:true;
+    public Disease patientIllness(Disease disease) {
+        return this.getSessionFactory().getCurrentSession().createNamedQuery("patientIllnessInfo",Disease.class)
+                .setParameter("ill",disease.getIllness()).setParameter("number",disease.getPatient().getPatientNumber())
+                .setParameter("date",disease.getDate()).stream().findFirst().orElse(null);
     }
 
     @Override
-    public boolean checkIfMedicationIsSavedAlready(Medication medication) {
-        medication=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfMedicationIsSavedAlready",Medication.class)
-                .setParameter("product",medication.getProductName()).setParameter("number",medication.getPatient().getPatientNumber())
-                .setParameter("date",new Date(),TemporalType.DATE).setParameter("illno",medication.getIllness().getIllnessNumber())
+    public boolean checkIfIllnessIsSavedAlready(Disease  disease) {
+         disease=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfIllnessIsSavedAlready",Disease.class)
+                .setParameter("ill",disease.getIllness()).setParameter("number",disease.getPatient().getPatientNumber())
+                .setParameter("date",disease.getDate()).stream().findFirst().orElse(null);
+
+        return disease==null ? false:true;
+    }
+
+    @Override
+    public boolean checkIfMedicationIsSavedAlready(Medicate medicate) {
+        medicate=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfMedicationIsSavedAlready",Medicate.class)
+                .setParameter("name",medicate.getMedName()).setParameter("number",medicate.getPatient().getPatientNumber())
+                .setParameter("illno",medicate.getDisease().getIllnessNumber())
                 .stream().findFirst().orElse(null);
 
-        return medication==null ? false:true;
+        return medicate==null ? false:true;
     }
 
     @Override
-    public List<Illness> getTodayPatientIllnesses(Illness illness) {
-        return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("getTodayPatientIllnesses",Illness.class)
-                .setParameter("number",illness.getPatient().getPatientNumber()).setParameter("date",illness.getDate()).getResultList());
+    public List<Disease> getTodayPatientIllnesses(Disease disease) {
+        return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("getTodayPatientIllnesses",Disease.class)
+                .setParameter("number",disease.getPatient().getPatientNumber()).setParameter("date",disease.getDate()).getResultList());
     }
 
     @Override
-    public Illness illnessInfo(Illness illness) {
-        return this.getSessionFactory().getCurrentSession().find(Illness.class,illness.getIllnessNumber());
+    public Disease illnessInfo(Disease disease) {
+        return this.getSessionFactory().getCurrentSession().find(Disease.class,disease.getIllnessNumber());
     }
 
     public SessionFactory getSessionFactory() {

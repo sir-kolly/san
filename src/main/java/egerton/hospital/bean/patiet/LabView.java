@@ -50,9 +50,12 @@ public class LabView {
                 if(this.getLabService().submitLabResult(lab)){
                     test=new Test(lab.getTestNumber(),lab.getTest(),patient,true,new Date());
                     if(this.getLabService().updateTestAfterSubmitted(test)){
+                        if(this.tests.isEmpty())
+                            setTestsAvailable(false);
                         Message.message("Result submitted",FacesMessage.SEVERITY_INFO);
                         context.getExternalContext().getFlash().setKeepMessages(true);
                         setTestSelected(false);
+                        lab=new Lab();
                         return ("/faces/lab/lab-report.xhtml?faces-redirect=true");
                     }
                 }

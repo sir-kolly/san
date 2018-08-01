@@ -1,20 +1,20 @@
 package egerton.hospital.model.admit;
 
 import egerton.hospital.model.employe.Employee;
-import egerton.hospital.model.illness.Illness;
+import egerton.hospital.model.illness.Disease;
 import egerton.hospital.model.patient.Patient;
 import egerton.hospital.model.room.Bed;
 import egerton.hospital.model.room.Room;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table
 @NamedQueries({
-        @NamedQuery(name = "patientAdmissionDetails",query = "from Admission adm join fetch adm.patient p where p.patientNumber=:number"),
+        @NamedQuery(name = "patientPreviousAdmissionDetails",query = "from Admission adm join fetch adm.patient p where adm.date!=:date and p.patientNumber=:number"),
+        @NamedQuery(name = "patientAdmissionInfo",query = "from Admission adm join fetch adm.patient p where adm.date=:date and p.patientNumber=:number"),
         @NamedQuery(name = "checkIfAdmittedAlready",query = "from Admission adm join fetch adm.patient p where p.patientNumber=:number and date=:date")})
 public class Admission {
     private String admissionNumber,section,reason;
@@ -23,14 +23,15 @@ public class Admission {
     private Bed bed;
     private Patient patient;
     private Employee doc;
-    private Set<Illness>illnesses;
+    private Set<Disease>illnesses;
 
     public Admission() {
     }
 
-    public Admission(String admissionNumber, String section, Date date,Date time, Room room, Bed bed, Patient patient, Employee doc) {
+    public Admission(String admissionNumber, String section, String reason,Date date,Date time, Room room, Bed bed, Patient patient, Employee doc) {
         this.admissionNumber = admissionNumber;
         this.section = section;
+        this.reason=reason;
         this.date = date;
         this.time=time;
         this.room = room;
@@ -83,12 +84,12 @@ public class Admission {
     public Employee getDoc() {
         return doc;
     }
-    @OneToMany(mappedBy = "admission",targetEntity = Illness.class,cascade = CascadeType.ALL)
-    public Set<Illness> getIllnesses() {
+    @OneToMany(mappedBy = "admission",cascade = CascadeType.ALL)
+    public Set<Disease> getIllnesses() {
         return illnesses;
     }
 
-    public void setIllnesses(Set<Illness> illnesses) {
+    public void setIllnesses(Set<Disease> illnesses) {
         this.illnesses = illnesses;
     }
 

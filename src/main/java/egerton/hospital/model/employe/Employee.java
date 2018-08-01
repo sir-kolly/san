@@ -1,6 +1,6 @@
 package egerton.hospital.model.employe;
 
-import egerton.hospital.model.medication.Medication;
+import egerton.hospital.model.medication.Medicate;
 
 import javax.persistence.*;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 @NamedQuery(name = "employeeInfo",query = "from Employee em where em.employeeNumber=:num and em.password=:pwd")
 public class Employee {
     private String employeeNumber,nationalId,phone,email,firstName,lastName,gender,role,password;
-    private List<Medication> medications;
+    private List<Medicate> medications;
 
 
     public Employee() {
@@ -64,12 +64,12 @@ public class Employee {
         return password;
     }
 
-    @OneToMany(mappedBy = "doc",cascade = CascadeType.ALL,targetEntity = Medication.class)
-    public List<Medication> getMedications() {
+    @OneToMany(mappedBy = "doc",cascade = CascadeType.ALL)
+    public List<Medicate> getMedications() {
         return medications;
     }
 
-    public void setMedications(List<Medication> medications) {
+    public void setMedications(List<Medicate> medications) {
         this.medications = medications;
     }
 

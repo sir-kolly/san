@@ -3,7 +3,9 @@
                 template="/Template.xhtml">
 
     <f:metadata>
-        <f:loadBundle var=""
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{doctorView.admissionInfo}"/>
+        </f:metadata>
     </f:metadata>
     <ui:define name="title">
         Admission |Record
@@ -14,12 +16,11 @@
     </ui:define>
     <ui:define name="content">
         <h:column>
-            <h:panelGrid width="71%"  style="background: white;margin: 2px auto;padding: 5px 20px">
+            <h:panelGrid styleClass="panel-grid">
                 <h:form style="padding: 2px">
-                    <h:inputHidden readonly="true" id="patNo" value="#{doctorView.patient.patientNumber}"/>
                     <fieldset>
-                        <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">patient admission info</legend>
-                        <h:panelGrid columns="6">
+                        <legend >patient admission details</legend>
+                        <h:panelGrid columns="4">
                             <h:outputLabel value="NAME" for="name"/>
                             <h:inputText readonly="true" value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}" id="name" class="form-control"/>
                             <h:outputLabel value="SECTION" for="sec"/>
@@ -33,10 +34,36 @@
                             <h:outputLabel value="TIME" for="time"/>
                             <h:inputText readonly="true" value="#{doctorView.admission.time}" id="time" class="form-control"/>
                         </h:panelGrid>
-                        <h:panelGrid width="20%" style="margin: 20px 0 5px 0" columns="2" cellpadding="5" cellspacing="5">
-                            <h:commandButton value="update" action="#{receptionView.updatePatientRecord}" styleClass="login-button" style="background: #008844;color: white;text-transform: uppercase;font-weight: bold"/>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+        <h:column>
+            <h:panelGrid styleClass="panel-grid">
+                <h:form style="padding: 2px">
+                    <fieldset>
+                        <legend >patient admission details</legend>
+                        <h:panelGrid columns="4">
+                            <h:dataTable styleClass="table" rowClasses="odd,even" value="#{doctorView.illnesses}" var="ill">
+                                <h:column headerClass="table-header">
+                                    <f:facet name="header">
+                                       Sickness
+                                    </f:facet>
+                                    #{ill.illness}
+                                </h:column>
+                                <h:column headerClass="table-header">
+                                    <f:facet name="header">
+                                        prescribed medications
+                                    </f:facet>
+                                    #{ill.medications}
+                                </h:column>
+                            </h:dataTable>
                         </h:panelGrid>
                     </fieldset>
+                    <h:panelGrid columns="2">
+                        <h:commandButton value="update" action="#{doctorView.updateAdmissionInfo}" styleClass="button"/>
+                        <h:commandButton value="close" action="#{doctorView.backToAdmOption}" styleClass="button"/>
+                    </h:panelGrid>
                 </h:form>
             </h:panelGrid>
         </h:column>

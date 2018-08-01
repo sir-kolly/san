@@ -1,23 +1,23 @@
 package egerton.hospital.service.medication;
 
-import egerton.hospital.model.illness.Illness;
+import egerton.hospital.model.illness.Disease;
+import egerton.hospital.model.medication.Medicate;
 import egerton.hospital.model.patient.Patient;
-import egerton.hospital.model.medication.Medication;
 
 import java.util.List;
 
 public interface MedicationService {
-    boolean saveTreatmentRecord(Medication medication);
-    List<Medication> getPatientMedications(Patient patient);
+    boolean saveTreatmentRecord(Medicate medicate);
+    List<Medicate> getPatientMedications(Patient patient);
 
-    boolean saveIllness(Illness illness);
-    List<Illness> getPatientIllnesses(Patient patient);
+    boolean saveIllness(Disease disease);
+    List<Disease> getPatientIllnesses(Patient patient);
+    Disease patientIllness(Disease disease);
+    boolean checkIfIllnessIsSavedAlready(Disease disease);
 
-    boolean checkIfIllnessIsSavedAlready(Illness illness);
+    boolean checkIfMedicationIsSavedAlready(Medicate medicate);
 
-    boolean checkIfMedicationIsSavedAlready(Medication medication);
+    List<Disease> getTodayPatientIllnesses(Disease disease);
 
-    List<Illness> getTodayPatientIllnesses(Illness illness);
-
-    Illness illnessInfo(Illness illness);
+    Disease illnessInfo(Disease disease);
 }

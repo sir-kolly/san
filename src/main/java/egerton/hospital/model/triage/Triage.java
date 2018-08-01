@@ -72,7 +72,6 @@ public class Triage {
     public String getBmi() {
         return bmi;
     }
-
     @Column(name = "date",nullable = false)
     @Temporal(TemporalType.DATE)
     public Date getDate() {
@@ -83,7 +82,6 @@ public class Triage {
     public Date getTime() {
         return time;
     }
-
     @ManyToOne
     @JoinColumn(name = "patient_number",foreignKey = @ForeignKey(name = "PATIENT_TRIAGE_FK"))
     public Patient getPatient() {

@@ -33,10 +33,10 @@
             </h:panelGrid>
         </h:column>
         <h:column>
-            <h:panelGrid rendered="#{labView.patientRecordAvailable}" styleClass="panel-grid">
+            <h:panelGrid rendered="#{labView.testsAvailable}" styleClass="panel-grid">
                 <h:form style="padding: 2px;" id="medInfo">
                     <fieldset>
-                        <legend >previous medication reports</legend>
+                        <legend >test to be done</legend>
                         <h:panelGrid width="100%">
                             <h:dataTable  value="#{labView.tests}" var="ts" headerClass="table-header" rowClasses="even,odd" >
                                 <h:column>

@@ -1,0 +1,28 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/Template.xhtml">
+    <ui:define name="title">
+        Init |Consultation
+    </ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="doctor-menu.xhtml"/>
+    </ui:define>
+    <ui:define name="content">
+        <h:column>
+            <h:panelGrid styleClass="panel-grid">
+                <h:form style="padding: 2px;width: 60%;margin: auto" id="info">
+                    <fieldset>
+                        <legend>
+                           select the process to start
+                        </legend>
+                        <h:panelGrid width="20%" style="margin: 5px auto" columns="2">
+                            <h:commandButton value="open consultation" action="#{doctorView.openConsultationUrl}" styleClass="option-button" rendered="#{!doctorView.consultationInitiated}"/>
+                            <h:commandButton value="end consultation" action="#{doctorView.endConsultationUrl}" onclick="return confirm('Ending the treatment process')" styleClass="option-button" rendered="#{doctorView.consultationInitiated}"/>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+    </ui:define>
+</ui:composition>

@@ -63,7 +63,7 @@ public class LabDAOImpl implements LabDAO {
 
     @Override
     public List<Lab> previousReports(Date date, Patient patient) {
-        return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("todayLabReport",Lab.class)
+        return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("previousReports",Lab.class)
                 .setParameter("date",date).setParameter("number",patient.getPatientNumber()).getResultList());
     }
 

@@ -26,13 +26,13 @@
                         </legend>
                         <h:panelGrid width="100%" columns="2">
                             <h:outputLabel value="Illness" for="il" />
-                            <h:inputText  id="il" value="#{doctorView.illness.illness}" required="true" requiredMessage="input dissease" styleClass="form-control" />
-                        </h:panelGrid>
-                        <h:panelGrid width="20%" style="margin: 5px auto" columns="2">
-                            <h:commandButton value="submit" action="#{doctorView.saveSuggestedIllness}" styleClass="button"/>
-                            <h:commandButton value="close" action="#{doctorView.openConsultationUrl}" styleClass="button"/>
+                            <h:inputText  id="il" value="#{doctorView.disease.illness}" required="true" requiredMessage="input dissease" styleClass="form-control" />
                         </h:panelGrid>
                     </fieldset>
+                    <h:panelGrid width="20%" style="margin: 5px auto" columns="2">
+                        <h:commandButton value="submit" action="#{doctorView.saveSuggestedIllness}" styleClass="button"/>
+                        <h:commandButton value="close" action="#{doctorView.backUrl}" styleClass="button"/>
+                    </h:panelGrid>
                 </h:form>
             </h:panelGrid>
         </h:column>

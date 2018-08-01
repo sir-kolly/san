@@ -3,13 +3,13 @@ package egerton.hospital.bean.patiet;
 import egerton.hospital.message.Message;
 import egerton.hospital.model.admit.Admission;
 import egerton.hospital.model.employe.Employee;
-import egerton.hospital.model.illness.Illness;
+import egerton.hospital.model.illness.Disease;
 import egerton.hospital.model.lab.Lab;
+import egerton.hospital.model.medication.Medicate;
 import egerton.hospital.model.patient.Patient;
 import egerton.hospital.model.room.Bed;
 import egerton.hospital.model.room.Room;
 import egerton.hospital.model.test.Test;
-import egerton.hospital.model.medication.Medication;
 import egerton.hospital.model.triage.Triage;
 import egerton.hospital.model.visit.Visit;
 import egerton.hospital.service.admission.AdmissionService;
@@ -20,6 +20,7 @@ import egerton.hospital.service.room.RoomService;
 import egerton.hospital.service.triage.TriageService;
 import egerton.hospital.service.visit.VisitService;
 
+import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
@@ -30,8 +31,8 @@ import java.util.*;
 @Named
 @ViewScoped
 public class DoctorView {
-    private Medication medication;
-    private Illness illness;
+    private Medicate medicate;
+    private Disease disease;
     private Patient patient;
     private Admission admission;
     private Visit visit;
@@ -56,15 +57,14 @@ public class DoctorView {
     @Inject
     private RoomService roomService;
 
-    private List<Illness>illnesses;
-    private List<Medication>medications;
+    private List<Disease>illnesses;
+    private List<Medicate>medications;
     private List<Visit>visits;
     private Set<Admission>admissions;
-    private Set<String>numbers;
     private List<Lab>labs,prevLabs;
     private Set<Triage>triageSet;
     private Set<String>freeRooms,freeBeds;
-    private Set<String>suspectedIllness;
+    private Set<String>sicknesses;
 
     private boolean patientRecordAvailable,consultationInitiated;
 
@@ -74,29 +74,34 @@ public class DoctorView {
         admission =new Admission();
         bed=new Bed();
         employee=new Employee();
-        illness=new Illness();
+        disease=new Disease();
         lab=new Lab();
-        medication=new Medication();
+        medicate=new Medicate();
         patient=new Patient();
         room=new Room();
         test=new Test();
         triage=new Triage();
         visit=new Visit();
     }
+    @PostConstruct
+    private void init(){
+        this.setConsultationInitiated(false);
+    }
 
     public String saveSuggestedIllness(){
         try {
-            illness=new Illness(generateRandomNumber(),illness.getIllness(),getPatient());
-            if (this.getMedicationService().checkIfIllnessIsSavedAlready(illness)){
-                if (this.getMedicationService().saveIllness(illness)){
+            disease=new Disease(generateRandomNumber(),disease.getIllness(),getPatient(),new Date());
+            if (!this.getMedicationService().checkIfIllnessIsSavedAlready(disease)){
+                if (this.getMedicationService().saveIllness(disease)){
                     Message.message("Illness Submitted",FacesMessage.SEVERITY_INFO);
                     context.getExternalContext().getFlash().setKeepMessages(true);
-
+                    disease=new Disease();
                     return ("/faces/doctor/illness.xhtml?faces-redirect=true");
                 }
-            }else  Message.message("Illness Submitted already",FacesMessage.SEVERITY_INFO);
-
-
+            }else{
+                Message.message("Illness Submitted already",FacesMessage.SEVERITY_INFO);
+                context.getExternalContext().getFlash().setKeepMessages(true);
+            }
         }catch (Exception e){
             Message.message(""+e,FacesMessage.SEVERITY_ERROR);
         }
@@ -104,16 +109,20 @@ public class DoctorView {
     }
     public String submitMedications(){
         try {
+            disease=this.illnessInfo();
             this.setEmployee((Employee)FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("doc"));
-            medication=new Medication(generateRandomNumber(),medication.getProductName(),medication.getPrescription(),medication.getStrength(),medication.getRouteOfAdministration(),medication.getComment(),new Date(),getPatient(),getEmployee());
-            if (this.getMedicationService().checkIfMedicationIsSavedAlready(medication)){
-                if (this.getMedicationService().saveTreatmentRecord(medication)){
+            medicate=new Medicate(generateRandomNumber(),medicate.getMedName(),medicate.getPrescription(),medicate.getStrength(),medicate.getModeOfAdministration(),medicate.getComment(),new Date(),getPatient(),getEmployee(),getDisease());
+            if (!this.getMedicationService().checkIfMedicationIsSavedAlready(medicate)){
+                if (this.getMedicationService().saveTreatmentRecord(medicate)){
                     Message.message("Medication Submitted",FacesMessage.SEVERITY_INFO);
                     context.getExternalContext().getFlash().setKeepMessages(true);
                     return ("/faces/doctor/medication.xhtml?faces-redirect=true");
                 }
             }
-            else Message.message("Medication Submitted already",FacesMessage.SEVERITY_INFO);
+            else {
+                context.getExternalContext().getFlash().setKeepMessages(true);
+                Message.message("Medication Submitted already",FacesMessage.SEVERITY_INFO);
+            }
         }catch (Exception e){
             Message.message(""+e,FacesMessage.SEVERITY_ERROR);
         }
@@ -126,6 +135,7 @@ public class DoctorView {
                 if(getLabService().submitTestToBeDone(test)){
                     Message.message("Test Submitted",FacesMessage.SEVERITY_INFO);
                     context.getExternalContext().getFlash().setKeepMessages(true);
+                    test=new Test();
                     return ("/faces/doctor/test-to-be-done.xhtml?faces-redirect=true");
                 }
             }
@@ -135,8 +145,6 @@ public class DoctorView {
             }
         }catch (Exception e){
             Message.message(""+e,FacesMessage.SEVERITY_ERROR);
-        }finally {
-            test=new Test();
         }
         return null;
     }
@@ -165,8 +173,10 @@ public class DoctorView {
         try {
             bed.setRoom(room);
             setBed(this.bedInfo(bed));
-            admission =new Admission(generateRandomNumber(),getAdmission().getSection(),new Date(),new Date(),getRoom(),getBed(),getPatient(),getEmployee());
-            if (this.getAdmissionService().checkIfAdmittedAlready(admission)){
+            this.setEmployee((Employee)FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("doc"));
+
+            admission =new Admission(generateRandomNumber(),getAdmission().getSection(),getAdmission().getReason(),new Date(),new Date(),getRoom(),getBed(),getPatient(),getEmployee());
+            if (!this.getAdmissionService().checkIfAdmittedAlready(admission)){
                 if (this.getAdmissionService().admitPatient(admission)){
                     room.setSize(this.updatedRoomSize(room));
                     bed.setRoom(room);
@@ -184,28 +194,58 @@ public class DoctorView {
         }
         return null;
     }
+    public String updateAdmissionInfo(){
+        try {
+             if(this.getAdmissionService().update(admission)) {
+                 Message.message("Admission Successful", FacesMessage.SEVERITY_INFO);
+                 context.getExternalContext().getFlash().setKeepMessages(true);
+                 return ("/faces/doctor/admission.xhtml?faces-redirect=true");
+             }
+             else Message.message("Admitted already",FacesMessage.SEVERITY_INFO);
+        }catch (Exception e){
+            Message.message(""+e,FacesMessage.SEVERITY_ERROR);
+        }
+        return null;
+    }
+    public Admission admissionInfo(){
+        try{
+            Admission adm=this.getAdmissionService().todayPatientAdmission(admission);
+            if (adm!=null)
+                admission=adm;
 
-    public List<Illness>medications(){
+            disease=new Disease(patient,new Date());
+            illnesses=this.getMedicationService().getTodayPatientIllnesses(disease);
+
+            return adm;
+        }catch (Exception e){
+            Message.message(""+e,FacesMessage.SEVERITY_ERROR);
+        }
+        return null;
+    }
+    public List<Medicate>medications(){
         try {
             medications=this.getMedicationService().getPatientMedications(patient);
-            if(!illnesses.isEmpty())
-                return illnesses;
+            if(!medications.isEmpty())
+                return medications;
         }catch (Exception e){}
         return new ArrayList<>();
     }
 
     public Patient visitorToday(){
+        System.out.println("calling here");
         try {
             Visit vs=getVisitService().visitorToday(new Date());
+            System.out.println("what of here");
             if(!vs.equals(null)){
                 visit=vs;
                 patient=visit.getPatient();
+                System.out.println("ok here");
                 if(patient!=null){
                     this.setPatientRecordAvailable(true);
                     this.treatments(patient);
                     this.tests(patient);
                     this.previousLabReports();
-                    this.admissions(patient);
+                    this.admissions();
                     return patient;
                 }
             }
@@ -240,9 +280,9 @@ public class DoctorView {
         }
         return null;
     }
-    private void admissions(Patient patient){
+    private void admissions(){
         try {
-            admissions=this.getAdmissionService().admissionDetails(patient);
+            admissions=this.getAdmissionService().patientPreviousAdmissionDetails(admission);
             if(!admissions.isEmpty()){
             }
         }catch (Exception e){
@@ -296,69 +336,99 @@ public class DoctorView {
         }catch (Exception e){}
         return null;
     }
-    public Set<String>suspectedIllnesses(){
+    public Set<String> suspectedIllnesses(){
+        sicknesses=new HashSet<>();
         try{
-            suspectedIllness=new HashSet<>();
-            illness=new Illness(patient,new Date());
-            illnesses=this.getMedicationService().getTodayPatientIllnesses(illness);
-            System.out.println(illnesses.get(0).getIllness());
+            disease=new Disease(patient,new Date());
+            illnesses=this.getMedicationService().getTodayPatientIllnesses(disease);
             if (!illnesses.isEmpty()){
-                System.out.println(illnesses.size());
-                for (Illness il:illnesses){
-                    suspectedIllness.add(il.getIllness());
+                for (Disease il:illnesses){
+                    sicknesses.add(il.getIllness());
                 }
-                System.out.println(suspectedIllness);
-
-                return suspectedIllness;
+                return sicknesses;
             }
         }catch (Exception e){
             Message.message(e.toString(),FacesMessage.SEVERITY_ERROR);
         }
-        finally {
-
-        }
         return null;
     }
-    public Illness illnessInfo(){
+    public Disease illnessInfo(){
         try{
-            illness=this.getMedicationService().illnessInfo(illness);
+            disease=new Disease(disease.getIllness(),patient,new Date());
+            disease=this.getMedicationService().patientIllness(disease);
+            System.out.println(disease.getIllnessNumber());
         }catch (Exception e){
             Message.message(e.toString(),FacesMessage.SEVERITY_ERROR);
         }
-        return illness;
+        return disease;
     }
     private String generateRandomNumber(){
         return UUID.randomUUID().toString().replace("-","")
                 .substring(1,16).toUpperCase();
     }
-    public String refresh(){
-        return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
+    private boolean updatePatientVisit() {
+        try{
+            visit.setTreated(true);
+            if (this.getVisitService().updateVisit(visit))
+                return true;
+        }catch (Exception e){
+            Message.message(e.toString(),FacesMessage.SEVERITY_ERROR);
+        }
+        return false;
+    }
+
+    ///ADMISSION URLS
+    public String admissionUrls(){
+        if(isConsultationInitiated())
+            return ("/faces/doctor/admission-option.xhtml?faces-redirect=true");
+
+        return ("/faces/doctor/init-consultation.xhtml?faces-redirect=true");
     }
     public String admissionUrl(){
-        if(isConsultationInitiated())
-            return ("/faces/doctor/admission.xhtml?faces-redirect=true");
-
-        return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
+        return ("/faces/doctor/admission.xhtml?faces-redirect=true");
+    }
+    public String admInfoUrl(){
+        return ("/faces/doctor/admission-info.xhtml?faces-redirect=true");
+    }
+    public String backToAdmOption(){
+        return ("/faces/doctor/admission-option.xhtml?faces-redirect=true");
+    }
+    ///LAB URLS
+    public String labOptionUrl(){
+        return ("/faces/doctor/lab-option.xhtml?faces-redirect=true");
     }
     public String testToBeDoneUrl(){
-        if(this.patient!=(null))
-          return ("/faces/doctor/test-to-be-done.xhtml?faces-redirect=true");
-        return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
+        return ("/faces/doctor/test-to-be-done.xhtml?faces-redirect=true");
     }
+    public String labResultUrl(){
+            return ("/faces/doctor/lab-result.xhtml?faces-redirect=true");
+    }
+
+    ///TRIAGE URLS
     public String triageReportUrl(){
         if (isConsultationInitiated())
             return ("/faces/doctor/triage-report.xhtml?faces-redirect=true");
-        return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
+        return ("/faces/doctor/init-consultation.xhtml?faces-redirect=true");
     }
 
+    ///ILLNESS URLS
     public String illnessUrl(){
         if (isConsultationInitiated())
             return ("/faces/doctor/illness.xhtml?faces-redirect=true");
-        return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
+        return ("/faces/doctor/init-consultation.xhtml?faces-redirect=true");
     }
+
+    ///MEDICATION URLS
     public String medicationUrl(){
         if (isConsultationInitiated())
             return ("/faces/doctor/medication.xhtml?faces-redirect=true");
+        return ("/faces/doctor/init-consultation.xhtml?faces-redirect=true");
+    }
+    ///INIT DOCTOR ACTIONS URLS
+    public String initConsultationUrl(){
+        return ("/faces/doctor/init-consultation.xhtml?faces-redirect=true");
+    }
+    public String backUrl(){
         return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
     }
     public String openConsultationUrl(){
@@ -366,19 +436,15 @@ public class DoctorView {
         return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
     }
     public String endConsultationUrl(){
-//        clear();
-        return ("/faces/doctor/doctor-board.xhtml?faces-redirect=true");
+        if(updatePatientVisit()){
+            clear();
+            return ("/faces/doctor/int-consultation.xhtml?faces-redirect=true");
+        }
+        return null;
     }
-    public String labResultUrl(){
-        if (isConsultationInitiated())
-            return ("/faces/doctor/lab-result.xhtml?faces-redirect=true");
-        return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
-    }
-    public String toPatientAdmissionRecord(){
-        if (isConsultationInitiated())
-            return ("/faces/doctor/admission-info.xhtml?faces-redirect=true");
-        return ("/faces/doctor/consultation.xhtml?faces-redirect=true");
-    }
+
+
+
     private String updatedRoomSize(Room room){
         try{
             room=this.getRoomService().roomInfo(room);
@@ -398,9 +464,9 @@ public class DoctorView {
         admission =new Admission();
         bed=new Bed();
         employee=new Employee();
-        illness=new Illness();
+        disease=new Disease();
         lab=new Lab();
-        medication=new Medication();
+        medicate=new Medicate();
         patient=new Patient();
         room=new Room();
         test=new Test();
@@ -420,22 +486,6 @@ public class DoctorView {
 
     public void setTriageSet(Set<Triage> triageSet) {
         this.triageSet = triageSet;
-    }
-
-    public Medication getMedication() {
-        return medication;
-    }
-
-    public void setMedication(Medication medication) {
-        this.medication = medication;
-    }
-
-    public Illness getIllness() {
-        return illness;
-    }
-
-    public void setIllness(Illness illness) {
-        this.illness = illness;
     }
 
     public Patient getPatient() {
@@ -502,14 +552,6 @@ public class DoctorView {
         this.receptionService = receptionService;
     }
 
-    public Set<String> getNumbers() {
-        return numbers;
-    }
-
-    public void setNumbers(Set<String> numbers) {
-        this.numbers = numbers;
-    }
-
     public VisitService getVisitService() {
         return visitService;
     }
@@ -550,16 +592,20 @@ public class DoctorView {
         this.triageService = triageService;
     }
 
-    public List<Illness> getIllnesses() {
+    public List<Disease> getIllnesses() {
         return illnesses;
     }
 
-    public void setIllnesses(List<Illness> illnesses) {
+    public void setIllnesses(List<Disease> illnesses) {
         this.illnesses = illnesses;
     }
 
-    public List<Medication> getMedications() {
+    public List<Medicate> getMedications() {
         return medications;
+    }
+
+    public void setMedications(List<Medicate> medications) {
+        this.medications = medications;
     }
 
     public Employee getEmployee() {
@@ -610,10 +656,6 @@ public class DoctorView {
         this.roomService = roomService;
     }
 
-    public void setMedications(List<Medication> medications) {
-        this.medications = medications;
-    }
-
     public List<Visit> getVisits() {
         return visits;
     }
@@ -634,6 +676,22 @@ public class DoctorView {
         this.patientRecordAvailable = patientRecordAvailable;
     }
 
+    public Medicate getMedicate() {
+        return medicate;
+    }
+
+    public void setMedicate(Medicate medicate) {
+        this.medicate = medicate;
+    }
+
+    public Disease getDisease() {
+        return disease;
+    }
+
+    public void setDisease(Disease disease) {
+        this.disease = disease;
+    }
+
     public List<Lab> getPrevLabs() {
         return prevLabs;
     }
@@ -646,12 +704,12 @@ public class DoctorView {
         this.admissions = admissions;
     }
 
-    public Set<String> getSuspectedIllness() {
-        return suspectedIllness;
+    public Set<String> getSicknesses() {
+        return sicknesses;
     }
 
-    public void setSuspectedIllness(Set<String> suspectedIllness) {
-        this.suspectedIllness = suspectedIllness;
+    public void setSicknesses(Set<String> sicknesses) {
+        this.sicknesses = sicknesses;
     }
 
     public FacesContext getContext() {

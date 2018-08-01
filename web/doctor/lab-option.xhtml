@@ -1,0 +1,28 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/Template.xhtml">
+    <ui:define name="title">
+        Lab |Actions
+    </ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="doctor-menu.xhtml"/>
+    </ui:define>
+    <ui:define name="content">
+        <h:column>
+            <h:panelGrid styleClass="panel-grid">
+                <h:form style="padding: 2px;width: 60%;margin: auto" id="info">
+                    <fieldset>
+                        <legend>
+                            select the process to start
+                        </legend>
+                        <h:panelGrid columns="2">
+                            <h:commandButton value="submit test" action="#{doctorView.testToBeDoneUrl}" styleClass="option-button" />
+                            <h:commandButton value="lab result" action="#{doctorView.labResultUrl}" styleClass="option-button"/>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+    </ui:define>
+</ui:composition>

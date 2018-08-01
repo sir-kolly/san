@@ -7,7 +7,9 @@ import java.util.Set;
 
 public interface AdmissionService {
     boolean admitPatient(Admission admission);
-    Set<Admission> admissionDetails(Patient patient);
-
     boolean checkIfAdmittedAlready(Admission admission);
+    boolean update(Admission admission);
+
+    Set<Admission> patientPreviousAdmissionDetails(Admission admission);
+    Admission todayPatientAdmission(Admission admission);
 }

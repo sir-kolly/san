@@ -5,16 +5,18 @@
                 template="/Template.xhtml">
     <ui:define name="menu">
         <h:column>
-            <h:form styleClass="top-nav">
-                <h:panelGrid columns="4" width="auto" style="text-align: left;">
-                    <h:outputText value="TRIAGE SECTION BOARD" styleClass="brand"/>
-                    <h:panelGrid style="text-align: left">
-                        <h:outputLink value="#{triageView.measurementUrl()}" styleClass="nav-links">| Record | </h:outputLink>
-                    </h:panelGrid>
-                    <h:outputText value="signed-in :#{nurse.firstName} #{nurse.lastName}  :[#{login.time()} hrs]"  styleClass="user-info"/>
-                    <h:outputLink value="#{login.logout()}"><i class="fa fa-sign-out" style="color: red"/></h:outputLink>
-                </h:panelGrid>
-            </h:form>
+           <h:panelGrid styleClass="top-nav">
+               <h:form >
+                   <h:panelGrid columns="4" width="auto" style="text-align: left;">
+                       <h:outputText value="sanatorium reception" styleClass="brand"/>
+                       <h:panelGrid style="text-align: left">
+                           <h:outputLink value="#{triageView.measurementUrl()}" styleClass="nav-links">| Record | </h:outputLink>
+                       </h:panelGrid>
+                       <h:outputText value="[#{nurse.firstName} #{nurse.lastName} ]"  styleClass="user-info"/>
+                       <h:outputLink value="#{login.logout()}"><i class="fa fa-sign-out" style="color: red"/></h:outputLink>
+                   </h:panelGrid>
+               </h:form>
+           </h:panelGrid>
         </h:column>
     </ui:define>
 </ui:composition>
