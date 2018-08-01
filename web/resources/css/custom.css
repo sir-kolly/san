@@ -51,8 +51,10 @@
     font-weight: bold;
     font-size: 14px;
     background: #bbbbbb;
+    box-shadow: #bbbbbb 2px 5px 2px 1px;
     color: green;
     font-family: "Courier New", Courier, monospace;
+    text-transform: uppercase;
 }
 .nav-links{
     text-decoration: none;

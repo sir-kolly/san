@@ -30,9 +30,10 @@ public class LabDAOImpl implements LabDAO {
 
     @Override
     public boolean checkIfTestIsAlreadySubmitted(Test test) {
-        test=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfTestIsAlreadySubmitted",Test.class)
+       Test ts=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfTestIsAlreadySubmitted",Test.class)
                 .setParameter("test",test.getTest()).setParameter("date",test.getDate()).stream().findFirst().orElse(null);
-
+        if(ts!=null)
+            test=ts;
         return test==null ? false:true;
     }
 
@@ -69,9 +70,12 @@ public class LabDAOImpl implements LabDAO {
 
     @Override
     public boolean checkIfResultIsAlreadySubmitted(Lab lab) {
-        lab=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfResultIsAlreadySubmitted",Lab.class)
+       Lab lb=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfResultIsAlreadySubmitted",Lab.class)
                 .setParameter("test",lab.getTest()).setParameter("date",lab.getDate()).setParameter("num",lab.getPatient().getPatientNumber())
                 .stream().findFirst().orElse(null);
+
+        if(lb!=null)
+            lab=lb;
 
         return lab==null ? false:true;
     }

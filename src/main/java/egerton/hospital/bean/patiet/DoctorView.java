@@ -19,6 +19,7 @@ import egerton.hospital.service.reception.ReceptionService;
 import egerton.hospital.service.room.RoomService;
 import egerton.hospital.service.triage.TriageService;
 import egerton.hospital.service.visit.VisitService;
+import egerton.hospital.utill.Utill;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -26,6 +27,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.rmi.CORBA.Util;
 import java.text.SimpleDateFormat;
 import java.util.*;
 @Named
@@ -182,6 +184,7 @@ public class DoctorView {
                     bed.setRoom(room);
                     bed.setOccupied(true);
                     if(this.getRoomService().updateRoom(room) && this.getRoomService().updateBed(bed)){
+                        Utill.setNumber(admission.getAdmissionNumber());
                         Message.message("Admission Successful",FacesMessage.SEVERITY_INFO);
                         context.getExternalContext().getFlash().setKeepMessages(true);
                         return ("/faces/doctor/admission.xhtml?faces-redirect=true");
@@ -196,6 +199,7 @@ public class DoctorView {
     }
     public String updateAdmissionInfo(){
         try {
+            admission.setAdmissionNumber(Utill.getNumber());
              if(this.getAdmissionService().update(admission)) {
                  Message.message("Admission Successful", FacesMessage.SEVERITY_INFO);
                  context.getExternalContext().getFlash().setKeepMessages(true);

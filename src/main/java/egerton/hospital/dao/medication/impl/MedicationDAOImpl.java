@@ -48,19 +48,24 @@ public class MedicationDAOImpl implements MedicationDAO {
 
     @Override
     public boolean checkIfIllnessIsSavedAlready(Disease  disease) {
-         disease=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfIllnessIsSavedAlready",Disease.class)
+      Disease ds=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfIllnessIsSavedAlready",Disease.class)
                 .setParameter("ill",disease.getIllness()).setParameter("number",disease.getPatient().getPatientNumber())
                 .setParameter("date",disease.getDate()).stream().findFirst().orElse(null);
+
+        if(ds!=null)
+            disease=ds;
 
         return disease==null ? false:true;
     }
 
     @Override
     public boolean checkIfMedicationIsSavedAlready(Medicate medicate) {
-        medicate=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfMedicationIsSavedAlready",Medicate.class)
+        Medicate md=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfMedicationIsSavedAlready",Medicate.class)
                 .setParameter("name",medicate.getMedName()).setParameter("number",medicate.getPatient().getPatientNumber())
                 .setParameter("illno",medicate.getDisease().getIllnessNumber())
                 .stream().findFirst().orElse(null);
+        if(md!=null)
+            medicate=md;
 
         return medicate==null ? false:true;
     }

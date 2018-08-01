@@ -46,6 +46,7 @@ public class TriageView {
                 if(this.getTriageService().saveTriageRecord(triage)){
                     visit.setAttendedTriage(true);
                     if (this.getVisitService().updateVisit(visit)){
+                        Utill.setNumber(triage.getRecordNo());
                         Message.message("Record Submitted",FacesMessage.SEVERITY_INFO);
                         context.getExternalContext().getFlash().setKeepMessages(true);
                         return ("/faces/nurse/record-measurement.xhtml?faces-redirect=true");
@@ -59,6 +60,7 @@ public class TriageView {
     }
     public String updateTriageRecord(){
         try{
+            triage.setRecordNo(Utill.getNumber());
             if(this.getTriageService().update(triage)){
                 Message.message("Record Submitted",FacesMessage.SEVERITY_INFO);
                 context.getExternalContext().getFlash().setKeepMessages(true);

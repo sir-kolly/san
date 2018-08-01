@@ -32,9 +32,12 @@ public class AdmissionDAOImpl implements AdmissionDAO {
 
     @Override
     public boolean checkIfAdmittedAlready(Admission admission) {
-        admission=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfAdmittedAlready",Admission.class)
+        Admission adm=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfAdmittedAlready",Admission.class)
                 .setParameter("number",admission.getPatient().getPatientNumber())
                 .setParameter("date",admission.getDate()).stream().findFirst().orElse(null);
+
+        if(adm!=null)
+            admission=adm;
 
         return admission==null ? false:true;
     }
