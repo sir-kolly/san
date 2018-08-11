@@ -19,7 +19,6 @@ public interface LabService {
     List<Lab> previousReports(Date date, Patient patient);
     List<Lab> todayLabReport(Date date, Patient patient);
 
-
     boolean updateTestAfterSubmitted(Test test);
 
 

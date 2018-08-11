@@ -4,11 +4,13 @@ import egerton.hospital.dao.medication.MedicationDAO;
 import egerton.hospital.model.illness.Disease;
 import egerton.hospital.model.medication.Medicate;
 import egerton.hospital.model.patient.Patient;
+import egerton.hospital.model.symptom.Symptom;
 import egerton.hospital.service.medication.MedicationService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
+import java.util.Date;
 import java.util.List;
 @Transactional
 @Service
@@ -59,6 +61,16 @@ public class MedicationServiceImpl implements MedicationService {
     @Override
     public Disease illnessInfo(Disease disease) {
         return this.getMedicationDAO().illnessInfo(disease);
+    }
+
+    @Override
+    public boolean saveSymptoms(Symptom symptom) {
+        return this.getMedicationDAO().saveSymptoms(symptom);
+    }
+
+    @Override
+    public Symptom getTodaySymptom(Date date, Patient patient) {
+        return this.getMedicationDAO().getTodaySymptom(date,patient);
     }
 
     public MedicationDAO getMedicationDAO() {

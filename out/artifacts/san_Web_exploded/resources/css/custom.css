@@ -37,7 +37,7 @@
     background: #111144;
     box-shadow: #bbb 1px 1px 3px 2px;
     margin: auto;
-    padding: 0;
+    padding: 10px 0;
 }
 .user-info{
     font-size: 12px;
@@ -183,7 +183,7 @@ table{
     font-size: 12px;
     font-weight: bold;
     color: #ffffff;
-    background: #008844;
+    background: #bbbbbb;
     height: 30px;
 }
 

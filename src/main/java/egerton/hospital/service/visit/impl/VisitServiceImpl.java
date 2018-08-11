@@ -48,6 +48,11 @@ public class VisitServiceImpl  implements VisitService {
         return this.getVisitDAO().checkIfVisitIsAlreadyRecordedForPatient(visit);
     }
 
+    @Override
+    public List<Visit> visitsToday(Date date) {
+        return this.getVisitDAO().visitsToday(date);
+    }
+
     public VisitDAO getVisitDAO() {
         return visitDAO;
     }

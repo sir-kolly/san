@@ -13,4 +13,6 @@ public interface VisitDAO {
     List<Visit>visitsForTheTriageToday(Date date);
     boolean updateVisit(Visit visit);
     boolean checkIfVisitIsAlreadyRecordedForPatient(Visit visit);
+
+    List<Visit> visitsToday(Date date);
 }

@@ -7,7 +7,95 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ce85d40-49dd-49fb-9ac1-cacbe8e130e0" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/ChemistView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/symptom/Symptom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doctor/patient-record-manipulation.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/doctor/patient-to-attend-to-unit-A.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/lab/lab-queue.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/pharmacy/chemist-menu.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/pharmacy/reception-board.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/pharmacy/visitors.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/reception/visitors.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3ace36a8-3c82-4dee-84a3-16419856a23c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3ace36a8-3c82-4dee-84a3-16419856a23c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.~lock.srs.odt#" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.~lock.srs.odt#" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/srs.odt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/srs.odt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/DoctorView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/DoctorView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/LabView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/LabView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/LoginView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/ReceptionView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/bean/patiet/ReceptionView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/lab/impl/LabDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/lab/impl/LabDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/login/impl/LoginDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/login/impl/LoginDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/medication/MedicationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/medication/MedicationDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/medication/impl/MedicationDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/medication/impl/MedicationDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/visit/VisitDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/visit/VisitDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/visit/impl/VisitDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/dao/visit/impl/VisitDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/model/employe/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/model/employe/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/model/medication/Medicate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/model/medication/Medicate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/model/patient/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/model/patient/Patient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/model/visit/Visit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/model/visit/Visit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/medication/MedicationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/medication/MedicationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/medication/impl/MedicationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/medication/impl/MedicationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/visit/VisitService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/visit/VisitService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/visit/impl/VisitServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/WEB-INF/classes/egerton/hospital/service/visit/impl/VisitServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/doctor/consultation.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/doctor/consultation.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/doctor/doctor-board.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/doctor/doctor-board.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/doctor/doctor-menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/doctor/doctor-menu.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/doctor/medication.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/doctor/medication.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/doctor/triage-report.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/doctor/triage-report.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/lab/lab-menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/lab/lab-menu.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/login.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/reception/patient-record.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/reception/patient-record.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/reception/reception-menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/reception/reception-menu.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/resources/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/san_Web_exploded/resources/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LabView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LabView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/ReceptionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/ReceptionView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/lab/impl/LabDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/lab/impl/LabDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/login/impl/LoginDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/login/impl/LoginDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/medication/MedicationDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/medication/MedicationDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/medication/impl/MedicationDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/medication/impl/MedicationDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/VisitDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/VisitDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/impl/VisitDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/impl/VisitDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/employe/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/employe/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/medication/Medicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/medication/Medicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/patient/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/patient/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/visit/Visit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/model/visit/Visit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/lab/LabService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/lab/LabService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/medication/MedicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/medication/MedicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/medication/impl/MedicationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/medication/impl/MedicationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/VisitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/VisitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/impl/VisitServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/impl/VisitServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/DoctorView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/DoctorView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/LabView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/LabView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/LoginView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/ReceptionView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/bean/patiet/ReceptionView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/lab/impl/LabDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/lab/impl/LabDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/login/impl/LoginDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/login/impl/LoginDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/medication/MedicationDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/medication/MedicationDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/medication/impl/MedicationDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/medication/impl/MedicationDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/visit/VisitDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/visit/VisitDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/visit/impl/VisitDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/dao/visit/impl/VisitDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/model/employe/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/model/employe/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/model/medication/Medicate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/model/medication/Medicate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/model/patient/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/model/patient/Patient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/model/visit/Visit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/model/visit/Visit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/service/medication/MedicationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/service/medication/MedicationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/service/medication/impl/MedicationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/service/medication/impl/MedicationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/service/visit/VisitService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/service/visit/VisitService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/egerton/hospital/service/visit/impl/VisitServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/egerton/hospital/service/visit/impl/VisitServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/doctor/consultation.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/doctor/consultation.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/doctor/doctor-board.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/doctor/doctor-board.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/doctor/doctor-menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/doctor/doctor-menu.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/doctor/medication.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/doctor/medication.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/doctor/triage-report.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/doctor/triage-report.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/lab/lab-menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/lab/lab-menu.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/lab/lab-report.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/lab/lab-report.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/reception/patient-record.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/reception/patient-record.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/reception/reception-menu.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/reception/reception-menu.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/resources/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/resources/css/custom.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,20 +138,283 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3ace36a8-3c82-4dee-84a3-16419856a23c/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="135">
+              <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MedicationDAOImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/medication/impl/MedicationDAOImpl.java">
+      <file leaf-file-name="DoctorView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="50" column="97" selection-start-line="50" selection-start-column="97" selection-end-line="50" selection-end-column="97" />
+            <state relative-caret-position="-72">
+              <caret line="411" column="4" selection-start-line="411" selection-start-column="4" selection-end-line="411" selection-end-column="4" />
+              <folding>
+                <element signature="e#16166#16167#0" expanded="true" />
+                <element signature="e#16243#16244#0" expanded="true" />
+                <element signature="e#16274#16275#0" expanded="true" />
+                <element signature="e#16349#16350#0" expanded="true" />
+                <element signature="e#16384#16385#0" expanded="true" />
+                <element signature="e#16462#16463#0" expanded="true" />
+                <element signature="e#17092#17093#0" expanded="true" />
+                <element signature="e#17168#17169#0" expanded="true" />
+                <element signature="e#17200#17201#0" expanded="true" />
+                <element signature="e#17281#17282#0" expanded="true" />
+                <element signature="e#17318#17319#0" expanded="true" />
+                <element signature="e#17401#17402#0" expanded="true" />
+                <element signature="e#17686#17687#0" expanded="true" />
+                <element signature="e#17768#17769#0" expanded="true" />
+                <element signature="e#17802#17803#0" expanded="true" />
+                <element signature="e#17883#17884#0" expanded="true" />
+                <element signature="e#18448#18449#0" expanded="true" />
+                <element signature="e#18525#18526#0" expanded="true" />
+                <element signature="e#18598#18599#0" expanded="true" />
+                <element signature="e#18682#18683#0" expanded="true" />
+                <element signature="e#18711#18712#0" expanded="true" />
+                <element signature="e#18790#18791#0" expanded="true" />
+                <element signature="e#20064#20065#0" expanded="true" />
+                <element signature="e#20139#20140#0" expanded="true" />
+                <element signature="e#20165#20166#0" expanded="true" />
+                <element signature="e#20236#20237#0" expanded="true" />
+                <element signature="e#20282#20283#0" expanded="true" />
+                <element signature="e#20324#20325#0" expanded="true" />
+                <element signature="e#20395#20396#0" expanded="true" />
+                <element signature="e#20457#20458#0" expanded="true" />
+                <element signature="e#20489#20490#0" expanded="true" />
+                <element signature="e#20517#20518#0" expanded="true" />
+                <element signature="e#20559#20560#0" expanded="true" />
+                <element signature="e#20593#20594#0" expanded="true" />
+                <element signature="e#20625#20626#0" expanded="true" />
+                <element signature="e#20653#20654#0" expanded="true" />
+                <element signature="e#20695#20696#0" expanded="true" />
+                <element signature="e#20729#20730#0" expanded="true" />
+                <element signature="e#20761#20762#0" expanded="true" />
+                <element signature="e#20789#20790#0" expanded="true" />
+                <element signature="e#20831#20832#0" expanded="true" />
+                <element signature="e#20865#20866#0" expanded="true" />
+                <element signature="e#20897#20898#0" expanded="true" />
+                <element signature="e#20925#20926#0" expanded="true" />
+                <element signature="e#20967#20968#0" expanded="true" />
+                <element signature="e#21001#21002#0" expanded="true" />
+                <element signature="e#21033#21034#0" expanded="true" />
+                <element signature="e#21061#21062#0" expanded="true" />
+                <element signature="e#21103#21104#0" expanded="true" />
+                <element signature="e#21137#21138#0" expanded="true" />
+                <element signature="e#21178#21179#0" expanded="true" />
+                <element signature="e#21210#21211#0" expanded="true" />
+                <element signature="e#21265#21266#0" expanded="true" />
+                <element signature="e#21307#21308#0" expanded="true" />
+                <element signature="e#21342#21343#0" expanded="true" />
+                <element signature="e#21372#21373#0" expanded="true" />
+                <element signature="e#21419#21420#0" expanded="true" />
+                <element signature="e#21457#21458#0" expanded="true" />
+                <element signature="e#21496#21497#0" expanded="true" />
+                <element signature="e#21528#21529#0" expanded="true" />
+                <element signature="e#21581#21582#0" expanded="true" />
+                <element signature="e#21623#21624#0" expanded="true" />
+                <element signature="e#21652#21653#0" expanded="true" />
+                <element signature="e#21679#21680#0" expanded="true" />
+                <element signature="e#21717#21718#0" expanded="true" />
+                <element signature="e#21749#21750#0" expanded="true" />
+                <element signature="e#21780#21781#0" expanded="true" />
+                <element signature="e#21808#21809#0" expanded="true" />
+                <element signature="e#21849#21850#0" expanded="true" />
+                <element signature="e#21883#21884#0" expanded="true" />
+                <element signature="e#21916#21917#0" expanded="true" />
+                <element signature="e#21945#21946#0" expanded="true" />
+                <element signature="e#21989#21990#0" expanded="true" />
+                <element signature="e#22025#22026#0" expanded="true" />
+                <element signature="e#22080#22081#0" expanded="true" />
+                <element signature="e#22120#22121#0" expanded="true" />
+                <element signature="e#22309#22310#0" expanded="true" />
+                <element signature="e#22348#22349#0" expanded="true" />
+                <element signature="e#22422#22423#0" expanded="true" />
+                <element signature="e#22478#22479#0" expanded="true" />
+                <element signature="e#22531#22532#0" expanded="true" />
+                <element signature="e#22570#22571#0" expanded="true" />
+                <element signature="e#22644#22645#0" expanded="true" />
+                <element signature="e#22700#22701#0" expanded="true" />
+                <element signature="e#22745#22746#0" expanded="true" />
+                <element signature="e#22780#22781#0" expanded="true" />
+                <element signature="e#22842#22843#0" expanded="true" />
+                <element signature="e#22890#22891#0" expanded="true" />
+                <element signature="e#22917#22918#0" expanded="true" />
+                <element signature="e#22943#22944#0" expanded="true" />
+                <element signature="e#22978#22979#0" expanded="true" />
+                <element signature="e#23008#23009#0" expanded="true" />
+                <element signature="e#23049#23050#0" expanded="true" />
+                <element signature="e#23082#23083#0" expanded="true" />
+                <element signature="e#23138#23139#0" expanded="true" />
+                <element signature="e#23182#23183#0" expanded="true" />
+                <element signature="e#23216#23217#0" expanded="true" />
+                <element signature="e#23243#23244#0" expanded="true" />
+                <element signature="e#23286#23287#0" expanded="true" />
+                <element signature="e#23318#23319#0" expanded="true" />
+                <element signature="e#23365#23366#0" expanded="true" />
+                <element signature="e#23401#23402#0" expanded="true" />
+                <element signature="e#23466#23467#0" expanded="true" />
+                <element signature="e#23516#23517#0" expanded="true" />
+                <element signature="e#23559#23560#0" expanded="true" />
+                <element signature="e#23591#23592#0" expanded="true" />
+                <element signature="e#23648#23649#0" expanded="true" />
+                <element signature="e#23690#23691#0" expanded="true" />
+                <element signature="e#23736#23737#0" expanded="true" />
+                <element signature="e#23770#23771#0" expanded="true" />
+                <element signature="e#23832#23833#0" expanded="true" />
+                <element signature="e#23878#23879#0" expanded="true" />
+                <element signature="e#23915#23916#0" expanded="true" />
+                <element signature="e#23946#23947#0" expanded="true" />
+                <element signature="e#23996#23997#0" expanded="true" />
+                <element signature="e#24036#24037#0" expanded="true" />
+                <element signature="e#24065#24066#0" expanded="true" />
+                <element signature="e#24092#24093#0" expanded="true" />
+                <element signature="e#24130#24131#0" expanded="true" />
+                <element signature="e#24162#24163#0" expanded="true" />
+                <element signature="e#24189#24190#0" expanded="true" />
+                <element signature="e#24215#24216#0" expanded="true" />
+                <element signature="e#24250#24251#0" expanded="true" />
+                <element signature="e#24280#24281#0" expanded="true" />
+                <element signature="e#24321#24322#0" expanded="true" />
+                <element signature="e#24353#24354#0" expanded="true" />
+                <element signature="e#24408#24409#0" expanded="true" />
+                <element signature="e#24450#24451#0" expanded="true" />
+                <element signature="e#24490#24491#0" expanded="true" />
+                <element signature="e#24521#24522#0" expanded="true" />
+                <element signature="e#24574#24575#0" expanded="true" />
+                <element signature="e#24614#24615#0" expanded="true" />
+                <element signature="e#24657#24658#0" expanded="true" />
+                <element signature="e#24691#24692#0" expanded="true" />
+                <element signature="e#24750#24751#0" expanded="true" />
+                <element signature="e#24796#24797#0" expanded="true" />
+                <element signature="e#24834#24835#0" expanded="true" />
+                <element signature="e#24863#24864#0" expanded="true" />
+                <element signature="e#24912#24913#0" expanded="true" />
+                <element signature="e#24948#24949#0" expanded="true" />
+                <element signature="e#24993#24994#0" expanded="true" />
+                <element signature="e#25026#25027#0" expanded="true" />
+                <element signature="e#25075#25076#0" expanded="true" />
+                <element signature="e#25120#25121#0" expanded="true" />
+                <element signature="e#25302#25303#0" expanded="true" />
+                <element signature="e#25330#25331#0" expanded="true" />
+                <element signature="e#25377#25378#0" expanded="true" />
+                <element signature="e#25411#25412#0" expanded="true" />
+                <element signature="e#25448#25449#0" expanded="true" />
+                <element signature="e#25476#25477#0" expanded="true" />
+                <element signature="e#25523#25524#0" expanded="true" />
+                <element signature="e#25557#25558#0" expanded="true" />
+                <element signature="e#25594#25595#0" expanded="true" />
+                <element signature="e#25622#25623#0" expanded="true" />
+                <element signature="e#25669#25670#0" expanded="true" />
+                <element signature="e#25703#25704#0" expanded="true" />
+                <element signature="e#25740#25741#0" expanded="true" />
+                <element signature="e#25768#25769#0" expanded="true" />
+                <element signature="e#25815#25816#0" expanded="true" />
+                <element signature="e#25849#25850#0" expanded="true" />
+                <element signature="e#25886#25887#0" expanded="true" />
+                <element signature="e#25917#25918#0" expanded="true" />
+                <element signature="e#25967#25968#0" expanded="true" />
+                <element signature="e#26007#26008#0" expanded="true" />
+                <element signature="e#26042#26043#0" expanded="true" />
+                <element signature="e#26072#26073#0" expanded="true" />
+                <element signature="e#26119#26120#0" expanded="true" />
+                <element signature="e#26157#26158#0" expanded="true" />
+                <element signature="e#26195#26196#0" expanded="true" />
+                <element signature="e#26226#26227#0" expanded="true" />
+                <element signature="e#26277#26278#0" expanded="true" />
+                <element signature="e#26317#26318#0" expanded="true" />
+                <element signature="e#26377#26378#0" expanded="true" />
+                <element signature="e#26421#26422#0" expanded="true" />
+                <element signature="e#26463#26464#0" expanded="true" />
+                <element signature="e#26496#26497#0" expanded="true" />
+                <element signature="e#26553#26554#0" expanded="true" />
+                <element signature="e#26597#26598#0" expanded="true" />
+                <element signature="e#26637#26638#0" expanded="true" />
+                <element signature="e#26667#26668#0" expanded="true" />
+                <element signature="e#26719#26720#0" expanded="true" />
+                <element signature="e#26757#26758#0" expanded="true" />
+                <element signature="e#26792#26793#0" expanded="true" />
+                <element signature="e#26822#26823#0" expanded="true" />
+                <element signature="e#26869#26870#0" expanded="true" />
+                <element signature="e#26907#26908#0" expanded="true" />
+                <element signature="e#26955#26956#0" expanded="true" />
+                <element signature="e#26999#27000#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Visit" pinned="false" current-in-tab="false">
+        <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="patient-record-manipulation.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/doctor/patient-record-manipulation.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="166" column="34" lean-forward="true" selection-start-line="166" selection-start-column="34" selection-end-line="166" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Symptom.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/symptom/Symptom.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LabView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LabView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="990">
+              <caret line="80" column="13" lean-forward="true" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+              <folding>
+                <element signature="e#4455#4456#0" expanded="true" />
+                <element signature="e#4486#4487#0" expanded="true" />
+                <element signature="e#4447#4448#0" expanded="true" />
+                <element signature="e#4487#4488#0" expanded="true" />
+                <element signature="e#3775#3776#0" expanded="true" />
+                <element signature="e#3829#3830#0" expanded="true" />
+                <element signature="e#4124#4125#0" expanded="true" />
+                <element signature="e#4161#4162#0" expanded="true" />
+                <element signature="e#4225#4226#0" expanded="true" />
+                <element signature="e#4277#4278#0" expanded="true" />
+                <element signature="e#5192#5193#0" expanded="true" />
+                <element signature="e#5220#5221#0" expanded="true" />
+                <element signature="e#5261#5262#0" expanded="true" />
+                <element signature="e#5295#5296#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="medication.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/doctor/medication.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="90" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="90" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lab-report.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/lab/lab-report.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1275">
+              <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -87,38 +438,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/impl/VisitDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/VisitDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/VisitService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/impl/VisitServiceImpl.java" />
-        <option value="$PROJECT_DIR$/web/doctor/triage-report.xhtml" />
-        <option value="$PROJECT_DIR$/web/doctor/lab-result.xhtml" />
-        <option value="$PROJECT_DIR$/web/doctor/test-to-be-done.xhtml" />
-        <option value="$PROJECT_DIR$/web/lab/lab-board.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/test/Test.java" />
-        <option value="$PROJECT_DIR$/web/doctor/initi-consultation.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LabView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" />
-        <option value="$PROJECT_DIR$/web/lab/lab-report.xhtml" />
-        <option value="$PROJECT_DIR$/web/resources/css/style.css" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/medication/Medication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/illness/Illness.java" />
-        <option value="$PROJECT_DIR$/web/doctor/consultation.xhtml" />
-        <option value="$PROJECT_DIR$/web/doctor/illness.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/employe/Employee.java" />
-        <option value="$PROJECT_DIR$/web/doctor/medication.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/illness/Disease.java" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/medication/MedicationDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/medication/impl/MedicationServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/medication/Medicate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/triage/Triage.java" />
-        <option value="$PROJECT_DIR$/web/doctor/admission.xhtml" />
-        <option value="$PROJECT_DIR$/web/doctor/lab.xhtml" />
-        <option value="$PROJECT_DIR$/web/doctor/admit.xhtml" />
-        <option value="$PROJECT_DIR$/web/doctor/medication-option.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/medication/MedicationService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/patient/Patient.java" />
         <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/admit/Admission.java" />
         <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/admission/AdmissionDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/admission/AdmissionService.java" />
@@ -127,17 +446,49 @@
         <option value="$PROJECT_DIR$/web/doctor/lab-option.xhtml" />
         <option value="$PROJECT_DIR$/web/doctor/init-consultation.xhtml" />
         <option value="$PROJECT_DIR$/web/nurse/nurse-menu.xhtml" />
-        <option value="$PROJECT_DIR$/web/lab/lab-menu.xhtml" />
-        <option value="$PROJECT_DIR$/web/reception/reception-menu.xhtml" />
-        <option value="$PROJECT_DIR$/web/resources/css/custom.css" />
         <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/TriageView.java" />
-        <option value="$PROJECT_DIR$/web/doctor/doctor-menu.xhtml" />
         <option value="$PROJECT_DIR$/web/doctor/admission-info.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java" />
         <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/admission/impl/AdmissionDAOImpl.java" />
+        <option value="$PROJECT_DIR$/web/doctor/triage-report.xhtml" />
         <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/lab/impl/LabDAOImpl.java" />
+        <option value="$PROJECT_DIR$/web/doctor/doctor-board.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/lab/LabService.java" />
+        <option value="$PROJECT_DIR$/web/doctor/consultation.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/VisitService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/impl/VisitServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/VisitDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/impl/VisitDAOImpl.java" />
+        <option value="$PROJECT_DIR$/web/reception/reception-menu.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/ChemistView.java" />
+        <option value="$PROJECT_DIR$/web/pharmacy/visitors.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/attendance/Attendance.java" />
+        <option value="$PROJECT_DIR$/web/reception/visitors.xhtml" />
+        <option value="$PROJECT_DIR$/web/doctor/patient-record.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/medication/Medicate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/patient/Patient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/login/impl/LoginDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/employe/Employee.java" />
+        <option value="$PROJECT_DIR$/web/login.xhtml" />
+        <option value="$PROJECT_DIR$/web/doctor/patient-to-attend-to-unit-A.xhtml" />
+        <option value="$PROJECT_DIR$/web/doctor/doctor-menu.xhtml" />
+        <option value="$PROJECT_DIR$/web/resources/css/custom.css" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/medication/MedicationDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/dao/medication/impl/MedicationDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/medication/MedicationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/service/medication/impl/MedicationServiceImpl.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3ace36a8-3c82-4dee-84a3-16419856a23c/console.sql" />
+        <option value="$PROJECT_DIR$/web/reception/patient-record.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/visit/Visit.java" />
+        <option value="$PROJECT_DIR$/web/lab/lab-menu.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/model/symptom/Symptom.java" />
+        <option value="$PROJECT_DIR$/web/doctor/patient-record-manipulation.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/ReceptionView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LabView.java" />
+        <option value="$PROJECT_DIR$/web/lab/lab-queue.xhtml" />
+        <option value="$PROJECT_DIR$/web/lab/lab-report.xhtml" />
+        <option value="$PROJECT_DIR$/web/doctor/medication.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java" />
       </list>
     </option>
   </component>
@@ -178,6 +529,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,13 +549,6 @@
               <item name="san" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="san" type="b2602c69:ProjectViewProjectNode" />
-              <item name="san" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="san" type="b2602c69:ProjectViewProjectNode" />
@@ -256,29 +603,6 @@
               <item name="egerton" type="462c0819:PsiDirectoryNode" />
               <item name="hospital" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="admission" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="san" type="b2602c69:ProjectViewProjectNode" />
-              <item name="san" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="egerton" type="462c0819:PsiDirectoryNode" />
-              <item name="hospital" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="admission" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="san" type="b2602c69:ProjectViewProjectNode" />
-              <item name="san" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="egerton" type="462c0819:PsiDirectoryNode" />
-              <item name="hospital" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="lab" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -292,6 +616,17 @@
               <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="lab" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="egerton" type="462c0819:PsiDirectoryNode" />
+              <item name="hospital" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="san" type="b2602c69:ProjectViewProjectNode" />
@@ -325,17 +660,6 @@
               <item name="egerton" type="462c0819:PsiDirectoryNode" />
               <item name="hospital" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="triage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="san" type="b2602c69:ProjectViewProjectNode" />
-              <item name="san" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="egerton" type="462c0819:PsiDirectoryNode" />
-              <item name="hospital" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
               <item name="visit" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -359,17 +683,6 @@
               <item name="egerton" type="462c0819:PsiDirectoryNode" />
               <item name="hospital" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="san" type="b2602c69:ProjectViewProjectNode" />
-              <item name="san" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="egerton" type="462c0819:PsiDirectoryNode" />
-              <item name="hospital" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="admit" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="san" type="b2602c69:ProjectViewProjectNode" />
@@ -435,29 +748,7 @@
               <item name="egerton" type="462c0819:PsiDirectoryNode" />
               <item name="hospital" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="room" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="san" type="b2602c69:ProjectViewProjectNode" />
-              <item name="san" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="egerton" type="462c0819:PsiDirectoryNode" />
-              <item name="hospital" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="san" type="b2602c69:ProjectViewProjectNode" />
-              <item name="san" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="egerton" type="462c0819:PsiDirectoryNode" />
-              <item name="hospital" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="triage" type="462c0819:PsiDirectoryNode" />
+              <item name="symptom" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="san" type="b2602c69:ProjectViewProjectNode" />
@@ -479,29 +770,6 @@
               <item name="egerton" type="462c0819:PsiDirectoryNode" />
               <item name="hospital" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="san" type="b2602c69:ProjectViewProjectNode" />
-              <item name="san" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="egerton" type="462c0819:PsiDirectoryNode" />
-              <item name="hospital" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="admission" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="san" type="b2602c69:ProjectViewProjectNode" />
-              <item name="san" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="egerton" type="462c0819:PsiDirectoryNode" />
-              <item name="hospital" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="admission" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="san" type="b2602c69:ProjectViewProjectNode" />
@@ -553,6 +821,12 @@
               <item name="san" type="b2602c69:ProjectViewProjectNode" />
               <item name="san" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="pharmacy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="san" type="b2602c69:ProjectViewProjectNode" />
+              <item name="san" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="reception" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -572,9 +846,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -592,15 +863,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/pharmacy" />
+      <recent name="$PROJECT_DIR$/web/WEB-INF" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="egerton.hospital.bean.patiet" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web" />
       <recent name="$PROJECT_DIR$/web/WEB-INF" />
       <recent name="$PROJECT_DIR$/web/faces" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/WEB-INF" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -842,88 +1117,58 @@
       <workItem from="1533108653980" duration="17810000" />
       <workItem from="1533195013142" duration="40000" />
       <workItem from="1533195179070" duration="895000" />
+      <workItem from="1533741389021" duration="345000" />
+      <workItem from="1533795863151" duration="3573000" />
+      <workItem from="1533803336245" duration="20432000" />
+      <workItem from="1533876141805" duration="18102000" />
+      <workItem from="1533903480005" duration="7083000" />
+      <workItem from="1533975052478" duration="12729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205129000" />
+    <option name="totallyTimeSpent" value="267393000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="0" width="1372" height="746" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="15" side_tool="true" weight="0.32917318" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32917318" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="CDI" order="3" />
-      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="CDI" order="9" />
+      <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.0966325" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.09590044" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="JSF" order="3" />
+      <window_info anchor="right" id="JSF" order="5" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Java Enterprise" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.52574104" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2591508" />
-      <window_info id="Web" order="2" side_tool="true" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.17784712" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info id="Image Layers" order="5" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.56630266" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32917318" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.32917318" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19399707" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Database Console" order="8" weight="0.32917318" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.45865834" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32917318" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32917318" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Database Console" order="15" weight="0.32917318" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.52574104" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="JSF" order="5" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.45865834" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info id="Image Layers" order="6" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2591508" />
-      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.0966325" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="CDI" order="10" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32917318" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -932,449 +1177,17 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LabView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.xhtml">
+    <entry file="file://$PROJECT_DIR$/web/doctor/lab-result.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="42" column="71" selection-start-line="42" selection-start-column="71" selection-end-line="42" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="15" selection-start-line="15" selection-start-column="4" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/login/impl/LoginDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/lab/lab-report.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/medication/Medication.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/illness/Illness.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/lab/Lab.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="43" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/doctor/illness.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/employe/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Room">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Bed">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Patient">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/doctor/medication.xhtml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/impl/VisitDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="33" column="34" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/visit/impl/VisitServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="31" column="38" lean-forward="true" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/medication/impl/MedicationServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="50" column="79" selection-start-line="50" selection-start-column="79" selection-end-line="50" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/medication/MedicationDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="56" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/medication/Medicate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="12" column="207" selection-start-line="12" selection-start-column="207" selection-end-line="12" selection-end-column="207" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2888#2889#0" expanded="true" />
-            <element signature="e#2918#2919#0" expanded="true" />
-            <element signature="e#3235#3236#0" expanded="true" />
-            <element signature="e#3283#3284#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Employee">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/visit/Visit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/triage/Triage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/doctor/admission.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="54" column="120" selection-start-line="54" selection-start-column="120" selection-end-line="54" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/doctor/medication-option.xhtml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/doctor/consultation.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-341">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/patient/Patient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="15" column="145" lean-forward="true" selection-start-line="15" selection-start-column="145" selection-end-line="15" selection-end-column="145" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/admit/Admission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/medication/MedicationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/admission/impl/AdmissionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/admission/AdmissionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/doctor/admit.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="50" lean-forward="true" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/doctor/admission-option.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/illness/Disease.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="13" column="52" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2363#2364#0" expanded="true" />
-            <element signature="e#2397#2398#0" expanded="true" />
-            <element signature="e#2980#2981#0" expanded="true" />
-            <element signature="e#3026#3027#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/nurse/nurse-menu.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="15" column="106" lean-forward="true" selection-start-line="15" selection-start-column="106" selection-end-line="15" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/lab/lab-menu.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/reception/reception-menu.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="8" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Triage">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/doctor/doctor-menu.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="46" lean-forward="true" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/TriageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="67" column="13" lean-forward="true" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/doctor/admission-info.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="62" column="117" selection-start-line="62" selection-start-column="117" selection-end-line="62" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="200" column="13" lean-forward="true" selection-start-line="200" selection-start-column="13" selection-end-line="200" selection-end-column="13" />
-          <folding>
-            <element signature="e#14215#14216#0" expanded="true" />
-            <element signature="e#14291#14292#0" expanded="true" />
-            <element signature="e#13759#13760#0" expanded="true" />
-            <element signature="e#13840#13841#0" expanded="true" />
-            <element signature="e#13839#13840#0" expanded="true" />
-            <element signature="e#13920#13921#0" expanded="true" />
-            <element signature="e#14571#14572#0" expanded="true" />
-            <element signature="e#14655#14656#0" expanded="true" />
-            <element signature="e#14920#14921#0" expanded="true" />
-            <element signature="e#15004#15005#0" expanded="true" />
-            <element signature="e#15047#15048#0" expanded="true" />
-            <element signature="e#15128#15129#0" expanded="true" />
-            <element signature="e#15869#15870#0" expanded="true" />
-            <element signature="e#15952#15953#0" expanded="true" />
-            <element signature="e#14806#14807#0" expanded="true" />
-            <element signature="e#14889#14890#0" expanded="true" />
-            <element signature="e#16588#16589#0" expanded="true" />
-            <element signature="e#16663#16664#0" expanded="true" />
-            <element signature="e#16689#16690#0" expanded="true" />
-            <element signature="e#16760#16761#0" expanded="true" />
-            <element signature="e#16801#16802#0" expanded="true" />
-            <element signature="e#16833#16834#0" expanded="true" />
-            <element signature="e#16888#16889#0" expanded="true" />
-            <element signature="e#16930#16931#0" expanded="true" />
-            <element signature="e#16965#16966#0" expanded="true" />
-            <element signature="e#16995#16996#0" expanded="true" />
-            <element signature="e#17042#17043#0" expanded="true" />
-            <element signature="e#17080#17081#0" expanded="true" />
-            <element signature="e#17119#17120#0" expanded="true" />
-            <element signature="e#17151#17152#0" expanded="true" />
-            <element signature="e#17204#17205#0" expanded="true" />
-            <element signature="e#17246#17247#0" expanded="true" />
-            <element signature="e#17275#17276#0" expanded="true" />
-            <element signature="e#17302#17303#0" expanded="true" />
-            <element signature="e#17340#17341#0" expanded="true" />
-            <element signature="e#17372#17373#0" expanded="true" />
-            <element signature="e#17403#17404#0" expanded="true" />
-            <element signature="e#17431#17432#0" expanded="true" />
-            <element signature="e#17472#17473#0" expanded="true" />
-            <element signature="e#17506#17507#0" expanded="true" />
-            <element signature="e#17539#17540#0" expanded="true" />
-            <element signature="e#17568#17569#0" expanded="true" />
-            <element signature="e#17612#17613#0" expanded="true" />
-            <element signature="e#17648#17649#0" expanded="true" />
-            <element signature="e#17703#17704#0" expanded="true" />
-            <element signature="e#17743#17744#0" expanded="true" />
-            <element signature="e#17931#17932#0" expanded="true" />
-            <element signature="e#17970#17971#0" expanded="true" />
-            <element signature="e#18044#18045#0" expanded="true" />
-            <element signature="e#18100#18101#0" expanded="true" />
-            <element signature="e#18153#18154#0" expanded="true" />
-            <element signature="e#18192#18193#0" expanded="true" />
-            <element signature="e#18266#18267#0" expanded="true" />
-            <element signature="e#18322#18323#0" expanded="true" />
-            <element signature="e#18367#18368#0" expanded="true" />
-            <element signature="e#18402#18403#0" expanded="true" />
-            <element signature="e#18464#18465#0" expanded="true" />
-            <element signature="e#18512#18513#0" expanded="true" />
-            <element signature="e#18539#18540#0" expanded="true" />
-            <element signature="e#18565#18566#0" expanded="true" />
-            <element signature="e#18600#18601#0" expanded="true" />
-            <element signature="e#18630#18631#0" expanded="true" />
-            <element signature="e#18671#18672#0" expanded="true" />
-            <element signature="e#18704#18705#0" expanded="true" />
-            <element signature="e#18760#18761#0" expanded="true" />
-            <element signature="e#18804#18805#0" expanded="true" />
-            <element signature="e#18838#18839#0" expanded="true" />
-            <element signature="e#18865#18866#0" expanded="true" />
-            <element signature="e#18908#18909#0" expanded="true" />
-            <element signature="e#18940#18941#0" expanded="true" />
-            <element signature="e#18987#18988#0" expanded="true" />
-            <element signature="e#19023#19024#0" expanded="true" />
-            <element signature="e#19088#19089#0" expanded="true" />
-            <element signature="e#19138#19139#0" expanded="true" />
-            <element signature="e#19181#19182#0" expanded="true" />
-            <element signature="e#19213#19214#0" expanded="true" />
-            <element signature="e#19270#19271#0" expanded="true" />
-            <element signature="e#19312#19313#0" expanded="true" />
-            <element signature="e#19358#19359#0" expanded="true" />
-            <element signature="e#19392#19393#0" expanded="true" />
-            <element signature="e#19454#19455#0" expanded="true" />
-            <element signature="e#19500#19501#0" expanded="true" />
-            <element signature="e#19537#19538#0" expanded="true" />
-            <element signature="e#19568#19569#0" expanded="true" />
-            <element signature="e#19618#19619#0" expanded="true" />
-            <element signature="e#19658#19659#0" expanded="true" />
-            <element signature="e#19687#19688#0" expanded="true" />
-            <element signature="e#19714#19715#0" expanded="true" />
-            <element signature="e#19752#19753#0" expanded="true" />
-            <element signature="e#19784#19785#0" expanded="true" />
-            <element signature="e#19811#19812#0" expanded="true" />
-            <element signature="e#19837#19838#0" expanded="true" />
-            <element signature="e#19872#19873#0" expanded="true" />
-            <element signature="e#19902#19903#0" expanded="true" />
-            <element signature="e#19943#19944#0" expanded="true" />
-            <element signature="e#19975#19976#0" expanded="true" />
-            <element signature="e#20030#20031#0" expanded="true" />
-            <element signature="e#20072#20073#0" expanded="true" />
-            <element signature="e#20112#20113#0" expanded="true" />
-            <element signature="e#20143#20144#0" expanded="true" />
-            <element signature="e#20196#20197#0" expanded="true" />
-            <element signature="e#20236#20237#0" expanded="true" />
-            <element signature="e#20279#20280#0" expanded="true" />
-            <element signature="e#20313#20314#0" expanded="true" />
-            <element signature="e#20372#20373#0" expanded="true" />
-            <element signature="e#20418#20419#0" expanded="true" />
-            <element signature="e#20456#20457#0" expanded="true" />
-            <element signature="e#20485#20486#0" expanded="true" />
-            <element signature="e#20534#20535#0" expanded="true" />
-            <element signature="e#20570#20571#0" expanded="true" />
-            <element signature="e#20615#20616#0" expanded="true" />
-            <element signature="e#20648#20649#0" expanded="true" />
-            <element signature="e#20697#20698#0" expanded="true" />
-            <element signature="e#20742#20743#0" expanded="true" />
-            <element signature="e#20924#20925#0" expanded="true" />
-            <element signature="e#20955#20956#0" expanded="true" />
-            <element signature="e#21005#21006#0" expanded="true" />
-            <element signature="e#21045#21046#0" expanded="true" />
-            <element signature="e#21080#21081#0" expanded="true" />
-            <element signature="e#21110#21111#0" expanded="true" />
-            <element signature="e#21157#21158#0" expanded="true" />
-            <element signature="e#21195#21196#0" expanded="true" />
-            <element signature="e#21233#21234#0" expanded="true" />
-            <element signature="e#21264#21265#0" expanded="true" />
-            <element signature="e#21315#21316#0" expanded="true" />
-            <element signature="e#21355#21356#0" expanded="true" />
-            <element signature="e#21415#21416#0" expanded="true" />
-            <element signature="e#21459#21460#0" expanded="true" />
-            <element signature="e#21501#21502#0" expanded="true" />
-            <element signature="e#21534#21535#0" expanded="true" />
-            <element signature="e#21591#21592#0" expanded="true" />
-            <element signature="e#21635#21636#0" expanded="true" />
-            <element signature="e#21675#21676#0" expanded="true" />
-            <element signature="e#21705#21706#0" expanded="true" />
-            <element signature="e#21757#21758#0" expanded="true" />
-            <element signature="e#21795#21796#0" expanded="true" />
-            <element signature="e#21843#21844#0" expanded="true" />
-            <element signature="e#21887#21888#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/doctor/lab-option.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        <state relative-caret-position="54">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1385,45 +1198,568 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/css/custom.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/illness/Disease.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="52" column="24" lean-forward="true" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+        <state relative-caret-position="240">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/admission/impl/AdmissionDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LoginView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="42" column="52" lean-forward="true" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="77" selection-start-line="15" selection-start-column="77" selection-end-line="15" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/doctor/doctor-board.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="13" column="47" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/employe/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/admission/AdmissionDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/login/impl/LoginDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+        <state relative-caret-position="135">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/lab/impl/LabDAOImpl.java">
+    <entry file="file://$PROJECT_DIR$/web/doctor/doctor-menu.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-356">
-          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+        <state relative-caret-position="237">
+          <caret line="18" column="68" lean-forward="true" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2625">
+          <caret line="175" column="1" selection-start-line="175" selection-start-column="1" selection-end-line="175" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/medication/MedicationDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="25" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/medication/impl/MedicationDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="50" column="97" selection-start-line="50" selection-start-column="97" selection-end-line="50" selection-end-column="97" />
+        <state relative-caret-position="423">
+          <caret line="98" column="5" lean-forward="true" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/medication/MedicationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/service/medication/impl/MedicationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="67" column="52" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+          <folding>
+            <element signature="e#2124#2125#0" expanded="true" />
+            <element signature="e#2192#2193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/patient/Patient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="120" column="31" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4054#4055#0" expanded="true" />
+            <element signature="e#4085#4086#0" expanded="true" />
+            <element signature="e#4140#4141#0" expanded="true" />
+            <element signature="e#4180#4181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/reception/patient-record.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="78" column="49" lean-forward="true" selection-start-line="78" selection-start-column="49" selection-end-line="78" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/visit/Visit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding>
+            <element signature="e#2411#2412#0" expanded="true" />
+            <element signature="e#2441#2442#0" expanded="true" />
+            <element signature="e#2677#2678#0" expanded="true" />
+            <element signature="e#2715#2716#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/doctor/consultation.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="33" column="19" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="33" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/doctor/patient-to-attend-to-unit-A.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/lab/lab-menu.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/dao/visit/impl/VisitDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="57" column="13" lean-forward="true" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/ReceptionView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="65" column="26" lean-forward="true" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/model/symptom/Symptom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Test">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Employee">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/lab/lab-queue.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/doctor/patient-record-manipulation.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="166" column="34" lean-forward="true" selection-start-line="166" selection-start-column="34" selection-end-line="166" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/lab/lab-report.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/LabView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="80" column="13" lean-forward="true" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="13" />
+          <folding>
+            <element signature="e#4455#4456#0" expanded="true" />
+            <element signature="e#4486#4487#0" expanded="true" />
+            <element signature="e#4447#4448#0" expanded="true" />
+            <element signature="e#4487#4488#0" expanded="true" />
+            <element signature="e#3775#3776#0" expanded="true" />
+            <element signature="e#3829#3830#0" expanded="true" />
+            <element signature="e#4124#4125#0" expanded="true" />
+            <element signature="e#4161#4162#0" expanded="true" />
+            <element signature="e#4225#4226#0" expanded="true" />
+            <element signature="e#4277#4278#0" expanded="true" />
+            <element signature="e#5192#5193#0" expanded="true" />
+            <element signature="e#5220#5221#0" expanded="true" />
+            <element signature="e#5261#5262#0" expanded="true" />
+            <element signature="e#5295#5296#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3ace36a8-3c82-4dee-84a3-16419856a23c/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="135">
+          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Symptom">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://3ace36a8-3c82-4dee-84a3-16419856a23c/schema/hospital/table/Visit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/doctor/medication.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="90" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/egerton/hospital/bean/patiet/DoctorView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72">
+          <caret line="411" column="4" selection-start-line="411" selection-start-column="4" selection-end-line="411" selection-end-column="4" />
+          <folding>
+            <element signature="e#16166#16167#0" expanded="true" />
+            <element signature="e#16243#16244#0" expanded="true" />
+            <element signature="e#16274#16275#0" expanded="true" />
+            <element signature="e#16349#16350#0" expanded="true" />
+            <element signature="e#16384#16385#0" expanded="true" />
+            <element signature="e#16462#16463#0" expanded="true" />
+            <element signature="e#17092#17093#0" expanded="true" />
+            <element signature="e#17168#17169#0" expanded="true" />
+            <element signature="e#17200#17201#0" expanded="true" />
+            <element signature="e#17281#17282#0" expanded="true" />
+            <element signature="e#17318#17319#0" expanded="true" />
+            <element signature="e#17401#17402#0" expanded="true" />
+            <element signature="e#17686#17687#0" expanded="true" />
+            <element signature="e#17768#17769#0" expanded="true" />
+            <element signature="e#17802#17803#0" expanded="true" />
+            <element signature="e#17883#17884#0" expanded="true" />
+            <element signature="e#18448#18449#0" expanded="true" />
+            <element signature="e#18525#18526#0" expanded="true" />
+            <element signature="e#18598#18599#0" expanded="true" />
+            <element signature="e#18682#18683#0" expanded="true" />
+            <element signature="e#18711#18712#0" expanded="true" />
+            <element signature="e#18790#18791#0" expanded="true" />
+            <element signature="e#20064#20065#0" expanded="true" />
+            <element signature="e#20139#20140#0" expanded="true" />
+            <element signature="e#20165#20166#0" expanded="true" />
+            <element signature="e#20236#20237#0" expanded="true" />
+            <element signature="e#20282#20283#0" expanded="true" />
+            <element signature="e#20324#20325#0" expanded="true" />
+            <element signature="e#20395#20396#0" expanded="true" />
+            <element signature="e#20457#20458#0" expanded="true" />
+            <element signature="e#20489#20490#0" expanded="true" />
+            <element signature="e#20517#20518#0" expanded="true" />
+            <element signature="e#20559#20560#0" expanded="true" />
+            <element signature="e#20593#20594#0" expanded="true" />
+            <element signature="e#20625#20626#0" expanded="true" />
+            <element signature="e#20653#20654#0" expanded="true" />
+            <element signature="e#20695#20696#0" expanded="true" />
+            <element signature="e#20729#20730#0" expanded="true" />
+            <element signature="e#20761#20762#0" expanded="true" />
+            <element signature="e#20789#20790#0" expanded="true" />
+            <element signature="e#20831#20832#0" expanded="true" />
+            <element signature="e#20865#20866#0" expanded="true" />
+            <element signature="e#20897#20898#0" expanded="true" />
+            <element signature="e#20925#20926#0" expanded="true" />
+            <element signature="e#20967#20968#0" expanded="true" />
+            <element signature="e#21001#21002#0" expanded="true" />
+            <element signature="e#21033#21034#0" expanded="true" />
+            <element signature="e#21061#21062#0" expanded="true" />
+            <element signature="e#21103#21104#0" expanded="true" />
+            <element signature="e#21137#21138#0" expanded="true" />
+            <element signature="e#21178#21179#0" expanded="true" />
+            <element signature="e#21210#21211#0" expanded="true" />
+            <element signature="e#21265#21266#0" expanded="true" />
+            <element signature="e#21307#21308#0" expanded="true" />
+            <element signature="e#21342#21343#0" expanded="true" />
+            <element signature="e#21372#21373#0" expanded="true" />
+            <element signature="e#21419#21420#0" expanded="true" />
+            <element signature="e#21457#21458#0" expanded="true" />
+            <element signature="e#21496#21497#0" expanded="true" />
+            <element signature="e#21528#21529#0" expanded="true" />
+            <element signature="e#21581#21582#0" expanded="true" />
+            <element signature="e#21623#21624#0" expanded="true" />
+            <element signature="e#21652#21653#0" expanded="true" />
+            <element signature="e#21679#21680#0" expanded="true" />
+            <element signature="e#21717#21718#0" expanded="true" />
+            <element signature="e#21749#21750#0" expanded="true" />
+            <element signature="e#21780#21781#0" expanded="true" />
+            <element signature="e#21808#21809#0" expanded="true" />
+            <element signature="e#21849#21850#0" expanded="true" />
+            <element signature="e#21883#21884#0" expanded="true" />
+            <element signature="e#21916#21917#0" expanded="true" />
+            <element signature="e#21945#21946#0" expanded="true" />
+            <element signature="e#21989#21990#0" expanded="true" />
+            <element signature="e#22025#22026#0" expanded="true" />
+            <element signature="e#22080#22081#0" expanded="true" />
+            <element signature="e#22120#22121#0" expanded="true" />
+            <element signature="e#22309#22310#0" expanded="true" />
+            <element signature="e#22348#22349#0" expanded="true" />
+            <element signature="e#22422#22423#0" expanded="true" />
+            <element signature="e#22478#22479#0" expanded="true" />
+            <element signature="e#22531#22532#0" expanded="true" />
+            <element signature="e#22570#22571#0" expanded="true" />
+            <element signature="e#22644#22645#0" expanded="true" />
+            <element signature="e#22700#22701#0" expanded="true" />
+            <element signature="e#22745#22746#0" expanded="true" />
+            <element signature="e#22780#22781#0" expanded="true" />
+            <element signature="e#22842#22843#0" expanded="true" />
+            <element signature="e#22890#22891#0" expanded="true" />
+            <element signature="e#22917#22918#0" expanded="true" />
+            <element signature="e#22943#22944#0" expanded="true" />
+            <element signature="e#22978#22979#0" expanded="true" />
+            <element signature="e#23008#23009#0" expanded="true" />
+            <element signature="e#23049#23050#0" expanded="true" />
+            <element signature="e#23082#23083#0" expanded="true" />
+            <element signature="e#23138#23139#0" expanded="true" />
+            <element signature="e#23182#23183#0" expanded="true" />
+            <element signature="e#23216#23217#0" expanded="true" />
+            <element signature="e#23243#23244#0" expanded="true" />
+            <element signature="e#23286#23287#0" expanded="true" />
+            <element signature="e#23318#23319#0" expanded="true" />
+            <element signature="e#23365#23366#0" expanded="true" />
+            <element signature="e#23401#23402#0" expanded="true" />
+            <element signature="e#23466#23467#0" expanded="true" />
+            <element signature="e#23516#23517#0" expanded="true" />
+            <element signature="e#23559#23560#0" expanded="true" />
+            <element signature="e#23591#23592#0" expanded="true" />
+            <element signature="e#23648#23649#0" expanded="true" />
+            <element signature="e#23690#23691#0" expanded="true" />
+            <element signature="e#23736#23737#0" expanded="true" />
+            <element signature="e#23770#23771#0" expanded="true" />
+            <element signature="e#23832#23833#0" expanded="true" />
+            <element signature="e#23878#23879#0" expanded="true" />
+            <element signature="e#23915#23916#0" expanded="true" />
+            <element signature="e#23946#23947#0" expanded="true" />
+            <element signature="e#23996#23997#0" expanded="true" />
+            <element signature="e#24036#24037#0" expanded="true" />
+            <element signature="e#24065#24066#0" expanded="true" />
+            <element signature="e#24092#24093#0" expanded="true" />
+            <element signature="e#24130#24131#0" expanded="true" />
+            <element signature="e#24162#24163#0" expanded="true" />
+            <element signature="e#24189#24190#0" expanded="true" />
+            <element signature="e#24215#24216#0" expanded="true" />
+            <element signature="e#24250#24251#0" expanded="true" />
+            <element signature="e#24280#24281#0" expanded="true" />
+            <element signature="e#24321#24322#0" expanded="true" />
+            <element signature="e#24353#24354#0" expanded="true" />
+            <element signature="e#24408#24409#0" expanded="true" />
+            <element signature="e#24450#24451#0" expanded="true" />
+            <element signature="e#24490#24491#0" expanded="true" />
+            <element signature="e#24521#24522#0" expanded="true" />
+            <element signature="e#24574#24575#0" expanded="true" />
+            <element signature="e#24614#24615#0" expanded="true" />
+            <element signature="e#24657#24658#0" expanded="true" />
+            <element signature="e#24691#24692#0" expanded="true" />
+            <element signature="e#24750#24751#0" expanded="true" />
+            <element signature="e#24796#24797#0" expanded="true" />
+            <element signature="e#24834#24835#0" expanded="true" />
+            <element signature="e#24863#24864#0" expanded="true" />
+            <element signature="e#24912#24913#0" expanded="true" />
+            <element signature="e#24948#24949#0" expanded="true" />
+            <element signature="e#24993#24994#0" expanded="true" />
+            <element signature="e#25026#25027#0" expanded="true" />
+            <element signature="e#25075#25076#0" expanded="true" />
+            <element signature="e#25120#25121#0" expanded="true" />
+            <element signature="e#25302#25303#0" expanded="true" />
+            <element signature="e#25330#25331#0" expanded="true" />
+            <element signature="e#25377#25378#0" expanded="true" />
+            <element signature="e#25411#25412#0" expanded="true" />
+            <element signature="e#25448#25449#0" expanded="true" />
+            <element signature="e#25476#25477#0" expanded="true" />
+            <element signature="e#25523#25524#0" expanded="true" />
+            <element signature="e#25557#25558#0" expanded="true" />
+            <element signature="e#25594#25595#0" expanded="true" />
+            <element signature="e#25622#25623#0" expanded="true" />
+            <element signature="e#25669#25670#0" expanded="true" />
+            <element signature="e#25703#25704#0" expanded="true" />
+            <element signature="e#25740#25741#0" expanded="true" />
+            <element signature="e#25768#25769#0" expanded="true" />
+            <element signature="e#25815#25816#0" expanded="true" />
+            <element signature="e#25849#25850#0" expanded="true" />
+            <element signature="e#25886#25887#0" expanded="true" />
+            <element signature="e#25917#25918#0" expanded="true" />
+            <element signature="e#25967#25968#0" expanded="true" />
+            <element signature="e#26007#26008#0" expanded="true" />
+            <element signature="e#26042#26043#0" expanded="true" />
+            <element signature="e#26072#26073#0" expanded="true" />
+            <element signature="e#26119#26120#0" expanded="true" />
+            <element signature="e#26157#26158#0" expanded="true" />
+            <element signature="e#26195#26196#0" expanded="true" />
+            <element signature="e#26226#26227#0" expanded="true" />
+            <element signature="e#26277#26278#0" expanded="true" />
+            <element signature="e#26317#26318#0" expanded="true" />
+            <element signature="e#26377#26378#0" expanded="true" />
+            <element signature="e#26421#26422#0" expanded="true" />
+            <element signature="e#26463#26464#0" expanded="true" />
+            <element signature="e#26496#26497#0" expanded="true" />
+            <element signature="e#26553#26554#0" expanded="true" />
+            <element signature="e#26597#26598#0" expanded="true" />
+            <element signature="e#26637#26638#0" expanded="true" />
+            <element signature="e#26667#26668#0" expanded="true" />
+            <element signature="e#26719#26720#0" expanded="true" />
+            <element signature="e#26757#26758#0" expanded="true" />
+            <element signature="e#26792#26793#0" expanded="true" />
+            <element signature="e#26822#26823#0" expanded="true" />
+            <element signature="e#26869#26870#0" expanded="true" />
+            <element signature="e#26907#26908#0" expanded="true" />
+            <element signature="e#26955#26956#0" expanded="true" />
+            <element signature="e#26999#27000#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

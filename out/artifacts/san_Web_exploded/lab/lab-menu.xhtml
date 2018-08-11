@@ -10,8 +10,7 @@
                     <h:panelGrid columns="4" width="auto" style="text-align: left;">
                         <h:outputText value="sanatorium lab" styleClass="brand"/>
                         <h:panelGrid columns="2">
-                            <h:outputLink value="#{labView.newLabReportUrl()}" styleClass="nav-links">| submit report |</h:outputLink>
-                            <h:outputLink  styleClass="nav-links">| update report |</h:outputLink>
+                            <h:outputLink value="#{labView.queueUrl()}" styleClass="nav-links">| submit report |</h:outputLink>
                         </h:panelGrid>
                         <h:outputText value="[#{lab.firstName} #{lab.lastName}]" styleClass="user-info"/>
                         <h:outputLink value="#{login.logout()}"><i class="fa fa-sign-out" style="color: red"/></h:outputLink>

@@ -3,6 +3,7 @@ package egerton.hospital.model.patient;
 import egerton.hospital.model.admit.Admission;
 import egerton.hospital.model.lab.Lab;
 import egerton.hospital.model.medication.Medicate;
+import egerton.hospital.model.symptom.Symptom;
 import egerton.hospital.model.triage.Triage;
 import egerton.hospital.model.visit.Visit;
 
@@ -23,7 +24,7 @@ public class Patient  implements Serializable {
     private List<Lab>labs;
     private List<Admission> admissions;
     private List<Medicate>medications;
-
+    private List<Symptom>symptoms;
     public Patient() {
     }
 
@@ -116,6 +117,14 @@ public class Patient  implements Serializable {
     @OneToMany(mappedBy = "patient",targetEntity = Medicate.class,cascade = CascadeType.ALL)
     public List<Medicate> getMedications() {
         return medications;
+    }
+    @OneToMany(mappedBy = "patient",targetEntity = Symptom.class,cascade = CascadeType.ALL)
+    public List<Symptom> getSymptoms() {
+        return symptoms;
+    }
+
+    public void setSymptoms(List<Symptom> symptoms) {
+        this.symptoms = symptoms;
     }
 
     public void setLabs(List<Lab> labs) {

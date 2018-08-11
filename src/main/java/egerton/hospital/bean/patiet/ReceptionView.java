@@ -29,6 +29,7 @@ public class ReceptionView implements Serializable {
     private Staff staff;
     private Visit visit;
     private boolean studentFound,patientVisitsRecordAvailable;
+    private Integer male,female,unitA,unitB,unitC,unitD;
 
     @Inject
     private ReceptionService receptionService;
@@ -38,6 +39,7 @@ public class ReceptionView implements Serializable {
     private VisitService visitService;
 
     private List<Visit>visits;
+    private String units[]={"A","B","C","D"};
 
     public ReceptionView(){
         patient=new Patient();
@@ -62,7 +64,7 @@ public class ReceptionView implements Serializable {
                            return "/faces/reception/patient-record.xhtml?faces-redirect=true";
                        }
                    }else {
-                       Message.message("Record Update successful",FacesMessage.SEVERITY_WARN);
+                       Message.message("Already updated",FacesMessage.SEVERITY_WARN);
                        this.patient=pat;
                        Utill.setNumber(patient.getPatientNumber());
                        student=new Student();
@@ -120,7 +122,7 @@ public class ReceptionView implements Serializable {
     }
     public String saveVisit(){
         FacesContext context=FacesContext.getCurrentInstance();
-        visit=new Visit(generateRandomNumber(),new Date(),new Date(),false,patient);
+        visit=new Visit(generateRandomNumber(),new Date(),new Date(),visit.getUnit(),false,true,false,false,false,patient);
         try {
             if(this.getVisitService().checkIfVisitIsAlreadyRecordedForPatient(visit)){
                 Message.message("Record Submitted Successfully",FacesMessage.SEVERITY_INFO);
@@ -188,9 +190,79 @@ public class ReceptionView implements Serializable {
         student=new Student();
         visit=new Visit();
     }
-    public void patientVisits(){
-        visits=this.getVisitService().patientVisits(patient);
+    public void queueLevels(){
+        try{
+            visits=this.getVisitService().visitsToday(new Date());
+            if (!visits.isEmpty()){
+                unitA=0;unitB=0;unitC=0;unitD=0;
+                for (Visit visit:visits)
+                    if (visit.getUnit().equalsIgnoreCase("A") && (visit.isInQueue())){
+                        unitA++;
+                    }else if (visit.getUnit().equalsIgnoreCase("B") && (visit.isInQueue())){
+                    unitB++;
+                    }else if (visit.getUnit().equalsIgnoreCase("C") && (visit.isInQueue())){
+                    unitC++;
+                    }else if (visit.getUnit().equalsIgnoreCase("D") && (visit.isInQueue())){
+                    unitD++;
+                    }
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
+
+    public void visitsToday(){
+        try{
+            visits=this.getVisitService().visitsToday(new Date());
+            if (!visits.isEmpty()){
+                male=0;
+                female=0;
+                for (Visit vs:visits){
+                    if (vs.getPatient().getGender().equalsIgnoreCase("male")){
+                        male++;
+                    }
+                    else female++;
+                }
+            }
+        }catch (Exception e){
+            System.out.println(e);
+            System.out.println(male);
+            System.out.println(female);
+        }
+    }
+
+    public Integer getUnitA() {
+        return unitA;
+    }
+
+    public void setUnitA(Integer unitA) {
+        this.unitA = unitA;
+    }
+
+    public Integer getUnitB() {
+        return unitB;
+    }
+
+    public void setUnitB(Integer unitB) {
+        this.unitB = unitB;
+    }
+
+    public Integer getUnitC() {
+        return unitC;
+    }
+
+    public void setUnitC(Integer unitC) {
+        this.unitC = unitC;
+    }
+
+    public Integer getUnitD() {
+        return unitD;
+    }
+
+    public void setUnitD(Integer unitD) {
+        this.unitD = unitD;
+    }
+
     private String generateRandomNumber(){
         return UUID.randomUUID().toString().replace("-","")
                 .substring(1,16).toUpperCase();
@@ -212,9 +284,36 @@ public class ReceptionView implements Serializable {
     public String studentReceptionUrl(){
         return ("/faces/reception/reception.xhtml?faces-redirect=true");
     }
+    public String receptionStatisticsUrl(){
+        return ("/faces/reception/visitors.xhtml?faces-redirect=true");
+    }
+
+    public String[] getUnits() {
+        return units;
+    }
+
+    public void setUnits(String[] units) {
+        this.units = units;
+    }
 
     public Integer getActionID() {
         return actionID;
+    }
+
+    public Integer getMale() {
+        return male;
+    }
+
+    public void setMale(Integer male) {
+        this.male = male;
+    }
+
+    public Integer getFemale() {
+        return female;
+    }
+
+    public void setFemale(Integer female) {
+        this.female = female;
     }
 
     public SchoolRecordsService getRecordsService() {

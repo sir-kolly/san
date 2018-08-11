@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import javax.inject.Inject;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -52,6 +53,12 @@ public class VisitDAOImpl implements VisitDAO {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public List<Visit> visitsToday(Date date) {
+        return new ArrayList<>(this.getSessionFactory().getCurrentSession().createNamedQuery("visitorsToday",Visit.class)
+                .setParameter("date",date).getResultList());
     }
 
     @Override

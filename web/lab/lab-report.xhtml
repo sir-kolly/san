@@ -74,13 +74,11 @@
                     </h:column>
                     <fieldset>
                         <legend >lab report submission</legend>
-                        <h:panelGrid columns="4">
+                        <h:panelGrid >
                             <h:outputLabel value="NUMBER" for="testno"/>
                             <h:inputText readonly="true" value="#{labView.lab.testNumber}" id="testno" class="form-control" required="true" requiredMessage="select test"/>
                             <h:outputLabel value="TEST" for="test"/>
                             <h:inputText readonly="true" value="#{labView.lab.test}" id="test" class="form-control"/>
-                        </h:panelGrid>
-                        <h:panelGrid columns="4">
                             <h:outputLabel value="RESULT" for="gender"/>
                             <h:inputTextarea  value="#{labView.lab.result}" id="result"  required="true" requiredMessage="input result"/>
                             <h:outputLabel value="COMMENT" for="comment"/>

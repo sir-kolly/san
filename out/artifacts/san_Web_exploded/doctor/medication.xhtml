@@ -1,9 +1,10 @@
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
                 template="/Template.xhtml">
     <f:metadata>
-        <f:event type="preRenderView" listener="#{doctorView.suspectedIllnesses()}"/>
+        <f:event type="preRenderView" listener="#{doctorView.patientMedicationViewElements()}"/>
     </f:metadata>
 
     <ui:define name="title">
@@ -15,6 +16,78 @@
     </ui:define>
     <ui:define name="content">
         <h:column>
+            <h:panelGrid styleClass="panel-grid" rendered="#{doctorView.patientRecordAvailable}">
+                <h:form style="padding: 2px" id="form">
+                    <fieldset>
+                        <legend>selected patient for Treatement</legend>
+                        <h:panelGrid columns="8" width="100%">
+                            <h:outputLabel value="patient number" for="pno"/>
+                            <h:inputText readonly="true"  value="#{doctorView.patient.patientNumber}" id="pno" class="form-control"/>
+                            <h:outputLabel value="name" for="name"/>
+                            <h:inputText readonly="true"  value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}" id="name" class="form-control"/>
+                            <h:outputLabel value="gender" for="gender"/>
+                            <h:inputText readonly="true"  value="#{doctorView.patient.gender}" id="gender" class="form-control" />
+                            <h:outputLabel value="yob" for="yob"/>
+                            <h:inputText readonly="true"  value="#{doctorView.patient.yoB}" id="yob" class="form-control"/>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+        <h:column>
+            <h:panelGrid styleClass="panel-grid">
+                <h:form style="padding: 2px" id="info">
+                    <fieldset>
+                        <legend>
+                           Symptoms
+                        </legend>
+                        <h:panelGrid width="100%">
+                            [ #{doctorView.symptom.symptom} ]
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+        <h:column rendered="#{doctorView.testResultAvailable}">
+            <h:panelGrid styleClass="panel-grid">
+                <h:form style="padding: 2px;" id="medInfo">
+                    <fieldset>
+                        <legend>
+                            lab test result
+                        </legend>
+                        <h:panelGrid width="100%">
+                            <h:dataTable value="#{doctorView.labs}" var="lb" headerClass="table-header" rowClasses="even,odd">
+                                <h:column>
+                                    <f:facet name="header">
+                                        Test
+                                    </f:facet>
+                                    #{lb.test}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        Result
+                                    </f:facet>
+                                    #{lb.result}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        Comment
+                                    </f:facet>
+                                    #{lb.comment}
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        Date
+                                    </f:facet>
+                                    #{lb.date}
+                                </h:column>
+                            </h:dataTable>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+        <h:column>
             <h:panelGrid styleClass="panel-grid">
                 <h:form style="padding: 2px">
                     <h:column>
@@ -22,20 +95,25 @@
                     </h:column>
                     <h:inputHidden readonly="true" id="patNo" value="#{doctorView.patient.patientNumber}"/>
                     <fieldset>
-                        <legend >patient madication</legend>
-                        <h:panelGrid columns="2"  style="text-align: left"  cellspacing="4" cellpadding="6">
-                            <h:outputLabel value="NAME" for="name"/>
-                            <h:inputText readonly="true" value="#{doctorView.patient.firstName} #{doctorView.patient.lastName}" id="name" class="form-control"/>
+                        <legend>Diagnosis</legend>
+                        <h:panelGrid>
+                            <h:inputTextarea  value="#{doctorView.medicate.diagnosis}" required="true" requiredMessage="diagnosis missing"/>
+                        </h:panelGrid>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Suspected Illness</legend>
+                        <h:panelGrid>
                             <h:outputLabel value="ILLNESS" for="ill"/>
-                            <h:selectOneMenu value="#{doctorView.disease.illness}" id="ill"  class="form-control" required="true" requiredMessage="illness missing">
-                                <f:selectItem itemLabel="" itemValue=""/>
-                                <f:selectItems value="#{doctorView.sicknesses}"/>
-                                <f:ajax listener="#{doctorView.illnessInfo()}" />
-                            </h:selectOneMenu>
-                            <h:outputLabel value="MEDICINE" for="med"/>
+                            <h:inputText id="ill" value="#{doctorView.medicate.illness}" styleClass="form-control" required="true" requiredMessage="input illnes"/>
+                        </h:panelGrid>
+                    </fieldset>
+                    <fieldset>
+                        <legend >Patient Madication</legend>
+                        <h:panelGrid columns="2"  style="text-align: left"  cellspacing="4" cellpadding="6">
+                          <h:outputLabel value="MEDICINE" for="med"/>
                             <h:inputText  value="#{doctorView.medicate.medName}" id="med" class="form-control" required="true" requiredMessage="medicine missing"/>
                             <h:outputLabel value="MODE OF ADMISSION" for="mod"/>
-                            <h:selectOneMenu  value="#{doctorView.medicate.modeOfAdministration}" id="mod" class="form-control" required="true" requiredMessage="mode missing">
+                            <h:selectOneMenu  value="#{doctorView.medicate.mode}" id="mod" class="form-control" required="true" requiredMessage="mode missing">
                                 <f:selectItem itemLabel="" itemValue=""/>
                                 <f:selectItem itemLabel="Injection" itemValue="Injection"/>
                                 <f:selectItem itemLabel="Oral" itemValue="Oral"/>
@@ -44,8 +122,8 @@
                             <h:inputTextarea  value="#{doctorView.medicate.prescription}" id="pr"  required="true" requiredMessage="prescription missing"/>
                             <h:outputLabel value="STRENGTH" for="str"/>
                             <h:inputText  value="#{doctorView.medicate.strength}" id="str" class="form-control" required="true" requiredMessage="strength missing"/>
-                            <h:outputLabel value="COMMENT" for="com"/>
-                            <h:inputTextarea  value="#{doctorView.medicate.comment}" id="com"   required="true" requiredMessage="comment missing"/>
+                            <h:outputLabel value="Recomendation" for="com"/>
+                            <h:inputTextarea  value="#{doctorView.medicate.recommendation}" id="com"   required="true" requiredMessage="comment missing"/>
                             <h:outputLabel value="DATE" for="date"/>
                             <h:inputText readonly="true" value="#{doctorView.date()}" id="date" class="form-control" />
                             <h:outputLabel value="TIME" for="time"/>
@@ -56,6 +134,11 @@
                         <h:commandButton value="submit" action="#{doctorView.submitMedications}" styleClass="button"/>
                     </h:panelGrid>
                 </h:form>
+                <h:panelGrid>
+                    <h:form>
+                        <h:commandButton value="release patient" action="#{doctorView.endConsultationUrl}" styleClass="button"/>
+                    </h:form>
+                </h:panelGrid>
             </h:panelGrid>
         </h:column>
     </ui:define>

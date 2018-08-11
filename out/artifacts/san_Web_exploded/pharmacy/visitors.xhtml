@@ -1,0 +1,60 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/Template.xhtml">
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{receptionView.visitsToday()}"/>
+    </f:metadata>
+
+    <ui:define name="title">
+        Patient |Record
+    </ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="chemist-menu.xhtml"/>
+    </ui:define>
+    <ui:define name="content">
+        <h:column>
+            <h:panelGrid styleClass="panel-grid">
+                <h:form >
+                    <fieldset>
+                        <legend>Patient Medications</legend>
+                        <h:dataTable value="#{chemistView.medications}" var="v" headerClass="table-header" rowClasses="even,odd">
+                            <h:column>
+                                <f:facet name="header">
+                                    patient number
+                                </f:facet>
+                                #{v.patient.patientNumber}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    name
+                                </f:facet>
+                                <h:outputText value="#{v.patient.firstName} #{v.patient.lastName}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    gender
+                                </f:facet>
+                                <h:outputText value="#{v.patient.gender}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    visit date
+                                </f:facet>
+                                <h:outputText value="#{v.date}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    treated
+                                </f:facet>
+                                <h:outputText value="#{v.treated?'Yes':'No'}"/>
+                            </h:column>
+                        </h:dataTable>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+    </ui:define>
+</ui:composition>
+
+        <!--rendered="#"-->

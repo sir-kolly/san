@@ -3,7 +3,9 @@ package egerton.hospital.dao.medication;
 import egerton.hospital.model.illness.Disease;
 import egerton.hospital.model.medication.Medicate;
 import egerton.hospital.model.patient.Patient;
+import egerton.hospital.model.symptom.Symptom;
 
+import java.util.Date;
 import java.util.List;
 
 public interface MedicationDAO {
@@ -18,6 +20,8 @@ public interface MedicationDAO {
     boolean checkIfMedicationIsSavedAlready(Medicate medicate);
 
     List<Disease> getTodayPatientIllnesses(Disease disease);
-
     Disease illnessInfo(Disease disease);
+
+    boolean saveSymptoms(Symptom symptom);
+    Symptom getTodaySymptom(Date date,Patient patient);
 }

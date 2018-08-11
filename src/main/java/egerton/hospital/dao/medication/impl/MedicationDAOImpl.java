@@ -4,11 +4,13 @@ import egerton.hospital.dao.medication.MedicationDAO;
 import egerton.hospital.model.illness.Disease;
 import egerton.hospital.model.medication.Medicate;
 import egerton.hospital.model.patient.Patient;
+import egerton.hospital.model.symptom.Symptom;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import javax.inject.Inject;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 @Repository
 public class MedicationDAOImpl implements MedicationDAO {
@@ -52,10 +54,11 @@ public class MedicationDAOImpl implements MedicationDAO {
                 .setParameter("ill",disease.getIllness()).setParameter("number",disease.getPatient().getPatientNumber())
                 .setParameter("date",disease.getDate()).stream().findFirst().orElse(null);
 
+      int x=0;
         if(ds!=null)
-            disease=ds;
+            x=1;
 
-        return disease==null ? false:true;
+        return x==1 ? true:false;
     }
 
     @Override
@@ -64,10 +67,11 @@ public class MedicationDAOImpl implements MedicationDAO {
                 .setParameter("name",medicate.getMedName()).setParameter("number",medicate.getPatient().getPatientNumber())
                 .setParameter("illno",medicate.getDisease().getIllnessNumber())
                 .stream().findFirst().orElse(null);
+        int x=0;
         if(md!=null)
-            medicate=md;
+            x=1;
 
-        return medicate==null ? false:true;
+        return x==1 ? true:false;
     }
 
     @Override
@@ -81,6 +85,18 @@ public class MedicationDAOImpl implements MedicationDAO {
         return this.getSessionFactory().getCurrentSession().find(Disease.class,disease.getIllnessNumber());
     }
 
+    @Override
+    public boolean saveSymptoms(Symptom symptom) {
+        this.getSessionFactory().getCurrentSession().save(symptom);
+        return true;
+    }
+
+    @Override
+    public Symptom getTodaySymptom(Date date, Patient patient) {
+        return this.getSessionFactory().getCurrentSession().createNamedQuery("getTodaySymptom",Symptom.class)
+                .setParameter("number",patient.getPatientNumber()).setParameter("date",date)
+                .stream().findFirst().get();
+    }
     public SessionFactory getSessionFactory() {
         return sessionFactory;
     }

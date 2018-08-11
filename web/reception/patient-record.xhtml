@@ -2,7 +2,7 @@
                 xmlns:f="http://java.sun.com/jsf/core"
                 template="/Template.xhtml">
     <f:metadata>
-        <f:event type="preRenderView" listener="#{receptionView.patientVisits()}"/>
+        <f:event type="preRenderView" listener="#{receptionView.queueLevels()}"/>
     </f:metadata>
 
     <ui:define name="title">
@@ -42,42 +42,56 @@
         </h:column>
         <h:column>
             <h:panelGrid styleClass="panel-grid">
-                <h:form style="padding: 2px;width: 80%;margin: auto">
+                <h:form >
                     <fieldset>
-                        <legend>Previous Visits</legend>
-                        <h:dataTable value="#{receptionView.visits}" var="v" headerClass="table-header" rowClasses="even,odd">
-                            <h:column>
-                                <f:facet name="header">
-                                   visit number
-                                </f:facet>
-                                #{v.visitNo}
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                   date
-                                </f:facet>
-                                #{v.date}
-                            </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    treated
-                                </f:facet>
-                                #{v.treated ? 'Yes':'No'}
-                            </h:column>
-                        </h:dataTable>
+                        <legend>Length of the Queues at the Consultation Units</legend>
+                       <h:panelGrid columns="4">
+                           <h:form>
+                               <fieldset>
+                                   <legend>Unit A</legend>
+                                   <h:outputText value="PATIENTS ON THE QUEUE  [#{receptionView.unitA}]"/>
+                               </fieldset>
+                           </h:form>
+                           <h:form>
+                               <fieldset>
+                                   <legend>Unit B</legend>
+                                   <h:outputText value="PATIENTS ON THE QUEUE  [#{receptionView.unitB}]"/>
+                               </fieldset>
+                           </h:form>
+                           <h:form>
+                               <fieldset>
+                                   <legend>Unit C</legend>
+                                   <h:outputText value="PATIENTS ON THE QUEUE  [#{receptionView.unitC}]"/>
+                               </fieldset>
+                           </h:form>
+                           <h:form>
+                               <fieldset>
+                                   <legend>Unit D</legend>
+                                   <h:outputText value="PATIENTS ON THE QUEUE  [#{receptionView.unitD}]"/>
+                               </fieldset>
+                           </h:form>
+                       </h:panelGrid>
                     </fieldset>
-                </h:form>
-                <h:form>
-                    <h:column>
-                        <h:messages id="msg" styleClass="messages"/>
-                    </h:column>
-                    <h:panelGrid width="20%" style="margin:auto" columns="2" cellpadding="5" cellspacing="3">
-                        <h:commandButton value="submit" action="#{receptionView.saveVisit}" styleClass="button"/>
-                        <h:commandButton value="edit" action="#{receptionView.toUpdate}" styleClass="button" />
-                    </h:panelGrid>
                 </h:form>
             </h:panelGrid>
         </h:column>
+        <h:column>
+            <h:panelGrid styleClass="panel-grid">
+                <h:form style="width: 60%;margin: auto">
+                    <fieldset>
+                        <legend>Action</legend>
+                        <h:panelGrid columns="2" width="100%">
+                            <h:outputLabel value="select unit"/>
+                            <h:selectOneMenu value="#{receptionView.visit.unit}" class="form-control" required="true" requiredMessage="select unit">
+                                <f:selectItem itemLabel="" itemValue=""/>
+                                <f:selectItems value="#{receptionView.units}"/>
+                            </h:selectOneMenu>
+                            <h:commandButton styleClass="button" value="Submit" action="#{receptionView.saveVisit}"/>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+    </h:column>
     </ui:define>
 </ui:composition>
 

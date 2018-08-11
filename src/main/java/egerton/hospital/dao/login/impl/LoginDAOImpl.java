@@ -13,7 +13,7 @@ public class LoginDAOImpl implements LoginDAO {
     @Override
     public Employee employeeInfo(Employee employee) {
         return this.getSessionFactory().getCurrentSession().createNamedQuery("employeeInfo",Employee.class)
-                .setParameter("num",employee.getEmployeeNumber())
+                .setParameter("email",employee.getEmail())
                 .setParameter("pwd",employee.getPassword())
                 .stream().findFirst().orElse(null);
     }

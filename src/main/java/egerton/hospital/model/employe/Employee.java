@@ -6,9 +6,9 @@ import javax.persistence.*;
 import java.util.List;
 @Entity
 @Table
-@NamedQuery(name = "employeeInfo",query = "from Employee em where em.employeeNumber=:num and em.password=:pwd")
+@NamedQuery(name = "employeeInfo",query = "from Employee em where em.email=:email and em.password=:pwd")
 public class Employee {
-    private String employeeNumber,nationalId,phone,email,firstName,lastName,gender,role,password;
+    private String employeeNumber,nationalId,phone,email,firstName,lastName,gender,role,password,unit;
     private List<Medicate> medications;
 
 
@@ -63,12 +63,18 @@ public class Employee {
     public String getPassword() {
         return password;
     }
-
+    @Column(name = "unit",length = 1,nullable = false)
+    public String getUnit() {
+        return unit;
+    }
     @OneToMany(mappedBy = "doc",cascade = CascadeType.ALL)
     public List<Medicate> getMedications() {
         return medications;
     }
 
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
     public void setMedications(List<Medicate> medications) {
         this.medications = medications;
     }

@@ -11,6 +11,31 @@
     </ui:define>
     <ui:define name="content">
         <h:column>
+            <h:panelGrid rendered="#{!empty doc}" styleClass="panel-grid">
+                <h:form style="width:60%">
+                    <fieldset>
+                        <legend>My profile</legend>
+                        <h:panelGrid columns="4">
+                            <label for="workno">social number</label>
+                            <h:inputText readonly="true" id="workno" value="#{doc.employeeNumber}" styleClass="form-control"/>
+                            <label for="name">name</label>
+                            <h:inputText readonly="true" value="#{doc.firstName} #{doc.lastName}" id="name" class="form-control"/>
+                            <label for="gender">gender</label>
+                            <h:inputText readonly="true" value="#{doc.gender}" id="gender" class="form-control" />
+                            <label for="phone">phone</label>
+                            <h:inputText readonly="true" value="#{doc.phone}" id="phone" class="form-control"/>
+                            <label for="nid">id</label>
+                            <h:inputText readonly="true" id="nid" value="#{doc.nationalId}" class="form-control"/>
+                            <label for="email">email</label>
+                            <h:inputText readonly="true" value="#{doc.email}" id="email" class="form-control"/>
+                            <label for="address">address</label>
+                            <h:inputText readonly="true" value="#{doc.role}" id="address" class="form-control"/>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+        <h:column>
             <h:panelGrid styleClass="panel-grid">
                 <h:form style="padding: 20px;text-align: left">
                     <fieldset>

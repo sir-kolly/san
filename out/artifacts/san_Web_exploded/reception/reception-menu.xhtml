@@ -5,12 +5,15 @@
     <ui:define name="menu">
         <h:column>
            <h:form styleClass="top-nav">
-               <h:panelGrid columns="4" width="auto" style="text-align: left;">
+               <h:panelGrid columns="5" width="auto" style="text-align: left;">
                    <h:outputText value="sanatorium reception" styleClass="brand"/>
-                   <h:panelGrid style="text-align: left">
+                   <h:panelGrid style="text-align: center">
                        <h:outputLink value="#{receptionView.studentReceptionUrl()}" styleClass="nav-links">| Reception |</h:outputLink>
                    </h:panelGrid>
-                   <h:outputText value="#{reception.firstName} #{reception.lastName}]" styleClass="user-info"/>
+                   <h:panelGrid style="text-align: center">
+                       <h:outputLink value="#{receptionView.receptionStatisticsUrl()}" styleClass="nav-links">| Statistics |</h:outputLink>
+                   </h:panelGrid>
+                   <h:outputText value="[ #{reception.firstName} #{reception.lastName} ]" styleClass="user-info"/>
                    <h:outputLink value="#{login.logout()}"><i class="fa fa-sign-out" style="color: red"/></h:outputLink>
                </h:panelGrid>
            </h:form>

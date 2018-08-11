@@ -9,24 +9,12 @@
                 <h:form >
                     <fieldset class="fieldset">
                         <h:panelGrid columns="9" width="auto" style="text-align: left;">
-                            <h:outputText value="sanatorium consultation" styleClass="brand"/>
+                            <h:outputText value="sanatorium consultation [unit #{doc.unit}]" styleClass="brand"/>
                             <h:panelGrid style="text-align: center">
-                                <h:outputLink value="#{doctorView.initConsultationUrl()}" styleClass="nav-links">|consultation|</h:outputLink>
+                                <h:outputLink value="#{doctorView.openConsultation()}" styleClass="nav-links">|open consultation|</h:outputLink>
                             </h:panelGrid>
                             <h:panelGrid style="text-align: center">
-                                <h:outputLink value="#{doctorView.triageReportUrl()}" styleClass="nav-links">|triage|</h:outputLink>
-                            </h:panelGrid>
-                            <h:panelGrid style="text-align: center">
-                                <h:outputLink value="#{doctorView.illnessUrl()}" styleClass="nav-links">|illness|</h:outputLink>
-                            </h:panelGrid>
-                            <h:panelGrid style="text-align: center">
-                                <h:outputLink value="#{doctorView.medicationUrl()}" styleClass="nav-links">|medication|</h:outputLink>
-                            </h:panelGrid>
-                            <h:panelGrid style="text-align: center">
-                                <h:outputLink value="#{doctorView.admissionUrls()}" styleClass="nav-links">|admission|</h:outputLink>
-                            </h:panelGrid>
-                            <h:panelGrid style="text-align: center">
-                                <h:outputLink value="#{doctorView.labOptionUrl()}" styleClass="nav-links">|Lab|</h:outputLink>
+                                <h:outputLink value="#{doctorView.openConsultation()}" styleClass="nav-links">|statistics|</h:outputLink>
                             </h:panelGrid>
                             <h:panelGrid style="text-align: center">
                                 <h:outputText value="[#{doc.firstName} #{doc.lastName}]"  styleClass="user-info"/>
@@ -40,3 +28,18 @@
     </ui:define>
 </ui:composition>
 
+        <!--<h:panelGrid style="text-align: center">-->
+        <!--<h:outputLink value="#{doctorView.triageReportUrl()}" styleClass="nav-links">|triage|</h:outputLink>-->
+        <!--</h:panelGrid>-->
+        <!--<h:panelGrid style="text-align: center">-->
+        <!--<h:outputLink value="#{doctorView.illnessUrl()}" styleClass="nav-links">|illness|</h:outputLink>-->
+        <!--</h:panelGrid>-->
+        <!--<h:panelGrid style="text-align: center">-->
+        <!--<h:outputLink value="#{doctorView.medicationUrl()}" styleClass="nav-links">|medication|</h:outputLink>-->
+        <!--</h:panelGrid>-->
+        <!--<h:panelGrid style="text-align: center">-->
+        <!--<h:outputLink value="#{doctorView.admissionUrls()}" styleClass="nav-links">|admission|</h:outputLink>-->
+        <!--</h:panelGrid>-->
+        <!--<h:panelGrid style="text-align: center">-->
+        <!--<h:outputLink value="#{doctorView.labOptionUrl()}" styleClass="nav-links">|Lab|</h:outputLink>-->
+        <!--</h:panelGrid>-->

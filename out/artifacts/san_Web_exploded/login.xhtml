@@ -12,8 +12,8 @@
                 <fieldset>
                     <legend style="color: #008844;text-transform: uppercase;font-size: 12px;font-weight: bold">sign in</legend>
                     <h:panelGrid columns="2" cellspacing="5" cellpadding="5" styleClass="login-area" width="100%">
-                        <label for="acces">User Code </label>
-                        <h:inputText id="acces" value="#{login.employee.employeeNumber}"  styleClass="form-control" required="true" requiredMessage="access-code missing"/>
+                        <label for="acces">User Email </label>
+                        <h:inputText id="acces" value="#{login.employee.email}"  styleClass="form-control" required="true" requiredMessage="access-code missing"/>
                         <label for="acces">Password </label>
                         <h:inputSecret id="access" value="#{login.employee.password}" styleClass="form-control" required="true" requiredMessage="access-code missing"/>
                     </h:panelGrid>

@@ -1,0 +1,67 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/Template.xhtml">
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{labView.patientsInTheQueue()}"/>
+    </f:metadata>
+
+    <ui:define name="title">
+        Patient |Lab
+    </ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="lab-menu.xhtml"/>
+    </ui:define>
+    <ui:define name="content">
+        <h:column>
+            <h:panelGrid styleClass="panel-grid">
+                <h:form style="padding: 2px;" id="labTestForm" >
+                    <fieldset>
+                        <legend>patients on the queue</legend>
+                        <h:panelGrid width="100%">
+                            <h:dataTable value="#{labView.labQueue}" var="pat" headerClass="table-header" rowClasses="even,odd">
+                                <h:column>
+                                    <f:facet name="header">
+                                        Patient Number
+                                    </f:facet>
+                                    <h:outputText value=" #{pat.patient.patientNumber}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        Patient name
+                                    </f:facet>
+                                    <h:outputText value=" #{pat.patient.firstName}  #{pat.patient.lastName}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        gender
+                                    </f:facet>
+                                    <h:outputText value=" #{pat.patient.gender}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        YoB
+                                    </f:facet>
+                                    <h:outputText value=" #{pat.patient.yoB}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                        Time of visit
+                                    </f:facet>
+                                    <h:outputText value=" #{pat.time}"/>
+                                </h:column>
+                                <h:column>
+                                    <f:facet name="header">
+                                    </f:facet>
+                                    <h:commandButton value="~" styleClass="option-button" action="#{labView.selectedPatientRecords}" style="background: #002255">
+                                        <f:setPropertyActionListener value="#{pat}" target="#{labView.visit}"/>
+                                    </h:commandButton>
+                                </h:column>
+                            </h:dataTable>
+                        </h:panelGrid>
+                    </fieldset>
+                </h:form>
+            </h:panelGrid>
+        </h:column>
+    </ui:define>
+</ui:composition>

@@ -22,6 +22,7 @@ public class LabView {
     private Lab lab;
     private Patient patient;
     private Test test;
+    private Visit visit;
 
     private boolean testSelected,testsAvailable;
     @Inject
@@ -31,7 +32,7 @@ public class LabView {
 
     private List<Test> tests,availableTests;
     private List<Lab> labResults;
-    private List<Visit>visits;
+    private List<Visit>visits,labQueue;
     private Set<String>numbers;
 
     private boolean patientRecordAvailable;
@@ -40,18 +41,21 @@ public class LabView {
         lab=new Lab();
         test=new Test();
         patient=new Patient();
+        visit=new Visit();
     }
 
     public String saveLabResult(){
         FacesContext context=FacesContext.getCurrentInstance();
         try {
             lab=new Lab(lab.getTestNumber(),lab.getTest(),lab.getResult(),lab.getComment(),new Date(),getPatient());
-            if (!this.getLabService().checkIfResultIsAlreadySubmitted(lab)){
+            if (this.getLabService().checkIfResultIsAlreadySubmitted(lab)){
                 if(this.getLabService().submitLabResult(lab)){
                     test=new Test(lab.getTestNumber(),lab.getTest(),patient,true,new Date());
                     if(this.getLabService().updateTestAfterSubmitted(test)){
-                        if(this.tests.isEmpty())
-                            setTestsAvailable(false);
+                        visit.setInQueue(true);
+                        if (this.getVisitService().updateVisit(visit))
+                            if(this.tests.isEmpty())
+                              setTestsAvailable(false);
                         Message.message("Result submitted",FacesMessage.SEVERITY_INFO);
                         context.getExternalContext().getFlash().setKeepMessages(true);
                         setTestSelected(false);
@@ -78,13 +82,38 @@ public class LabView {
             if(!patient.equals(null)){
                 test=new Test(patient,new Date());
                 tests=this.getLabService().getTestToBeDone(test);
-                this.setTestsAvailable(true);
+                if(!tests.isEmpty())
+                 this.setTestsAvailable(true);
                 this.setPatientRecordAvailable(true);
             }
         }catch (Exception e){}
         return;
     }
+    public void patientsInTheQueue(){
+        try{
+            visits=this.getVisitService().visitsToday(new Date());
+            if (!visits.isEmpty()){
+                labQueue=new ArrayList<>();
+                for (Visit visit:visits){
+                    if (visit.isSentToTheLab() && !visit.isInQueue()){
+                        labQueue.add(visit);
+                    }
+                }
+            }
 
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+    public String selectedPatientRecords(){
+        if(!visit.equals(null)){
+            patient=visit.getPatient();
+            setPatientRecordAvailable(true);
+            return ("/faces/lab/lab-report.xhtml?faces-redirect=true");
+        }
+        return null;
+    }
     public void testSelectedForSubmission(){
         if (this.test==null)
             Message.message("Error occurred During test selection",FacesMessage.SEVERITY_ERROR);
@@ -93,24 +122,19 @@ public class LabView {
             lab=new Lab(test.getTestNumber(),test.getTest(),test.getPatient());
         }
     }
-    public String refresh(){
-        return ("/faces/lab/lab-report.xhtml?faces-redirect=true");
+
+    public List<Visit> getLabQueue() {
+        return labQueue;
     }
 
-    private Timer getTimer(){
-        return new Timer();
+    public void setLabQueue(List<Visit> labQueue) {
+        this.labQueue = labQueue;
     }
 
+    public String queueUrl(){
+        return ("/faces/lab/lab-queue.xhtml");
+    }
 
-    public String testToBeDoneUrl(){
-        return ("/doctor/test.xhtml");
-    }
-    public String newLabReportUrl(){
-        return ("/faces/lab/lab-report.xhtml");
-    }
-    public String viewLabReportUrl(){
-        return ("/faces/lab/view-report.xhtml");
-    }
     private String generateRandomNumber(){
         return UUID.randomUUID().toString().replace("-","")
                 .substring(1,16).toUpperCase();
@@ -122,6 +146,14 @@ public class LabView {
 
     public void setAvailableTests(List<Test> availableTests) {
         this.availableTests = availableTests;
+    }
+
+    public Visit getVisit() {
+        return visit;
+    }
+
+    public void setVisit(Visit visit) {
+        this.visit = visit;
     }
 
     public Test getTest() {

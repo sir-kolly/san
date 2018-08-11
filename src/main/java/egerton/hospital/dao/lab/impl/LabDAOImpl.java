@@ -32,9 +32,10 @@ public class LabDAOImpl implements LabDAO {
     public boolean checkIfTestIsAlreadySubmitted(Test test) {
        Test ts=this.getSessionFactory().getCurrentSession().createNamedQuery("checkIfTestIsAlreadySubmitted",Test.class)
                 .setParameter("test",test.getTest()).setParameter("date",test.getDate()).stream().findFirst().orElse(null);
-        if(ts!=null)
-            test=ts;
-        return test==null ? false:true;
+        int x=0;
+       if(ts!=null)
+           x=1;
+        return x==1 ? true:false;
     }
 
     @Override
