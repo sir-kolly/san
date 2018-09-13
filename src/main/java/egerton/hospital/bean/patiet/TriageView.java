@@ -31,6 +31,7 @@ public class TriageView {
 
     private Set<String>numbers;
     private List<Visit>visits;
+    private List<Triage>triageRecords;
     FacesContext context=FacesContext.getCurrentInstance();
 
     public TriageView(){
@@ -88,6 +89,11 @@ public class TriageView {
             Message.message(""+e,FacesMessage.SEVERITY_WARN);
         }
         return null;
+    }
+    public void getRecordsOfTheDay(){
+        try {
+            this.triageRecords.add(triage);
+        }catch (Exception e){}
     }
     public String calculateBMI(){
         triage.setBmi(""+(Float.parseFloat(triage.getWeight())/(Float.parseFloat(triage.getHeight())*Float.parseFloat(triage.getHeight()))));
