@@ -1,0 +1,13 @@
+#INFO
+SAN- Is a sanatorium information system that is to be deployed and used by the 
+sanatorium department of the egerton university
+
+
+#Requirements for effective Deployment
+JDK OR JRE 1.8 and higher
+Tomcat Container 9.01 
+Maven 3.5
+
+
+#How to Run
+-$ mvn tomcat : deploy
